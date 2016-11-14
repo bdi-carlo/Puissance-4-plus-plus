@@ -1,0 +1,116 @@
+Introduction :
+
+Notre projet concerne le jeu Puissance 4++, nous connaissons tous ce jeu et nous devrons pouvoir y jouer en mode normal ainsi qu'au mode avancé. 
+
+Ce choix sera demandé à l'exécution du jeu à l'utilisateur. Suivant son choix, il pourra déterminer le nombre de joueurs ainsi que son pseudo pour l'enregistrement de la partie. 
+
+Nous allons implémenrer trois niveaux de difficulté qui va varier de débutant, intermédiaire à hardcore, ce qui va limiter le temps de réflexion du joueur. Si le temps est écoulé, la pièce sera aléatoirement placée, de plus dans le mode avancé (Puissance 4++), le type de la pièce et son emplacement seront choisis de façon aléatoire. 
+Le joueur devra choisir un pseudo et la couleur de ses pions.
+
+facultatif : Jouer contre l'ordinateur, interface graphique, possibilité de revoir sa partie, jouer en équipe de 2
+
+Règles Puissance 4 :
+
+Le but du jeu est d'aligner 4 pions sur une grille comptant 6 rangées et 7 colonnes. Chaque joueur dispose de 21 pions d'une couleur (par convention, en général jaune ou rouge). Tour à tour les deux joueurs placent un pion dans la colonne de leur choix, le pion coulisse alors jusqu'à la position la plus basse possible dans la dite colonne à la suite de quoi c'est à l'adversaire de jouer. Le vainqueur est le joueur qui réalise le premier un alignement (horizontal, vertical ou diagonal) d'au moins quatre pions de sa couleur. Si, alors que toutes les cases de la grille de jeu sont remplies, aucun des deux joueurs n'a réalisé un tel alignement, la partie est déclarée nulle.
+
+Règles Puissance 4++ : 
+
+Les règles du jeu sont identiques à celle du Puissance 4, c’est à dire qu’il faut aligner 4 pions pour gagner la partie. La différence est que l’on peut jouer jusqu’à 4 joueurs et que les pièces ont différentes caractéristiques. On y trouve des pièces pleines, des pièces creuses et des pièces bloquantes. Les pièces creuses se placent sur les pièces pleines (ou s’arrêter dessus) et inversement les pièces pleines peuvent traverser les pièces creuses (ou s’arrêter dessus). Une pièce bloquante ne peut pas être traversée par une pièce creuse ni par une pièce pleine. Les joueurs n’ont droit qu’à 2 pièces bloquantes durant une partie.
+
+Contrainte :
+
+Nous ne disposons que de 38h effectives de cours et la deadline du projet est fixée au 16/12/16. 
+Nous allons programmer en langage C.
+Nous allons utiliser Github pour gérer le versioning, l'utilisation des branches est un avantage non négligeable. Pour la génération de de la documentation, nous allons utiliser Doxygen. 
+   
+
+Interface :
+
+
+Choix du jeu :
+ 1 - Jouer au Puissance 4 classique
+ 2 - Jouer au Puissance 4 ++
+
+
+
+
+Difficulte :
+ 1 - Debutant
+ 2 - Intermediaire
+ 2 - Hardcore
+
+
+
+
+Nombre de joueurs :
+ 1 - Deux joueurs
+ 2 - Trois joueurs
+ 2 - Quatre joueurs
+
+
+Joueur 1 : Pseudo :
+Joueur 2 : Pseudo :
+Joueur 3 : Pseudo :
+Joueur 4 : Pseudo :
+
+
+
+
+
+
+
+
+
+
+Conception :
+
+Une matrice pour la grille
+Un fichier pour les meilleurs scores
+Un fichier pour sauvegarder la partie
+typedef enum {jaune, rouge, bleu, vert} t_couleur
+typedef enum {creuse, pleine, bloquante} t_type 
+typedef struct {t_couleur couleur ; t_type type ;} t_piece
+
+Fonction main 
+
+void choix_jeu()
+
+void choix_diff()
+
+Fonction Puissance 4
+
+void init_grille(t_piece grille[N][M])         N : 7  M : 6
+Les
+void afficher_grille(t_piece grille[N][M])
+
+void placer_pion(int colonne, t_piece[N][M])
+
+int victoire(t_piece[N][M])
+
+int egalite(t_piece[N][M])
+
+void record(int nb_coup)
+
+void replay()
+
+void calcul_temps()
+
+void placement_aleatoire(t_piece grille[N][M])
+
+
+
+
+Fonction Puissance 4++
+
+void init_grille(t_piece grille[N][M])         N : 7  M : 6
+
+void afficher_grille(t_piece grille[N][M])
+
+int victoire(t_piece[N][M])
+
+int egalite(t_piece[N][M])
+
+void record(int nb_coup)
+
+void replay()
+
