@@ -54,11 +54,29 @@ Joueur 3 : Pseudo :
 Joueur 4 : Pseudo :
 
 
+Après avoir choisi toutes les options la grille s'affichera et le joueur 1 pourra commencer à jouer :
 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ 1  2  3  4  5  6  7
 
+Joueur 1: Colonne: 1
 
+Et à chaque fois qu'un joueur joue la grille se mettra à jour.
+ 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ .  .  .  .  .  .  . 
+ x  .  .  .  .  .  . 
+ 1  2  3  4  5  6  7
 
-
+Joueur 2: Colonne:
 
 
 
@@ -79,7 +97,7 @@ void choix_diff()
 
 Fonction Puissance 4
 
-void init_grille(t_piece grille[N][M])         N : 7  M : 6
+void init_grille(t_piece grille[N][M])         N : 6  M : 7
 Les
 void afficher_grille(t_piece grille[N][M])
 
@@ -102,7 +120,7 @@ void placement_aleatoire(t_piece grille[N][M])
 
 Fonction Puissance 4++
 
-void init_grille(t_piece grille[N][M])         N : 7  M : 6
+void init_grille(t_piece grille[N][M])         N : 6  M : 7
 
 void afficher_grille(t_piece grille[N][M])
 
