@@ -1,7 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "puissance_classique.h"
-#include "puissance_avance.h"
 
 void choix_jeux(){
 	int choix;
@@ -16,7 +14,7 @@ void choix_jeux(){
 	/* Traitement du choix de l'utilisateur */
 	switch(choix)
 	{	case 1: puissance_classique(); break;
-		case 2: puissance_avance(); break;
+		case 2: /*puissance_avance();*/ break;
 		case 3: break;
 		default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 	}

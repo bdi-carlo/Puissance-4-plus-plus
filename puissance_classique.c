@@ -4,7 +4,7 @@
 #define N 6
 #define M 7
 
-int main(){
+void puissance_classique(){
 	int grille[N][M];
 	int colonne, ligne, pions, nb_pions, num_joueur;
 
