@@ -7,7 +7,7 @@
 int gagne(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
-	int i, j;
+	int i, j, ligne, colonne;
 
 	/*Test pour le joueur 1*/
 
@@ -41,6 +41,64 @@ int gagne(int grille[N][M]){
 
 	//Test diagonale droite
 
+	player1 = 0;
+
+		i = 0;
+		j = 3;
+		while(i <= 3 && j >= 0){
+			if(grille[i][j] == 0)player1 = 0;
+			else if(grille[i][j] == 2)player1 = 0;
+			else if(grille[i][j] == 1){
+				player1++;
+				if(player1 == 4)
+					return 1;
+			}
+			i++;
+			j--;	
+		}
+
+		i = 0;
+		j = 4;
+		while(i <= 4 && j >= 0){
+			if(grille[i][j] == 0)player1 = 0;
+			else if(grille[i][j] == 2)player1 = 0;
+			else if(grille[i][j] == 1){
+				player1++;
+				if(player1 == 4)
+					return 1;
+			}
+			i++;
+			j--;	
+		}
+
+		i = 0;
+		j = 5;
+		while(i <= 5 && j >= 0){
+			if(grille[i][j] == 0)player1 = 0;
+			else if(grille[i][j] == 2)player1 = 0;
+			else if(grille[i][j] == 1){
+				player1++;
+				if(player1 == 4)
+					return 1;
+			}
+			i++;
+			j--;	
+		}
+
+		i = 0;
+		j = 6;
+		while(i <= 5 && j >= 1){
+			if(grille[i][j] == 0)player1 = 0;
+			else if(grille[i][j] == 2)player1 = 0;
+			else if(grille[i][j] == 1){
+				player1++;
+				if(player1 == 4)
+					return 1;
+			}
+			i++;
+			j--;	
+		}
+	
 	
 	//Test diagonale gauche
 	
