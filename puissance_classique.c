@@ -5,6 +5,17 @@
 #define M 7
 #define L 20
 
+void pseudo_classique(char pseudo1[L], char pseudo2[L]){
+	system("clear");
+	printf("\nVeuillez choisir vos pseudos :\n");
+	
+	printf("\nJoueur 1 (pions rouges) : ");
+	scanf("%s", pseudo1);
+
+	printf("\nJoueur 2 (pions jaunes) : ");
+	scanf("%s", pseudo2);
+}
+
 void puissance_classique(){
 	int grille[N][M];
 	int colonne, ligne, pions, nb_pions, num_joueur;
@@ -24,34 +35,47 @@ void puissance_classique(){
 	while(pions < nb_pions){
 		pions ++;
 
-		//Le joueur 1 joue
+/****************************** JOUEUR 1 JOUE *****************************************/
+
 		num_joueur = 1;
+
+		//Demande où il veut jouer
 		printf("%s: Colonne: ",joueur1);
 		scanf("%i", &colonne);
 
+		//Affichage du numéro du tour
 		system("clear");
 		printf("\nTOUR NUMERO %i\n",pions);
+
+		//Placement du prion et mise à jour de la grille
 		placer_pions(grille, colonne, num_joueur);
 		afficher_matrice(grille);
 		
+		//Test pour savoir si le joueur à gagné
 		if(gagne(grille) == 1)break;
 
-/***********************************************************************/
+/****************************** JOUEUR 2 JOUE *****************************************/
 
-		//Le joueur 2 joue
 		num_joueur = 2;
+		//Demande où il veut jouer
 		printf("%s: Colonne: ",joueur2);
 		scanf("%i", &colonne);
 
+		//Affichage du numéro du tour
 		system("clear");
 		printf("\nTOUR NUMERO %i\n",pions+1);
+
+		//Placement du prion et mise à jour de la grille
 		placer_pions(grille, colonne, num_joueur);
 		afficher_matrice(grille);
 
+		//Test pour savoir si le joueur à gagné
 		if(gagne(grille) == 2)break;
 	}
 
+	//Affichage du résultat de la partie
 	system("clear");
+
 	if(gagne(grille) == 0)printf("\nMATCH NUL\n\n");
 
 	else if(gagne(grille) == 1)printf("\n%s GAGNE\n\n",joueur1);
