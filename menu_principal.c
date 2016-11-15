@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 void choix_jeux(){
 	int choix;
+
+	system("clear");
 
 	printf("\nChoix du jeu :\n");
 	printf(" 1 - Puissance 4 classique\n");
