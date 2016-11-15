@@ -23,7 +23,7 @@ void menu(){
 	}
 }
 
-void fin_jeux(){
+int fin_jeux(){
 	int choix;
 
 	printf("\nFIN :\n");
@@ -37,7 +37,8 @@ void fin_jeux(){
 	switch(choix)
 	{	case 1: puissance_classique(); break;
 		case 2: menu(); break;
-		case 3: break;
+		case 3: return 1;
 		default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 	}
+	return 0;
 }

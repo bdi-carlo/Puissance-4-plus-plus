@@ -4,7 +4,8 @@
 int main(){
 	menu();
 
-	fin_jeux();
+	while(fin_jeux() != 1)
+		fin_jeux();
 
 	printf("\nAu revoir !\n");
 }
