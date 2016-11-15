@@ -22,7 +22,7 @@ void enregistrement_score_classique(char joueur[L], int nb_coups){
 		FILE * fichier;
 
 		fichier = fopen("best_classique.txt", "a");
-		fprintf(fichier, "%s	%i\n", joueur, nb_coups);
+		fprintf(fichier, "\n%s	%i", joueur, nb_coups);
 		fclose(fichier);
 }
 
