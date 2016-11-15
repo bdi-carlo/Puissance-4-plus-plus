@@ -8,7 +8,7 @@ int menu(){
 	do{
 		system("clear");
 
-		printf("\nChoix du jeu :\n");
+		printf("\nMenu :\n");
 		printf(" 1 - Puissance 4 classique\n");
 		printf(" 2 - Puissance 4 ++\n");
 		printf(" 3 - Quitter\n");
