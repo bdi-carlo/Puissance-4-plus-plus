@@ -165,3 +165,4 @@ void puissance_classique(){
 		enregistrement_score_classique(joueur4, pions);
 	}
 }
+
