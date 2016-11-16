@@ -30,7 +30,7 @@ void enregistrement_score_classique(char joueur[L], int nb_coups){
 //Programme permettant la construction du jeu Puissance 4 classique
 void puissance_classique(){
 	int grille[N][M];
-	int colonne, ligne, pions, nb_pions, num_joueur, tour;
+	int colonne, ligne, pions, nb_tours, num_joueur, tour;
 	char joueur1[L],joueur2[L];
 
 /****************************** INITIALISATION ****************************************/
@@ -44,25 +44,38 @@ void puissance_classique(){
 	printf("\nTOUR NUMERO 1\n");
 	afficher_matrice(grille);
 	
-	nb_pions = 21;
+	nb_tours = 21;
 	pions = 1;
 	tour = 1;
-	while(pions < nb_pions){
+	while(pions <= nb_tours){
 
 /****************************** JOUEUR 1 JOUE *****************************************/
 
 		num_joueur = 1;
 
 		//Demande où il veut jouer
-		printf("%s: Colonne: ",joueur1);
-		scanf("%i", &colonne);
-
+		do{			
+			printf("%s: Colonne: ",joueur1);
+			scanf("%i", &colonne);
+			
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			
+			else{
+				//Placement du pion sur la grille si et seulement si la colonne le permet
+				ligne = choix_ligne(grille, colonne);
+				if(ligne < 0)
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				else
+					placer_pions(grille, colonne, ligne, num_joueur);
+			}
+		}while(colonne < 1 || colonne > 7 || ligne < 0);
+		
 		//Affichage du numéro du tour
 		system("clear");
 		printf("\nTOUR NUMERO %i\n",pions);
 
-		//Placement du prion et mise à jour de la grille
-		placer_pions(grille, colonne, num_joueur);
+		//Mise à jour de la grille
 		afficher_matrice(grille);
 		
 		//Test pour savoir si le joueur à gagné
@@ -71,17 +84,31 @@ void puissance_classique(){
 /****************************** JOUEUR 2 JOUE *****************************************/
 
 		num_joueur = 2;
+		
 		//Demande où il veut jouer
-		printf("%s: Colonne: ",joueur2);
-		scanf("%i", &colonne);
+		do{			
+			printf("%s: Colonne: ",joueur2);
+			scanf("%i", &colonne);
+			
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			
+			else{
+				//Placement du pion sur la grille si et seulement si la colonne le permet
+				ligne = choix_ligne(grille, colonne);
+				if(ligne < 0)
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				else
+					placer_pions(grille, colonne, ligne, num_joueur);
+			}
+		}while(colonne < 1 || colonne > 7 || ligne < 0);
 
 		//Affichage du numéro du tour
 		system("clear");
 		pions ++;
 		printf("\nTOUR NUMERO %i\n",pions);
 
-		//Placement du pion et mise à jour de la grille
-		placer_pions(grille, colonne, num_joueur);
+		//Mise à jour de la grille
 		afficher_matrice(grille);
 
 		//Test pour savoir si le joueur à gagné
@@ -93,10 +120,16 @@ void puissance_classique(){
 
 	system("clear");
 
-	if(gagne(grille) == 0)printf("\nMATCH NUL\n\n");
-
+	if(gagne(grille) == 0){
+		printf("\nMATCH NUL\n\n");
+	
+		afficher_matrice(grille);
+	}
+	
 	else if(gagne(grille) == 1){
 		printf("\n%s GAGNE\n\n",joueur1);
+		
+		afficher_matrice(grille);
 
 		//Enregistre le score du joueur 1
 		enregistrement_score_classique(joueur1, tour);
@@ -104,6 +137,8 @@ void puissance_classique(){
 
 	else if(gagne(grille) == 2){
 		printf("\n%s GAGNE\n\n",joueur2);
+		
+		afficher_matrice(grille);
 
 		//Enregistre le score du joueur 2
 		enregistrement_score_classique(joueur2, tour);
