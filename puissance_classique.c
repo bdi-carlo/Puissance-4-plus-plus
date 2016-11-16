@@ -14,23 +14,23 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L]){
 	printf("\nJoueur 1 (pions rouges) : ");
 	scanf("%s", pseudo1);
 
-	printf("\nJoueur 2 (pions jaunes) : ");
+	printf("\nJoueur 2 (pions bleus) : ");
 	scanf("%s", pseudo2);
 }
 
 //Enregistrement du score du gagnant
 void enregistrement_score_classique(char joueur[L], int nb_coups){
-		FILE * fichier;
+	FILE * fichier;
 
-		fichier = fopen("best_classique.txt", "a");
-		fprintf(fichier, "\n%s	%i", joueur, nb_coups);
-		fclose(fichier);
+	fichier = fopen("best_classique.txt", "a");
+	fprintf(fichier, "\n%s	%i", joueur, nb_coups);
+	fclose(fichier);
 }
 
 //Programme permettant la construction du jeu Puissance 4 classique
 void puissance_classique(){
 	int grille[N][M];
-	int colonne, ligne, pions, nb_pions, num_joueur;
+	int colonne, ligne, pions, nb_pions, num_joueur, tour;
 	char joueur1[L],joueur2[L];
 
 /****************************** INITIALISATION ****************************************/
@@ -46,6 +46,7 @@ void puissance_classique(){
 	
 	nb_pions = 21;
 	pions = 1;
+	tour = 1;
 	while(pions < nb_pions){
 
 /****************************** JOUEUR 1 JOUE *****************************************/
@@ -85,6 +86,7 @@ void puissance_classique(){
 
 		//Test pour savoir si le joueur à gagné
 		if(gagne(grille) == 2)break;
+		tour++;
 	}
 
 /******************** Affichage du résultat de la partie ******************************/
@@ -97,13 +99,13 @@ void puissance_classique(){
 		printf("\n%s GAGNE\n\n",joueur1);
 
 		//Enregistre le score du joueur 1
-		enregistrement_score_classique(joueur1, pions);
+		enregistrement_score_classique(joueur1, tour);
 	}
 
 	else if(gagne(grille) == 2){
 		printf("\n%s GAGNE\n\n",joueur2);
 
 		//Enregistre le score du joueur 2
-		enregistrement_score_classique(joueur2, pions);
+		enregistrement_score_classique(joueur2, tour);
 	}
 }
