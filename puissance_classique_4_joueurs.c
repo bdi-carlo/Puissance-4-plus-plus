@@ -91,7 +91,7 @@ void puissance_classique(){
 
 		//Test pour savoir si le joueur à gagné
 		if(gagne(grille) == 2)break;
-	}
+	
 	
 /****************************** JOUEUR 3 JOUE *****************************************/
 
@@ -111,7 +111,7 @@ void puissance_classique(){
 
 		//Test pour savoir si le joueur à gagné
 		if(gagne(grille) == 3)break;
-	}
+	
 	
 /****************************** JOUEUR 4 JOUE *****************************************/
 
@@ -134,34 +134,4 @@ void puissance_classique(){
 	}
 
 /******************** Affichage du résultat de la partie ******************************/
-
-	system("clear");
-
-	if(gagne(grille) == 0)printf("\nMATCH NUL\n\n");
-
-	else if(gagne(grille) == 1){
-		printf("\n%s GAGNE\n\n",joueur1);
-
-		//Enregistre le score du joueur 1
-		enregistrement_score_classique(joueur1, pions);
-	}
-
-	else if(gagne(grille) == 2){
-		printf("\n%s GAGNE\n\n",joueur2);
-
-		//Enregistre le score du joueur 2
-		enregistrement_score_classique(joueur2, pions);
-	}
-	else if(gagne(grille) == 3){
-		printf("\n%s GAGNE\n\n",joueur3);
-
-		//Enregistre le score du joueur 3
-		enregistrement_score_classique(joueur3, pions);
-	}
-	else if(gagne(grille) == 4){
-		printf("\n%s GAGNE\n\n",joueur4);
-
-		//Enregistre le score du joueur 4
-		enregistrement_score_classique(joueur4, pions);
-	}
-}
+resultat();
