@@ -7,7 +7,7 @@ void fin_jeux();
 
 void init_matrice(int matrice[N][M]);
 void afficher_matrice(int matrice[N][M]);
-int placer_pions(int matrice[N][M], int colonne, int num_joueur);
+void placer_pions(int matrice[N][M], int colonne, int num_joueur);
 int gagne(int grille[N][M]);
 
 void pseudo_classique(char pseudo1[L], char pseudo2[L]);

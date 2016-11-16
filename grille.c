@@ -33,7 +33,7 @@ void afficher_matrice(int matrice[N][M]){
 }
 
 //Place le pion du joueur correspondant à la colonne qu'il veut
-int placer_pions(int matrice[N][M], int colonne, int num_joueur){
+void placer_pions(int matrice[N][M], int colonne, int num_joueur){
 	int i;
 	int ligne = N-1;
 
@@ -92,12 +92,13 @@ int gagne(int grille[N][M]){
 				if(player1 == 4)
 					return 1;
 			}
-			if(grille[i][j] == 2){
+			else if(grille[i][j] == 2){
 				player2++;
 				player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
+			
 			else{
 				player1 = 0;
 				player2 = 0;
