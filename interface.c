@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "new_fonctions.h"
 
 int menu(){
 	int choix;
 
-	do{
+	
 		system("clear");
 
 		printf("\nMenu :\n");
@@ -22,11 +23,11 @@ int menu(){
 			case 3: return 1;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 		}
-	}while(choix != 3);
+
 	return 0;
 }
 
-int fin_jeux(){
+void fin_jeux(){
 	int choix;
 
 	do{
@@ -41,7 +42,7 @@ int fin_jeux(){
 		switch(choix)
 		{	case 1: puissance_classique(); break;
 			case 2: menu(); break;
-			case 3: return 1;
+			case 3: break;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 		}
 	}while(choix != 3);
