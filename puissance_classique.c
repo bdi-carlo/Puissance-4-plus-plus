@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "new_fonctions.h"
 #define N 6
 #define M 7
 #define L 20
@@ -100,7 +101,7 @@ void puissance_classique(){
 	}
 
 	else if(gagne(grille) == 2){
-		printf("\n%s 2 GAGNE\n\n",joueur2);
+		printf("\n%s GAGNE\n\n",joueur2);
 
 		//Enregistre le score du joueur 2
 		enregistrement_score_classique(joueur2, pions);
