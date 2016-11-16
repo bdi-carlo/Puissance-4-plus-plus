@@ -6,18 +6,6 @@
 #define M 7
 #define L 20
 
-//Demande aux joueurs leur pseudo
-void pseudo_classique(char pseudo1[L], char pseudo2[L]){
-	system("clear");
-	printf("\nVeuillez choisir vos pseudos :\n");
-	
-	printf("\nJoueur 1 (pions rouges) : ");
-	scanf("%s", pseudo1);
-
-	printf("\nJoueur 2 (pions bleus) : ");
-	scanf("%s", pseudo2);
-}
-
 //Enregistrement du score du gagnant
 void enregistrement_score_classique(char joueur[L], int nb_coups){
 	FILE * fichier;
