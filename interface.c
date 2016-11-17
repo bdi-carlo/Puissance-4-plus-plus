@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "new_fonctions.h"
 
+//Menu de debut de jeu
 int menu(){
 	int choix;
 
@@ -27,6 +28,7 @@ int menu(){
 	return 0;
 }
 
+//Menu de fin de jeu
 void fin_jeux(){
 	int choix;
 
@@ -46,4 +48,16 @@ void fin_jeux(){
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 		}
 	}while(choix != 3);
+}
+
+//Demande aux joueurs leur pseudo
+void pseudo_classique(char pseudo1[L], char pseudo2[L]){
+	system("clear");
+	printf("\nVeuillez choisir vos pseudos :\n");
+	
+	printf("\nJoueur 1 (pions rouges) : ");
+	scanf("%s", pseudo1);
+
+	printf("\nJoueur 2 (pions bleus) : ");
+	scanf("%s", pseudo2);
 }

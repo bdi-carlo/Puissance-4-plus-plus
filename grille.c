@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#define couleur(param) printf("\033[%sm",param)
 #define N 6
 #define M 7
 
@@ -23,8 +25,16 @@ void afficher_matrice(int matrice[N][M]){
 	for(i = 0; i < N; i++){
 		for(j = 0; j < M; j++){
 			if(matrice[i][j] == 0)printf(" . ");
-			if(matrice[i][j] == 1)printf(" x ");
-			if(matrice[i][j] == 2)printf(" o ");
+			if(matrice[i][j] == 1){
+				couleur("34");
+				printf(" @ ");
+				couleur("0");
+			}
+			if(matrice[i][j] == 2){
+				couleur("31");
+				printf(" @ ");
+				couleur("0");
+			}
 		}
 		printf("\n");
 	}
@@ -32,17 +42,26 @@ void afficher_matrice(int matrice[N][M]){
 	printf("\n");
 }
 
-//Place le pion du joueur correspondant à la colonne qu'il veut
-int placer_pions(int matrice[N][M], int colonne, int num_joueur){
+//Retourne la bonne ligne
+int choix_ligne(int matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
 
+	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
 	colonne--;
 	
+	//Boucle permettant de chercher la premiere la ligne sans pion
 	for(i = 1; i <= N; i++){
-		if(matrice[N-i][colonne] == 1 || matrice[N-i][colonne] == 2)ligne--;
+		if(matrice[N-i][colonne] != 0)ligne--;
 	}
+	return ligne;
+}
 
+//Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
+void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
+	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
+	colonne--;
+	
 	if(num_joueur == 1)
 		matrice[ligne][colonne] = 1;
 	else if(num_joueur == 2)
@@ -54,8 +73,6 @@ int gagne(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
 	int i, j;
-
-	/*Test pour le joueur 1*/
 
 	//Test en ligne
 	for(i = 0; i < N; i++){
@@ -92,12 +109,13 @@ int gagne(int grille[N][M]){
 				if(player1 == 4)
 					return 1;
 			}
-			if(grille[i][j] == 2){
+			else if(grille[i][j] == 2){
 				player2++;
 				player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
+			
 			else{
 				player1 = 0;
 				player2 = 0;
