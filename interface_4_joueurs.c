@@ -47,3 +47,20 @@ void fin_jeux(){
 		}
 	}while(choix != 3);
 }
+
+void pseudo_classique(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L]){
+	system("clear");
+	printf("\nVeuillez choisir vos pseudos :\n");
+	
+	printf("\nJoueur 1 (pions rouges) : ");
+	scanf("%s", pseudo1);
+
+	printf("\nJoueur 2 (pions bleus) : ");
+	scanf("%s", pseudo2);
+	
+	printf("\nJoueur 3 (pions vert) : ");
+	scanf("%s", pseudo3);
+
+	printf("\nJoueur 4 (pions magentas) : ");
+	scanf("%s", pseudo4);
+}

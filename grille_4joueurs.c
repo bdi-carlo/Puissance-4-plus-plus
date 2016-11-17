@@ -10,7 +10,7 @@ void init_matrice(int grille[N][M]){
 
 	for(i = 0; i < N; i++){
 		for(j = 0; j < M; j++){
-			matrice[i][j] = 0;
+			grille[i][j] = 0;
 		}
 	}
 }
@@ -22,37 +22,51 @@ void afficher_matrice(int grille[N][M]){
 	printf("\n");
 	for(i = 0; i < N; i++){
 		for(j = 0; j < M; j++){
-			if(matrice[i][j] == 0)printf(" . ");
-			if(matrice[i][j] == 1)printf(" x ");
-			if(matrice[i][j] == 2)printf(" o ");
-			if(matrice[i][j] == 3)printf(" a ");
-			if(matrice[i][j] == 4)printf(" e ");
+			if(grille[i][j] == 0)printf(" . ");
+			if(grille[i][j] == 1)printf(" x ");
+			if(grille[i][j] == 2)printf(" o ");
+			if(grille[i][j] == 3)printf(" a ");
+			if(grille[i][j] == 4)printf(" e ");
 		}
 		printf("\n");
 	}
 	printf("\n 1  2  3  4  5  6  7\n");
 	printf("\n");
 }
+//Retourne la bonne ligne
+int choix_ligne(int grille[N][M], int colonne){
+	int i;
+	int ligne = N-1;
+
+	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
+	colonne--;
+	
+	//Boucle permettant de chercher la premiere la ligne sans pion
+	for(i = 1; i <= N; i++){
+		if(grille[N-i][colonne] != 0)ligne--;
+	}
+	return ligne;
+}
 
 //Place le pion du joueur correspondant à la colonne qu'il veut
-int placer_pions(int matrice[N][M], int colonne, int num_joueur){
+int placer_pions(int grille[N][M], int colonne, int num_joueur){
 	int i;
 	int ligne = N-1;
 
 	colonne--;
 	
 	for(i = 1; i <= N; i++){
-		if(matrice[N-i][colonne] == 1 || matrice[N-i][colonne] == 2 || matrice[N-i][colonne] == 3 || matrice[N-i][colonne] == 4)ligne--;
+		if(grille[N-i][colonne] == 1 || grille[N-i][colonne] == 2 || grille[N-i][colonne] == 3 || grille[N-i][colonne] == 4)ligne--;
 	}
 
 	if(num_joueur == 1)
-		matrice[ligne][colonne] = 1;
+		grille[ligne][colonne] = 1;
 	else if(num_joueur == 2)
-		matrice[ligne][colonne] = 2;
+		grille[ligne][colonne] = 2;
 	else if(num_joueur == 3)
-		matrice[ligne][colonne] = 3;
+		grille[ligne][colonne] = 3;
 	else if(num_joueur == 4)
-		matrice[ligne][colonne] = 4;
+		grille[ligne][colonne] = 4;
 }
 
 //Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non

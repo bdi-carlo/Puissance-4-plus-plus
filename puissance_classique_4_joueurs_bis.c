@@ -55,7 +55,7 @@ void puissance_classique(){
 				if(ligne < 0)
 					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 				else
-					placer_pions(grille, colonne, ligne, num_joueur);
+					placer_pions(grille, colonne, num_joueur);
 			}
 		}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -87,13 +87,12 @@ void puissance_classique(){
 				if(ligne < 0)
 					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 				else
-					placer_pions(grille, colonne, ligne, num_joueur);
+					placer_pions(grille, colonne, num_joueur);
 			}
 		}while(colonne < 1 || colonne > 7 || ligne < 0);
 
 		//Affichage du numéro du tour
 		system("clear");
-		pions ++;
 		printf("\nTOUR NUMERO %i\n",pions);
 
 		//Mise à jour de la grille
@@ -101,7 +100,7 @@ void puissance_classique(){
 
 		//Test pour savoir si le joueur à gagné
 		if(gagne(grille) == 2)break;
-		tour++;
+		
 
 /****************************** JOUEUR 3 JOUE *****************************************/
 
@@ -121,7 +120,7 @@ void puissance_classique(){
 				if(ligne < 0)
 					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 				else
-					placer_pions(grille, colonne, ligne, num_joueur);
+					placer_pions(grille, colonne, num_joueur);
 			}
 		}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -153,20 +152,67 @@ void puissance_classique(){
 				if(ligne < 0)
 					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 				else
-					placer_pions(grille, colonne, ligne, num_joueur);
+					placer_pions(grille, colonne, num_joueur);
 			}
 		}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
 		//Affichage du numéro du tour
 		system("clear");
+		pions ++;
 		printf("\nTOUR NUMERO %i\n",pions);
 
 		//Mise à jour de la grille
 		afficher_matrice(grille);
 		
 		//Test pour savoir si le joueur à gagné
-		if(gagne(grille) == 3)break;
+		if(gagne(grille) == 4)break;
+		tour++;
+}
+
 
 /******************** Affichage du résultat de la partie ******************************/
-	resultat();
+
+	system("clear");
+
+	if(gagne(grille) == 0){
+		printf("\nMATCH NUL\n\n");
 	
+		afficher_matrice(grille);
+	}
+	
+	else if(gagne(grille) == 1){
+		printf("\n%s GAGNE\n\n",joueur1);
+		
+		afficher_matrice(grille);
+
+		//Enregistre le score du joueur 1
+		enregistrement_score_classique(joueur1, tour);
+	}
+
+	else if(gagne(grille) == 2){
+		printf("\n%s GAGNE\n\n",joueur2);
+		
+		afficher_matrice(grille);
+
+		//Enregistre le score du joueur 2
+		enregistrement_score_classique(joueur2, tour);
+	}
+	
+	else if(gagne(grille) == 3){
+		printf("\n%s GAGNE\n\n",joueur3);
+		
+		afficher_matrice(grille);
+
+		//Enregistre le score du joueur 3
+		enregistrement_score_classique(joueur3, tour);
+	}
+
+	else if(gagne(grille) == 4){
+		printf("\n%s GAGNE\n\n",joueur4);
+		
+		afficher_matrice(grille);
+
+		//Enregistre le score du joueur 4
+		enregistrement_score_classique(joueur4, tour);
+	}
+}
