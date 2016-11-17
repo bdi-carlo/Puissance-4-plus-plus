@@ -3,7 +3,7 @@
 #include <unistd.h>
 #define N 6
 #define M 7
-
+#define couleur(param) printf("\033[%sm",param)
 //Initialise à vide la grille du Puissance 4
 void init_matrice(int grille[N][M]){
 	int i,j;
@@ -23,10 +23,26 @@ void afficher_matrice(int grille[N][M]){
 	for(i = 0; i < N; i++){
 		for(j = 0; j < M; j++){
 			if(grille[i][j] == 0)printf(" . ");
-			if(grille[i][j] == 1)printf(" x ");
-			if(grille[i][j] == 2)printf(" o ");
-			if(grille[i][j] == 3)printf(" a ");
-			if(grille[i][j] == 4)printf(" e ");
+			if(grille[i][j] == 1){
+				couleur("34");
+				printf(" @ ");
+				couleur("0");
+			}
+			if(grille[i][j] == 2){
+				couleur("31");
+				printf(" @ ");
+				couleur("0");
+			}
+			if(grille[i][j] == 3){
+				couleur("35");
+				printf(" @ ");
+				couleur("0");
+			}
+			if(grille[i][j] == 4){
+				couleur("32");
+				printf(" @ ");
+				couleur("0");
+			}
 		}
 		printf("\n");
 	}
