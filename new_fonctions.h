@@ -13,4 +13,5 @@ int gagne(int grille[N][M]);
 void pseudo_classique(char pseudo1[L], char pseudo2[L]);
 void enregistrement_score_classique(char joueur[L], int nb_coups);
 void puissance_classique();
+void resultats();
 
