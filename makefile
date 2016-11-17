@@ -19,3 +19,7 @@ grille_avance.o : grille_avance.c
 	gcc -c grille_avance.c ${COMMANDE}
 puissance_avance.o : puissance_avance.c
 	gcc -c puissance_avance.c ${COMMANDE}
+	
+#suppression des fichiers temporaires
+clean :
+	rm -i *.o
