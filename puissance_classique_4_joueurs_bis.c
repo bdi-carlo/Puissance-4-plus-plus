@@ -32,7 +32,7 @@ void puissance_classique(){
 	printf("\nTOUR NUMERO 1\n");
 	afficher_matrice(grille);
 	
-	nb_tours = 21;
+	nb_tours = 11;
 	pions = 1;
 	tour = 1;
 	while(pions <= nb_tours){
