@@ -10,7 +10,7 @@
 void save_score_avance(char joueur[L], int nb_coups){
 	FILE * fichier;
 
-	fichier = fopen("best_classique.txt", "a");
+	fichier = fopen("best_avance.txt", "a");
 	fprintf(fichier, "\n%s	%i", joueur, nb_coups);
 	fclose(fichier);
 }
