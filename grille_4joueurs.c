@@ -279,6 +279,8 @@ int gagne(int grille[N][M]){
 			else if(grille[i][j] == 2){
 				player2++;
 				player1 = 0;
+				player3 = 0;
+				player4 = 0;
 				if(player2 == 4)
 					return 2;
 			}
