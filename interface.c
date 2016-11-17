@@ -19,9 +19,9 @@ int menu(){
 
 		/* Traitement du choix de l'utilisateur */
 		switch(choix)
-		{	case 1: puissance_classique(); break;
-			case 2: /*puissance_avance();*/ break;
-			case 3: return 1;
+		{	case 1: puissance_classique(); return choix;
+			case 2: puissance_avance(); return choix;
+			case 3: return choix;
 			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
 		}
 
