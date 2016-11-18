@@ -21,7 +21,7 @@ void fin_jeux_avance();
 int nb_joueur();
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs);
 int gagne_avance(int grille[N][M]);
-int placer_pions_avance(int grille[N][M], int colonne, int num_joueur);
+void placer_pions_avance(int grille[N][M], int colonne, int num_joueur);
 void afficher_matrice_avance(int matrice[N][M]);
 void save_score_avance(char joueur[L], int nb_coups);
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], char joueur3[L], char joueur4[L], int tour);

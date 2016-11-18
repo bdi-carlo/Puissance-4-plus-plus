@@ -22,4 +22,4 @@ puissance_avance.o : puissance_avance.c
 	
 #suppression des fichiers temporaires
 clean :
-	rm -i *.o
+	rm -rf *.o

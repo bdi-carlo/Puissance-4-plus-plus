@@ -42,7 +42,7 @@ void afficher_matrice_avance(int matrice[N][M]){
 }
 
 //Place le pion du joueur correspondant à la colonne qu'il veut
-int placer_pions_avance(int grille[N][M], int colonne, int num_joueur){
+void placer_pions_avance(int grille[N][M], int colonne, int num_joueur){
 	int i;
 	int ligne = N-1;
 
