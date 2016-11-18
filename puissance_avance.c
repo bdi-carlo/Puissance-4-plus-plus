@@ -16,7 +16,7 @@ void save_score_avance(char joueur[L], int nb_coups){
 }
 
 //Affiche le résultat de la partie
-void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], char joueur3[L], char joueur4[L], int tour){
+void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], char joueur3[L], char joueur4[L], int tour){
 	system("clear");
 
 	if(gagne_avance(grille) == 0){
