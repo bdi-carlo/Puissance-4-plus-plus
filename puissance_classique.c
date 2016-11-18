@@ -15,6 +15,35 @@ void enregistrement_score_classique(char joueur[L], int nb_coups){
 	fclose(fichier);
 }
 
+//Fonction qui permet d'afficher le resultat de la partie
+void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour){
+	system("clear");
+
+	if(gagne(grille) == 0){
+		printf("\nMATCH NUL\n\n");
+	
+		afficher_matrice(grille);
+	}
+	
+	else if(gagne(grille) == 1){
+		printf("\n%s GAGNE\n\n",joueur1);
+		
+		afficher_matrice(grille);
+
+		//Enregistre le score du joueur 1
+		enregistrement_score_classique(joueur1, tour);
+	}
+
+	else if(gagne(grille) == 2){
+		printf("\n%s GAGNE\n\n",joueur2);
+		
+		afficher_matrice(grille);
+
+		//Enregistre le score du joueur 2
+		enregistrement_score_classique(joueur2, tour);
+	}	
+}
+
 //Programme permettant la construction du jeu Puissance 4 classique
 void puissance_classique(){
 	int grille[N][M];
@@ -106,29 +135,5 @@ void puissance_classique(){
 
 /******************** Affichage du résultat de la partie ******************************/
 
-	system("clear");
-
-	if(gagne(grille) == 0){
-		printf("\nMATCH NUL\n\n");
-	
-		afficher_matrice(grille);
-	}
-	
-	else if(gagne(grille) == 1){
-		printf("\n%s GAGNE\n\n",joueur1);
-		
-		afficher_matrice(grille);
-
-		//Enregistre le score du joueur 1
-		enregistrement_score_classique(joueur1, tour);
-	}
-
-	else if(gagne(grille) == 2){
-		printf("\n%s GAGNE\n\n",joueur2);
-		
-		afficher_matrice(grille);
-
-		//Enregistre le score du joueur 2
-		enregistrement_score_classique(joueur2, tour);
-	}
+	affich_result(grille, joueur1, joueur2, tour);
 }
