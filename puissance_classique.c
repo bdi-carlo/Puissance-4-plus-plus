@@ -20,13 +20,15 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	system("clear");
 
 	if(gagne(grille) == 0){
-		printf("\nMATCH NUL\n\n");
+		printf("\n ---------------------------------------");
+		printf("\n|	         MATCH NUL		|");
 	
 		afficher_matrice(grille);
 	}
 	
 	else if(gagne(grille) == 1){
-		printf("\n%s GAGNE\n\n",joueur1);
+		printf("\n ---------------------------------------");
+		printf("\n|	         %s A GAGNE		|");
 		
 		afficher_matrice(grille);
 
@@ -35,7 +37,8 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	}
 
 	else if(gagne(grille) == 2){
-		printf("\n%s GAGNE\n\n",joueur2);
+		printf("\n ---------------------------------------");
+		printf("\n|	         %s A GAGNE		|");
 		
 		afficher_matrice(grille);
 
@@ -58,7 +61,8 @@ void puissance_classique(){
 	//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
 	init_matrice(grille);
 	system("clear");
-	printf("\nTOUR NUMERO 1\n");
+	printf("\n ---------------------------------------");
+	printf("\n|	       TOUR NUMERO 1		|");
 	afficher_matrice(grille);
 	
 	nb_tours = 21;
@@ -72,7 +76,7 @@ void puissance_classique(){
 
 		//Demande où il veut jouer
 		do{			
-			printf("%s: Colonne: ",joueur1);
+			printf("\n%s: Colonne: ",joueur1);
 			scanf("%i", &colonne);
 			
 			if(colonne < 1 || colonne > 7)
@@ -90,7 +94,8 @@ void puissance_classique(){
 		
 		//Affichage du numéro du tour
 		system("clear");
-		printf("\nTOUR NUMERO %i\n",pions);
+		printf("\n ---------------------------------------");
+		printf("\n|	       TOUR NUMERO %i		|",pions);
 
 		//Mise à jour de la grille
 		afficher_matrice(grille);
@@ -104,7 +109,7 @@ void puissance_classique(){
 		
 		//Demande où il veut jouer
 		do{			
-			printf("%s: Colonne: ",joueur2);
+			printf("\n%s: Colonne: ",joueur2);
 			scanf("%i", &colonne);
 			
 			if(colonne < 1 || colonne > 7)
@@ -123,7 +128,8 @@ void puissance_classique(){
 		//Affichage du numéro du tour
 		system("clear");
 		pions ++;
-		printf("\nTOUR NUMERO %i\n",pions);
+		printf("\n ---------------------------------------");
+		printf("\n|	       TOUR NUMERO %i		|",pions);
 
 		//Mise à jour de la grille
 		afficher_matrice(grille);

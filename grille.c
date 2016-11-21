@@ -21,8 +21,9 @@ void init_matrice(int matrice[N][M]){
 void afficher_matrice(int matrice[N][M]){
 	int i,j;
 
-	printf("\n");
+	printf("\n|					|\n");
 	for(i = 0; i < N; i++){
+		printf("|	  ");
 		for(j = 0; j < M; j++){
 			if(matrice[i][j] == 0)printf(" . ");
 			if(matrice[i][j] == 1){
@@ -36,9 +37,11 @@ void afficher_matrice(int matrice[N][M]){
 				couleur("0");
 			}
 		}
-		printf("\n");
+		printf("  	|\n");
 	}
-	printf("\n 1  2  3  4  5  6  7\n");
+	printf("|					|");
+	printf("\n|	   1  2  3  4  5  6  7  	|");
+	printf("\n ---------------------------------------");
 	printf("\n");
 }
 

@@ -4,36 +4,49 @@
 #include "new_fonctions.h"
 
 //Menu de fin de jeu
-void fin_jeux_avance(){
+int fin_jeux_avance(){
 	int choix;
 
-	do{
-		printf("\nFIN :\n");
-		printf(" 1 - Rejouer\n");
-		printf(" 2 - Retour au menu\n");
-		printf(" 3 - Quitter\n");
-		printf("Votre choix : ");
+	printf("\n ------------------------------- ");
+	printf("\n|	        FIN             |");
+	printf("\n|				|");
+	printf("\n| 	 1 - Rejouer		|");
+	printf("\n|  	 2 - Retour au menu	|");
+	printf("\n|  	 3 - Quitter		|");
+	printf("\n|				|");
+	printf("\n ------------------------------- ");
+
+	do{		
+		printf("\n>> Votre choix : ");
 		scanf("%d",&choix);
 
 		/* Traitement du choix de l'utilisateur */
 		switch(choix)
-		{	case 1: puissance_avance(); break;
-			case 2: menu(); break;
-			case 3: break;
-			default: printf("Erreur: votre choix doit etre compris entre 1 et 3\n");
+		{	case 1: puissance_avance(); return choix;
+			case 2: menu(); return choix;
+			case 3: return choix;
+			default: printf("\nErreur: votre choix doit etre compris entre 1 et 3\n");
 		}
-	}while(choix != 3);
+	}while(choix < 1 || choix > 3);
 }
 
 int nb_joueur(){
 	int choix;
 
-	printf("\nNombre de joueurs :\n");
-	printf(" 1 - 2 joueurs\n");
-	printf(" 2 - 3 joueurs\n");
-	printf(" 3 - 4 joueurs\n");
-	printf("Votre choix : ");
-	scanf("%d",&choix);
+	printf("\n ------------------------------- ");
+	printf("\n|	    PUISSANCE 4++       |");
+	printf("\n|	  Nombre de joueurs     |");
+	printf("\n|				|");
+	printf("\n| 	 1 - 2 joueurs		|");
+	printf("\n|  	 2 - 3 joueurs		|");
+	printf("\n|  	 3 - 4 joueurs		|");
+	printf("\n|				|");
+	printf("\n ------------------------------- ");
+
+	do{
+		printf("\n>>Votre choix : ");
+		scanf("%d",&choix);
+	}while(choix < 1 || choix > 3);
 
 	return choix+1;
 }
