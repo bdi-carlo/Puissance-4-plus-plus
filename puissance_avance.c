@@ -157,7 +157,7 @@ void puissance_avance(){
 			if(gagne_avance(grille) == 2)break;
 			if(tour == 11) break;
 		}
-		affich_result(grille, joueur1, joueur2, joueur3, joueur4, tour);
+		affich_result_avance(grille, joueur1, joueur2, joueur3, joueur4, tour);
 	}
 
 
@@ -265,7 +265,7 @@ void puissance_avance(){
 			//Test pour savoir si le joueur à gagné
 			if(gagne_avance(grille) == 3)break;
 		}
-		affich_result(grille, joueur1, joueur2, joueur3, joueur4, tour);
+		affich_result_avance(grille, joueur1, joueur2, joueur3, joueur4, tour);
 	}
 
 
@@ -411,7 +411,7 @@ void puissance_avance(){
 
 /******************** Affichage du résultat de la partie ******************************/
 	
-		affich_result(grille, joueur1, joueur2, joueur3, joueur4, tour);
+		affich_result_avance(grille, joueur1, joueur2, joueur3, joueur4, tour);
 
 	}
 }
