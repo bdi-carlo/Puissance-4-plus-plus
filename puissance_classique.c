@@ -28,7 +28,7 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	
 	else if(gagne(grille) == 1){
 		printf("\n ---------------------------------------");
-		printf("\n|	         %s A GAGNE		|");
+		printf("\n|	        %s A GAGNE 		|",joueur1);
 		
 		afficher_matrice(grille);
 
@@ -38,7 +38,7 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 
 	else if(gagne(grille) == 2){
 		printf("\n ---------------------------------------");
-		printf("\n|	         %s A GAGNE		|");
+		printf("\n|	        %s A GAGNE 		|",joueur2);
 		
 		afficher_matrice(grille);
 
