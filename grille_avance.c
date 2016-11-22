@@ -55,17 +55,13 @@ void placer_pions_avance(t_piece grille[N][M], int colonne, int ligne, int num_j
 
 	if(num_joueur == 1){
 		int bloquante = 2 ;
-
+		
 		if(type == 1){		// pièce creuse
-			if(grille[ligne-1][colonne] == 0) {		// case du dessous est vide
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
 				grille[ligne][colonne].valeur_pion1 = 1;
 				grille[ligne][colonne].type1 = creuse;
 			}
-			else if(grille[ligne-1][colonne] == 1) {		// case du dessous est creuse
-				grille[ligne][colonne].valeur_pion1 = 1;
-				grille[ligne][colonne].type1 = creuse;
-			}
-			else if(grille[ligne-1][colonne] == 2) {		// case du dessous est pleine
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
 				grille[ligne][colonne].valeur_pion1 = 0;
 				grille[ligne][colonne].type1 = vide;
 				grille[ligne-1][colonne].valeur_pion2 = 1;
@@ -73,52 +69,43 @@ void placer_pions_avance(t_piece grille[N][M], int colonne, int ligne, int num_j
 				grille[ligne-1][colonne].type2 = creuse;
 				
 			}
-			else if(grille[ligne-1][colonne] == 3) {		// case du dessous est bloquante
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
 				grille[ligne][colonne].valeur_pion1 = 1;
 				grille[ligne][colonne].type1 = creuse;
 			}
 		}
 		if(type == 2){		// pièce pleine
-			if(grille[ligne-1][colonne] == 0) {		// case du dessous est vide
-				grille[ligne][colonne].valeur_pion1 = 1;
-				grille[ligne][colonne].type1 = pleine;
-			}
-			else if(grille[ligne-1][colonne] == 1) {		// case du dessous est creuse
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
 				grille[ligne][colonne].valeur_pion1 = 0;
 				grille[ligne][colonne].type1 = vide;
 				grille[ligne-1][colonne].valeur_pion2 = 1;
 				grille[ligne-1][colonne].type1 = creuse ;
 				grille[ligne-1][colonne].type2 = pleine;
 			}
-			else if(grille[ligne-1][colonne] == 2) {		// case du dessous est pleine
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
 				grille[ligne][colonne].valeur_pion1 = 1;
 				grille[ligne][colonne].type1 = pleine;
 				
 			}
-			else if(grille[ligne-1][colonne] == 3) {		// case du dessous est bloquante
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
 				grille[ligne][colonne].valeur_pion1 = 1;
 				grille[ligne][colonne].type1 = pleine;
 			}
 		}
 		if(type == 3){		// pièce bloquante
 			while (bloquante != 0) {
-				if(grille[ligne-1][colonne] == 0) {		// case du dessous est vide
+				if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
 					grille[ligne][colonne].valeur_pion1 = 1;
 					grille[ligne][colonne].type1 = bloquante;
 					bloquante -- ;
 				}
-				else if(grille[ligne-1][colonne] == 1) {		// case du dessous est creuse
-					grille[ligne][colonne].valeur_pion1 = 1;
-					grille[ligne][colonne].type1 = bloquante;
-					bloquante -- ;
-				}
-				else if(grille[ligne-1][colonne] == 2) {		// case du dessous est pleine
+				else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
 					grille[ligne][colonne].valeur_pion1 = 1;
 					grille[ligne][colonne].type1 = bloquante;
 					bloquante -- ;
 				
 				}
-				else if(grille[ligne-1][colonne] == 3) {		// case du dessous est bloquante
+				else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
 					grille[ligne][colonne].valeur_pion1 = 1;
 					grille[ligne][colonne].type1 = bloquante;
 					bloquante -- ;
@@ -128,6 +115,192 @@ void placer_pions_avance(t_piece grille[N][M], int colonne, int ligne, int num_j
 		}
 		
 	}
+	
+	if(num_joueur == 2){
+		int bloquante2 = 2 ;
 
+		if(type == 1){		// pièce creuse
+			if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+				grille[ligne][colonne].valeur_pion1 = 0;
+				grille[ligne][colonne].type1 = vide;
+				grille[ligne-1][colonne].valeur_pion2 = 2;
+				grille[ligne-1][colonne].type1 = pleine ;
+				grille[ligne-1][colonne].type2 = creuse;
+				
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+				grille[ligne][colonne].valeur_pion1 = 2;
+				grille[ligne][colonne].type1 = creuse;
+			}
+		}
+		if(type == 2){		// pièce pleine
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+				grille[ligne][colonne].valeur_pion1 = 0;
+				grille[ligne][colonne].type1 = vide;
+				grille[ligne-1][colonne].valeur_pion2 = 2;
+				grille[ligne-1][colonne].type1 = creuse ;
+				grille[ligne-1][colonne].type2 = pleine;
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+				grille[ligne][colonne].valeur_pion1 = 2;
+				grille[ligne][colonne].type1 = pleine;
+				
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+				grille[ligne][colonne].valeur_pion1 = 2;
+				grille[ligne][colonne].type1 = pleine;
+			}
+		}
+		if(type == 3){		// pièce bloquante
+			while (bloquante2 != 0) {
+				 if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+					grille[ligne][colonne].valeur_pion1 = 2;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante2 -- ;
+				}
+				else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+					grille[ligne][colonne].valeur_pion1 = 2;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante2 -- ;
+				
+				}
+				else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+					grille[ligne][colonne].valeur_pion1 = 2;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante2 -- ;
+				}
+			}
+			if(bloquante2 == 0) printf("Vous avez utilisé vos 2 pièces bloquantes\n") ;
+		}
+		
+	}
+
+	if(num_joueur == 3){
+		int bloquante3 = 2 ;
+
+		if(type == 1){		// pièce creuse
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+				grille[ligne][colonne].valeur_pion1 = 3;
+				grille[ligne][colonne].type1 = creuse;
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+				grille[ligne][colonne].valeur_pion1 = 0;
+				grille[ligne][colonne].type1 = vide;
+				grille[ligne-1][colonne].valeur_pion2 = 3;
+				grille[ligne-1][colonne].type1 = pleine ;
+				grille[ligne-1][colonne].type2 = creuse;
+				
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+				grille[ligne][colonne].valeur_pion1 = 3;
+				grille[ligne][colonne].type1 = creuse;
+			}
+		}
+		if(type == 2){		// pièce pleine
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+				grille[ligne][colonne].valeur_pion1 = 0;
+				grille[ligne][colonne].type1 = vide;
+				grille[ligne-1][colonne].valeur_pion2 = 3;
+				grille[ligne-1][colonne].type1 = creuse ;
+				grille[ligne-1][colonne].type2 = pleine;
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+				grille[ligne][colonne].valeur_pion1 = 3;
+				grille[ligne][colonne].type1 = pleine;
+				
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+				grille[ligne][colonne].valeur_pion1 = 3;
+				grille[ligne][colonne].type1 = pleine;
+			}
+		}
+		if(type == 3){		// pièce bloquante
+			while (bloquante3 != 0) {
+				if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+					grille[ligne][colonne].valeur_pion1 = 3;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante3 -- ;
+				}
+				else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+					grille[ligne][colonne].valeur_pion1 = 3;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante3 -- ;
+				
+				}
+				else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+					grille[ligne][colonne].valeur_pion1 = 3;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante3 -- ;
+				}
+			}
+			if(bloquante3 == 0) printf("Vous avez utilisé vos 2 pièces bloquantes\n") ;
+		}
+		
+	}
+
+	if(num_joueur == 4){
+		int bloquante4 = 2 ;
+
+		if(type == 1){		// pièce creuse
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+				grille[ligne][colonne].valeur_pion1 = 4;
+				grille[ligne][colonne].type1 = creuse;
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+				grille[ligne][colonne].valeur_pion1 = 0;
+				grille[ligne][colonne].type1 = vide;
+				grille[ligne-1][colonne].valeur_pion2 = 4;
+				grille[ligne-1][colonne].type1 = pleine ;
+				grille[ligne-1][colonne].type2 = creuse;
+				
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+				grille[ligne][colonne].valeur_pion1 = 4;
+				grille[ligne][colonne].type1 = creuse;
+			}
+		}
+		if(type == 2){		// pièce pleine
+			if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+				grille[ligne][colonne].valeur_pion1 = 0;
+				grille[ligne][colonne].type1 = vide;
+				grille[ligne-1][colonne].valeur_pion2 = 4;
+				grille[ligne-1][colonne].type1 = creuse ;
+				grille[ligne-1][colonne].type2 = pleine;
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+				grille[ligne][colonne].valeur_pion1 = 4;
+				grille[ligne][colonne].type1 = pleine;
+				
+			}
+			else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+				grille[ligne][colonne].valeur_pion1 = 4;
+				grille[ligne][colonne].type1 = pleine;
+			}
+		}
+		if(type == 3){		// pièce bloquante
+			while (bloquante3 != 0) {
+				if(grille[ligne-1][colonne].valeur_pion1 == 1) {		// case du dessous est creuse
+					grille[ligne][colonne].valeur_pion1 = 4;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante3 -- ;
+				}
+				else if(grille[ligne-1][colonne].valeur_pion1 == 2) {		// case du dessous est pleine
+					grille[ligne][colonne].valeur_pion1 = 4;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante3 -- ;
+				
+				}
+				else if(grille[ligne-1][colonne].valeur_pion1 == 3) {		// case du dessous est bloquante
+					grille[ligne][colonne].valeur_pion1 = 4;
+					grille[ligne][colonne].type1 = bloquante;
+					bloquante3 -- ;
+				}
+			}
+			if(bloquante3 == 0) printf("Vous avez utilisé vos 2 pièces bloquantes\n") ;
+		}
+		
+	}
+
+	
 
 }
