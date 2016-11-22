@@ -45,7 +45,7 @@ void puissance_avance(){
 			
 				else{
 					//Placement du pion sur la grille si et seulement si la colonne le permet
-					ligne = N-1;
+					ligne = choix_ligne_avance(grille, colonne);
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else

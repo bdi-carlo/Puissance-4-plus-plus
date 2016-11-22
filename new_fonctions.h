@@ -25,6 +25,7 @@ int fin_jeux();
 
 void init_matrice_avance(t_piece matrice[N][M]);
 void afficher_matrice_avance(t_piece matrice[N][M]);
-void placer_pions_avance(t_piece grille[N][M], int colonne, int ligne, int num_joueur, int type);
+int choix_ligne_avance(t_piece matrice[N][M], int colonne);
+void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type);
 
 void puissance_avance();
