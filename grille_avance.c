@@ -79,19 +79,19 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				//Bloquante
 				if(matrice[i][j].type1 == bloquante){
 					couleur("31");
-					printf(" @ ");
+					printf(" ⨂ ");
 					couleur("0");
 				}
 				//Creuse
 				else if(matrice[i][j].type1 == creuse){
 					couleur("31");
-					printf(" O ");
+					printf(" 〇 ");
 					couleur("0");
 				}
 				//Pleine
 				else if(matrice[i][j].type1 == pleine){
 					couleur("31");
-					printf(" • ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 			}
