@@ -7,7 +7,32 @@
 #define M 7
 #define L 20
 
-//Enregistrement du score du gagnant
+/**
+
+*\file puissance_classique.c
+*\brief Puissance 4 classique
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+
+*/
+
+/**
+
+
+*\fn enregistrement_score_classique(char joueur[L], int nb_coups)
+*\brief Enregistrement du score du gagnant
+
+*\fn affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
+*\brief Affichage du resultat de la partie
+
+*\fn puissance_classique()
+*\brief Programme permettant la construction du jeu Puissance 4 classique
+
+
+*/
+
+
 void enregistrement_score_classique(char joueur[L], int nb_coups){
 	FILE * fichier;
 
@@ -16,7 +41,7 @@ void enregistrement_score_classique(char joueur[L], int nb_coups){
 	fclose(fichier);
 }
 
-//Fonction qui permet d'afficher le resultat de la partie
+
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour){
 	system("clear");
 
@@ -48,7 +73,7 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	}	
 }
 
-//Programme permettant la construction du jeu Puissance 4 classique
+
 void puissance_classique(){
 	int grille[N][M];
 	int colonne, ligne, pions, nb_tours, num_joueur, tour;

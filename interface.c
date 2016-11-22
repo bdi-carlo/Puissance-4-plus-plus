@@ -2,10 +2,35 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "new_fonctions.h"
-
 #define couleur(param) printf("\033[%sm",param)
 
-//Menu de debut de jeu
+/**
+
+*\file interface.c
+*\brief Interface du Puissance 4
+
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+
+*/
+
+/**
+
+
+*\fn int menu()
+*\brief Menu pour commencer la partie
+
+*\fn int fin_jeux()
+*\brief Menu pour la fin de la partie
+
+*\fn void pseudo_classique(char pseudo1[L], char pseudo2[L], int nb_joueurs)
+*\brief Demande aux joueurs leur pseudo
+
+
+*/
+
+
 int menu(){
 	int choix;
 
@@ -36,7 +61,7 @@ int menu(){
 	return 0;
 }
 
-//Menu de fin de jeu
+
 int fin_jeux(){
 	int choix;
 
@@ -63,7 +88,7 @@ int fin_jeux(){
 	}while(choix < 1 || choix > 3);
 }
 
-//Demande aux joueurs leur pseudo
+
 void pseudo_classique(char pseudo1[L], char pseudo2[L]){
 	system("clear");
 	printf("\nVeuillez choisir vos pseudos :\n");

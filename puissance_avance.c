@@ -6,8 +6,33 @@
 #define M 7
 #define L 20
 
-//Enregistrement du score du gagnant
-void save_score_avance(char joueur[L], int nb_coups){
+/**
+
+*\file puissance_classique.c
+*\brief Puissance 4 classique
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+
+*/
+
+/**
+
+
+*\fn save_score_avance(char joueur[L], int nb_coups)
+*\brief Enregistrement du score du gagnant
+
+*\fn affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], char joueur3[L], char joueur4[L], int tour)
+*\brief Affichage du resultat de la partie
+
+*\fn puissance_avance()
+*\brief Programme permettant la construction du jeu Puissance 4 classique à 2, 3 ou 4 joueurs
+
+
+*/
+
+
+void save_score_avance(char joueur[L], int nb_coups){ 
 	FILE * fichier;
 
 	fichier = fopen("best_avance.txt", "a");
@@ -15,7 +40,7 @@ void save_score_avance(char joueur[L], int nb_coups){
 	fclose(fichier);
 }
 
-//Affiche le résultat de la partie
+
 void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], char joueur3[L], char joueur4[L], int tour){
 	system("clear");
 
@@ -67,7 +92,7 @@ void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], ch
 	}
 }
 
-//Programme permettant la construction du jeu Puissance 4 classique
+
 void puissance_avance(){
 	int grille[N][M];
 	int colonne, ligne, pions, nb_tours, num_joueur, tour, nb_joueurs;

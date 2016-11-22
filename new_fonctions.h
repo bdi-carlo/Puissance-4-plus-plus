@@ -2,6 +2,16 @@
 #define M 7
 #define L 20
 
+/**
+
+*\file new_fonctions.c
+*\brief Prototypes des fonctions utilisées
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+
+*/
+
 int menu();
 
 void init_matrice(int matrice[N][M]);

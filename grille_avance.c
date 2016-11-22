@@ -6,7 +6,32 @@
 #define N 6
 #define M 7
 
-//Affiche la grille du Puissance 4 du jeu en cours
+/**
+
+*\file grille_avance.c
+*\brief Affiche la grille, place les pions et détermine le gagnant
+
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+
+*/
+
+/**
+
+
+*\fn void afficher_matrice_avance(int matrice[N][M])
+*\brief Affiche la grille du Puissance 4 pour jouer à plus de 2 joueurs
+
+*\fn void placer_pions_avance(int grille[N][M], int colonne, int num_joueur)
+*\brief Place le pion du joueur correspondant à la colonne qu'il veut
+
+*\fn int gagne_avance(int grille[N][M])
+*\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
+
+
+*/
+
 void afficher_matrice_avance(int matrice[N][M]){
 	int i,j;
 
@@ -44,7 +69,7 @@ void afficher_matrice_avance(int matrice[N][M]){
 	printf("\n");
 }
 
-//Place le pion du joueur correspondant à la colonne qu'il veut
+
 void placer_pions_avance(int grille[N][M], int colonne, int num_joueur){
 	int i;
 	int ligne = N-1;
@@ -65,7 +90,7 @@ void placer_pions_avance(int grille[N][M], int colonne, int num_joueur){
 		grille[ligne][colonne] = 4;
 }
 
-//Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
+//
 int gagne_avance(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
