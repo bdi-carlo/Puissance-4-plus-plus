@@ -10,8 +10,9 @@
 void afficher_matrice_avance(int matrice[N][M]){
 	int i,j;
 
-	printf("\n");
+	printf("\n|					|\n");
 	for(i = 0; i < N; i++){
+		printf("|	  ");
 		for(j = 0; j < M; j++){
 			if(matrice[i][j] == 0)printf(" . ");
 			if(matrice[i][j] == 1){
@@ -35,7 +36,7 @@ void afficher_matrice_avance(int matrice[N][M]){
 				couleur("0");
 			}
 		}
-		printf("\n");
+		printf("  	|\n");
 	}
 	printf("|					|");
 	printf("\n|	   1  2  3  4  5  6  7  	|");
