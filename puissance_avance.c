@@ -141,7 +141,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -174,7 +174,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 
@@ -219,7 +219,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -252,7 +252,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 
@@ -286,7 +286,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -330,7 +330,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -363,7 +363,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 
@@ -397,7 +397,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
@@ -430,7 +430,7 @@ void puissance_avance(){
 					if(ligne < 0)
 						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 					else
-						placer_pions_avance(grille, colonne, num_joueur);
+						placer_pions_avance(grille, colonne, ligne, num_joueur);
 				}
 			}while(colonne < 1 || colonne > 7 || ligne < 0);
 		
