@@ -17,9 +17,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			if(matrice[i][j] == 0)printf(" . ");
 
 /******************************************************* JOUEUR 1 **********************************************************/
-			
-			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){ 
 			//Quand le joueur 1 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){ 
+			
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
 				couleur("41;34");
 				printf(" 0 ");
@@ -37,8 +37,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
-			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine){
 			//Quand le joueur 1 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine){
+			
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
 				couleur("44;31");
 				printf(" 0 ");
@@ -76,9 +77,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			}
 
 /******************************************************* JOUEUR 2 **********************************************************/
-
-			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse){
 			//Quand le joueur 2 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse){
+			
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 				couleur("44;31");
 				printf(" 0 ");
@@ -96,8 +97,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
-			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine){
 			//Quand le joueur 2 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine){
+			
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 				couleur("41;34");
 				printf(" 0 ");
@@ -136,9 +138,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 
 /******************************************************* JOUEUR 3 **********************************************************/
-
-			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
 			//Quand le joueur 3 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 				couleur("45;31");
 				printf(" 0 ");
@@ -156,8 +158,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
-			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
 			//Quand le joueur 3 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 				couleur("41;35");
 				printf(" 0 ");
@@ -195,9 +198,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			}
 
 /******************************************************* JOUEUR 4 **********************************************************/
-
-			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
 			//Quand le joueur 4 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 				couleur("43;31");
 				printf(" 0 ");
@@ -215,8 +218,9 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
-			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
 			//Quand le joueur 4 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 				couleur("41;32");
 				printf(" 0 ");
