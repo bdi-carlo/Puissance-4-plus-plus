@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include "new_fonctions.h"
 
+#define couleur(param) printf("\033[%sm",param)
+
 //Menu de debut de jeu
 int menu(){
 	int choix;

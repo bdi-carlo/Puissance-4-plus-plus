@@ -37,7 +37,9 @@ void afficher_matrice_avance(int matrice[N][M]){
 		}
 		printf("\n");
 	}
-	printf("\n 1  2  3  4  5  6  7\n");
+	printf("|					|");
+	printf("\n|	   1  2  3  4  5  6  7  	|");
+	printf("\n ---------------------------------------");
 	printf("\n");
 }
 

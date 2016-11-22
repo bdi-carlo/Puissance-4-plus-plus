@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "new_fonctions.h"
+
 #define N 6
 #define M 7
 #define L 20

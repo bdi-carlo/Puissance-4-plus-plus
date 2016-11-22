@@ -20,13 +20,15 @@ void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], ch
 	system("clear");
 
 	if(gagne_avance(grille) == 0){
-		printf("\nMATCH NUL\n\n");
+		printf("\n ---------------------------------------");
+		printf("\n|	         MATCH NUL		|");
 	
 		afficher_matrice_avance(grille);
 	}
 	
 	else if(gagne_avance(grille) == 1){
-		printf("\n%s GAGNE\n\n",joueur1);
+		printf("\n ---------------------------------------");
+		printf("\n|	        %s A GAGNE 		|",joueur1);
 		
 		afficher_matrice_avance(grille);
 
@@ -35,7 +37,8 @@ void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], ch
 	}
 
 	else if(gagne_avance(grille) == 2){
-		printf("\n%s GAGNE\n\n",joueur2);
+		printf("\n ---------------------------------------");
+		printf("\n|	        %s A GAGNE 		|",joueur2);
 		
 		afficher_matrice_avance(grille);
 
@@ -44,7 +47,8 @@ void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], ch
 	}
 	
 	else if(gagne_avance(grille) == 3){
-		printf("\n%s GAGNE\n\n",joueur3);
+		printf("\n ---------------------------------------");
+		printf("\n|	        %s A GAGNE 		|",joueur3);
 		
 		afficher_matrice_avance(grille);
 
@@ -53,7 +57,8 @@ void affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], ch
 	}
 
 	else if(gagne_avance(grille) == 4){
-		printf("\n%s GAGNE\n\n",joueur4);
+		printf("\n ---------------------------------------");
+		printf("\n|	        %s A GAGNE 		|",joueur4);
 		
 		afficher_matrice_avance(grille);
 
@@ -79,7 +84,8 @@ void puissance_avance(){
 	//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
 	init_matrice(grille);
 	system("clear");
-	printf("\nTOUR NUMERO 1\n");
+	printf("\n ---------------------------------------");
+	printf("\n|	       TOUR NUMERO 1		|");
 	afficher_matrice_avance(grille);
 	
 	pions = 1;
@@ -116,7 +122,8 @@ void puissance_avance(){
 		
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -148,7 +155,8 @@ void puissance_avance(){
 
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -192,7 +200,8 @@ void puissance_avance(){
 		
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -224,7 +233,8 @@ void puissance_avance(){
 
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -257,7 +267,8 @@ void puissance_avance(){
 		
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -300,7 +311,8 @@ void puissance_avance(){
 		
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -332,7 +344,8 @@ void puissance_avance(){
 
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -365,7 +378,8 @@ void puissance_avance(){
 		
 			//Affichage du numéro du tour
 			system("clear");
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
@@ -398,7 +412,8 @@ void puissance_avance(){
 			//Affichage du numéro du tour
 			system("clear");
 			pions ++;
-			printf("\nTOUR NUMERO %i\n",pions);
+			printf("\n ---------------------------------------");
+			printf("\n|	       TOUR NUMERO %i		|",pions);
 
 			//Mise à jour de la grille
 			afficher_matrice_avance(grille);
