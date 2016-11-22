@@ -64,12 +64,12 @@ void afficher_matrice(int matrice[N][M]){
 			if(matrice[i][j] == 0)printf(" . ");
 			if(matrice[i][j] == 1){
 				couleur("34");
-				printf(" @ ");
+				printf(" ⬤  ");
 				couleur("0");
 			}
 			if(matrice[i][j] == 2){
 				couleur("31");
-				printf(" @ ");
+				printf(" ⬤  ");
 				couleur("0");
 			}
 		}
