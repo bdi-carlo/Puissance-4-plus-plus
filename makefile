@@ -1,15 +1,31 @@
-FICHIERS =  game.o interface_4_joueurs.o puissance_classique_4_joueurs_bis.o grille_4joueurs.o
+FICHIERS =  game.o interface.o puissance_classique.o grille.o interface_avance.o puissance_avance.o grille_avance.o
 COMMANDE = -g -Wextra
-PUISSANCE = puissance_classique_4_joueurs_bis.c
-INTERFACE = interface_4_joueurs.c
 
-exe : ${FICHIERS}
+#compile tout les fichiers et crée un executable
+all : ${FICHIERS}
 	gcc -o exe ${FICHIERS}
-game.o : game.c
+
+#compilation de toutes les dépendances
+game.o : game.c new_fonctions.h
 	gcc -c game.c ${COMMANDE}
-interface_4_joueurs.o : ${INTERFACE}
-	gcc -c ${INTERFACE} ${COMMANDE}
-puissance_classique_4_joueurs_bis.o : ${PUISSANCE}
-	gcc -c ${PUISSANCE} ${COMMANDE}
-grille_4joueurs.o : grille_4joueurs.c
-	gcc -c grille_4joueurs.c ${COMMANDE}
+interface.o : interface.c
+	gcc -c interface.c ${COMMANDE}
+puissance_classique.o : puissance_classique.c
+	gcc -c puissance_classique.c ${COMMANDE}
+grille.o : grille.c
+	gcc -c grille.c ${COMMANDE}
+
+interface_avance.o : interface_avance.c
+	gcc -c interface_avance.c ${COMMANDE}
+grille_avance.o : grille_avance.c
+	gcc -c grille_avance.c ${COMMANDE}
+puissance_avance.o : puissance_avance.c
+	gcc -c puissance_avance.c ${COMMANDE}
+	
+#suppression des fichiers temporaires
+clean_o :
+	rm -rf *.o
+clean_exe :
+	rm -rf *.exe
+clean_txt :
+	rm -rf *.txt
