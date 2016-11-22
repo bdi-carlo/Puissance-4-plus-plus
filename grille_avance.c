@@ -70,15 +70,10 @@ void afficher_matrice_avance(int matrice[N][M]){
 }
 
 
-void placer_pions_avance(int grille[N][M], int colonne, int num_joueur){
+void placer_pions_avance(int grille[N][M], int colonne, int ligne, int num_joueur){
 	int i;
-	int ligne = N-1;
 
 	colonne--;
-	
-	for(i = 1; i <= N; i++){
-		if(grille[N-i][colonne] == 1 || grille[N-i][colonne] == 2 || grille[N-i][colonne] == 3 || grille[N-i][colonne] == 4)ligne--;
-	}
 
 	if(num_joueur == 1)
 		grille[ligne][colonne] = 1;
