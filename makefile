@@ -17,9 +17,9 @@ grille.o : grille.c
 
 interface_avance.o : interface_avance.c
 	gcc -c interface_avance.c ${COMMANDE}
-grille_avance.o : grille_avance.c
+grille_avance.o : grille_avance.c new_fonctions.h
 	gcc -c grille_avance.c ${COMMANDE}
-puissance_avance.o : puissance_avance.c
+puissance_avance.o : puissance_avance.c new_fonctions.h
 	gcc -c puissance_avance.c ${COMMANDE}
 	
 #suppression des fichiers temporaires
