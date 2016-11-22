@@ -16,9 +16,10 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 		for(j = 0; j < M; j++){
 			if(matrice[i][j] == 0)printf(" . ");
 
-			//Joueur 1 
+/******************************************************* JOUEUR 1 **********************************************************/
 			
-			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){ 
+			//Quand le joueur 1 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
 				couleur("41;34");
 				printf(" Ø ");
@@ -37,6 +38,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			
 			}
 			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine){
+			//Quand le joueur 1 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
 				couleur("44;31");
 				printf(" Ø ");
@@ -54,28 +56,29 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
+			//Quand le joueur 1 joue une piece bloquante
 			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("31");
 				printf(" @ ");
 				couleur("0");
 			}
-	
+			//Quand le joueur 1 joue une piece creuse et qu'aucun autre joueur ne joue de piece par desssus
 			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
 				couleur("31");
 				printf(" O ");
 				couleur("0");
 			}
-
+			//Quand le joueur 1 joue une piece pleine et qu'aucun autre joueur ne joue de piece par dessus
 			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
 				couleur("31");
 				printf(" • ");
 				couleur("0");
 			}
 
+/******************************************************* JOUEUR 2 **********************************************************/
 
-
-			//Joueur 2
 			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse){
+			//Quand le joueur 2 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 				couleur("44;31");
 				printf(" Ø ");
@@ -94,6 +97,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			
 			}
 			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine){
+			//Quand le joueur 2 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 				couleur("41;34");
 				printf(" Ø ");
@@ -111,25 +115,30 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
+			//Quand le joueur 2 joue une piece bloquante
 			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("34");
 				printf(" @ ");
 				couleur("0");
 			}
-	
+			//Quand le joueur 2 joue une piece creuse et qu'aucun autre joueur ne joue de piece par desssus
 			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
 				couleur("34");
 				printf(" O ");
 				couleur("0");
 			}
-
+			//Quand le joueur 2 joue une piece pleine et qu'aucun autre joueur ne joue de piece par dessus
 			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
 				couleur("34");
 				printf(" • ");
 				couleur("0");
 			}
-			//Joueur 3
+
+
+/******************************************************* JOUEUR 3 **********************************************************/
+
 			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
+			//Quand le joueur 3 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 				couleur("45;31");
 				printf(" Ø ");
@@ -148,6 +157,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			
 			}
 			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
+			//Quand le joueur 3 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 				couleur("41;35");
 				printf(" Ø ");
@@ -165,25 +175,29 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
+			//Quand le joueur 3 joue une piece bloquante
 			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("35");
 				printf(" @ ");
 				couleur("0");
 			}
-	
+			//Quand le joueur 3 joue une piece creuse et qu'aucun autre joueur ne joue de piece par desssus
 			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
 				couleur("35");
 				printf(" O ");
 				couleur("0");
 			}
-
+			//Quand le joueur 3 joue une piece pleine et qu'aucun autre joueur ne joue de piece par dessus
 			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
 				couleur("35");
 				printf(" • ");
 				couleur("0");
 			}
-			//Joueur 4
+
+/******************************************************* JOUEUR 4 **********************************************************/
+
 			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
+			//Quand le joueur 4 joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 				couleur("43;31");
 				printf(" Ø ");
@@ -202,6 +216,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			
 			}
 			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
+			//Quand le joueur 4 joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 				couleur("41;32");
 				printf(" Ø ");
@@ -219,18 +234,19 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
+			//Quand le joueur 4 joue une piece bloquante
 			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("32");
 				printf(" @ ");
 				couleur("0");
 			}
-	
+			//Quand le joueur 4 joue une piece creuse et qu'aucun autre joueur ne joue de piece par desssus
 			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
 				couleur("32");
 				printf(" O ");
 				couleur("0");
 			}
-
+			//Quand le joueur 4 joue une piece pleine et qu'aucun autre joueur ne joue de piece par dessus
 			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
 				couleur("32");
 				printf(" • ");
