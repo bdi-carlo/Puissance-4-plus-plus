@@ -7,7 +7,7 @@
 #define M 7
 
 //Affiche la grille du Puissance 4 du jeu en cours
-void afficher_matrice_avance(int matrice[N][M]){
+void afficher_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
 
 	printf("\n|					|\n");
@@ -15,24 +15,225 @@ void afficher_matrice_avance(int matrice[N][M]){
 		printf("|	  ");
 		for(j = 0; j < M; j++){
 			if(matrice[i][j] == 0)printf(" . ");
-			if(matrice[i][j] == 1){
-				couleur("34");
-				printf(" @ ");
+
+			//Joueur 1 
+			
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){
+				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
+				couleur("41;34");
+				printf(" Ø ");
 				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+				couleur("41;35");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
+				couleur("41;32");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
 			}
-			if(matrice[i][j] == 2){
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine){
+				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+				couleur("44;31");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
+				couleur("45;31");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
+				couleur("43;31");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("31");
 				printf(" @ ");
 				couleur("0");
 			}
-			if(matrice[i][j] == 3){
+	
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
+				couleur("31");
+				printf(" O ");
+				couleur("0");
+			}
+
+			if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
+				couleur("31");
+				printf(" • ");
+				couleur("0");
+			}
+
+
+
+			//Joueur 2
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse){
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
+				couleur("44;31");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+				couleur("44;35");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
+				couleur("44;32");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine){
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
+				couleur("41;34");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
+				couleur("45;34");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
+				couleur("43;34");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
+				couleur("34");
+				printf(" @ ");
+				couleur("0");
+			}
+	
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
+				couleur("34");
+				printf(" O ");
+				couleur("0");
+			}
+
+			if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
+				couleur("34");
+				printf(" • ");
+				couleur("0");
+			}
+			//Joueur 3
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
+				couleur("45;31");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
+				couleur("45;34");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
+				couleur("45;32");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
+				couleur("41;35");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+				couleur("44;35");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
+				couleur("43;35");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("35");
 				printf(" @ ");
 				couleur("0");
 			}
-			if(matrice[i][j] == 4){
+	
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
+				couleur("35");
+				printf(" O ");
+				couleur("0");
+			}
+
+			if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
+				couleur("35");
+				printf(" • ");
+				couleur("0");
+			}
+			//Joueur 4
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
+				couleur("43;31");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+				couleur("43;35");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
+				couleur("43;34");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
+				couleur("41;32");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
+				couleur("45;32");
+				printf(" Ø ");
+				couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+				couleur("44;32");
+				printf(" Ø ");
+				couleur("0");
+				}
+			
+			}
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == bloquante && matrice[i][j].valeur_pion2 == 0){
 				couleur("32");
 				printf(" @ ");
+				couleur("0");
+			}
+	
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse && matrice[i][j].valeur_pion2 == 0){
+				couleur("32");
+				printf(" O ");
+				couleur("0");
+			}
+
+			if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 0){
+				couleur("32");
+				printf(" • ");
 				couleur("0");
 			}
 		}
