@@ -30,7 +30,7 @@ int main(){
 		while(choix2 != 3){
 		if(choix == 1)
 			choix2 = fin_jeux();
-		if(choix == 2)
+		else if(choix == 2)
 			choix2 = fin_jeux_avance();
 		} 
 	}
