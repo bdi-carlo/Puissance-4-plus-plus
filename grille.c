@@ -6,43 +6,7 @@
 #define N 6
 #define M 7
 
-
-/**
-
-*\file grille_avance.c
-*\brief Affiche la grille, place les pions et détermine le gagnant
-
-*\author Benjamin, Julien, Arthur
-*\version 1.0
-*\date Novembre 2016
-
-*/
-
-/**
-
-
-*\fn void init_matrice(int matrice[N][M])
-*\brief Initialise à vide la grille du Puissance 4
-
-*\fn void afficher_matrice(int matrice[N][M])
-*\brief Affiche la grille du Puissance 4 du jeu en cours
-
-*\fn int choix_ligne(int matrice[N][M], int colonne)
-*\brief Retourne la bonne ligne pour placer le pion
-
-*\fn void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur)
-*\brief Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
-
-*\fn void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur)
-*\brief Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
-
-
-*\fn int gagne(int grille[N][M])
-*\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
-
-*/
-
-
+//Initialise à vide la grille du Puissance 4
 void init_matrice(int matrice[N][M]){
 	int i,j;
 
@@ -53,7 +17,7 @@ void init_matrice(int matrice[N][M]){
 	}
 }
 
-
+//Affiche la grille du Puissance 4 du jeu en cours
 void afficher_matrice(int matrice[N][M]){
 	int i,j;
 
@@ -64,12 +28,12 @@ void afficher_matrice(int matrice[N][M]){
 			if(matrice[i][j] == 0)printf(" . ");
 			if(matrice[i][j] == 1){
 				couleur("34");
-				printf(" ⬤  ");
+				printf(" @ ");
 				couleur("0");
 			}
 			if(matrice[i][j] == 2){
 				couleur("31");
-				printf(" ⬤  ");
+				printf(" @ ");
 				couleur("0");
 			}
 		}
@@ -81,7 +45,7 @@ void afficher_matrice(int matrice[N][M]){
 	printf("\n");
 }
 
-
+//Retourne la bonne ligne
 int choix_ligne(int matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
@@ -96,7 +60,7 @@ int choix_ligne(int matrice[N][M], int colonne){
 	return ligne;
 }
 
-
+//Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
 void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
 	colonne--;
@@ -107,11 +71,11 @@ void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 		matrice[ligne][colonne] = 2;
 }
 
-
+//Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
 int gagne(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
-	int i, j;
+	int i, j, k;
 
 	//Test en ligne
 	for(i = 0; i < N; i++){
@@ -163,11 +127,13 @@ int gagne(int grille[N][M]){
 	}
 
 	//Test diagonale droite
+	for(k = 3; k <= 5; k++){
 		player1 = 0;
 		player2 = 0;
 		i = 0;
-		j = 3;
-		while(i <= 3 && j >= 0){
+
+		j = k;
+		while(i <= k && j >= 0){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -187,87 +153,16 @@ int gagne(int grille[N][M]){
 			i++;
 			j--;	
 		}
+	}
+		
 
+	for(k = 0; k <= 2; k++){
 		player1 = 0;
 		player2 = 0;
-		i = 0;
-		j = 4;
-		while(i <= 4 && j >= 0){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
-		j = 5;
-		while(i <= 5 && j >= 0){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
 		j = 6;
-		while(i <= 5 && j >= 1){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
 
-		player1 = 0;
-		player2 = 0;
-		i = 1;
-		j = 6;
-		while(i <= 5 && j >= 2){
+		i = k;
+		while(i <= 5 && j >= k+1){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -286,40 +181,17 @@ int gagne(int grille[N][M]){
 			}
 			i++;
 			j--;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 2;
-		j = 6;
-		while(i <= 5 && j >= 3){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
-	
+		}	
+	}	
 	
 	//Test diagonale gauche
+	for(k = 3; k >= 1; k--){
 		player1 = 0;
 		player2 = 0;
 		i = 0;
-		j = 3;
-		while(i <= 3 && j <= 6){
+
+		j = k;
+		while(i <= 6-k && j <= 6){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -339,87 +211,15 @@ int gagne(int grille[N][M]){
 			i++;
 			j++;	
 		}
+	}
 
+	for(k = 0; k <= 2; k++){
 		player1 = 0;
 		player2 = 0;
-		i = 0;
-		j = 2;
-		while(i <= 4 && j <= 6){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
-		j = 1;
-		while(i <= 5 && j <= 6){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
 		j = 0;
-		while(i <= 5 && j <= 5){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
 
-		player1 = 0;
-		player2 = 0;
-		i = 1;
-		j = 0;
-		while(i <= 5 && j <= 4){
+		i = k;
+		while(i <= 6-k && j <= 5-k){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -439,31 +239,7 @@ int gagne(int grille[N][M]){
 			i++;
 			j++;	
 		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 2;
-		j = 0;
-		while(i <= 5 && j <= 3){
-			if(grille[i][j] == 1){
-				player1++;
-				player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			else if(grille[i][j] == 2){
-				player2++;
-				player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
+	}
 
 	return 0;
 }
