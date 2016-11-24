@@ -25,7 +25,6 @@ int fin_jeux();
 
 void init_matrice_avance(t_piece matrice[N][M]);
 void afficher_matrice_avance(t_piece matrice[N][M]);
-<<<<<<< HEAD
 int choix_ligne_avance(t_piece matrice[N][M], int colonne);
 void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type);
 int gagne_avance(t_piece grille[N][M]);
@@ -36,8 +35,3 @@ int fin_jeux_avance();
 void puissance_avance();
 int nb_joueur() ;
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs);
-=======
-void placer_pions_avance(t_piece grille[N][M], int colonne, int ligne, int num_joueur, int type);
-
-void puissance_avance();
->>>>>>> f629ae424dccd42bbe86405465e0d2b50138b592
