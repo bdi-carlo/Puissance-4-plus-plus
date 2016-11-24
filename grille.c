@@ -75,7 +75,7 @@ void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 int gagne(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
-	int i, j, k;
+	int i, j;
 
 	//Test en ligne
 	for(i = 0; i < N; i++){
@@ -127,13 +127,11 @@ int gagne(int grille[N][M]){
 	}
 
 	//Test diagonale droite
-	for(k = 3; k <= 5; k++){
 		player1 = 0;
 		player2 = 0;
 		i = 0;
-
-		j = k;
-		while(i <= k && j >= 0){
+		j = 3;
+		while(i <= 3 && j >= 0){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -153,16 +151,12 @@ int gagne(int grille[N][M]){
 			i++;
 			j--;	
 		}
-	}
-		
 
-	for(k = 0; k <= 2; k++){
 		player1 = 0;
 		player2 = 0;
-		j = 6;
-
-		i = k;
-		while(i <= 5 && j >= k+1){
+		i = 0;
+		j = 4;
+		while(i <= 4 && j >= 0){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -181,17 +175,115 @@ int gagne(int grille[N][M]){
 			}
 			i++;
 			j--;	
-		}	
-	}	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 0;
+		j = 5;
+		while(i <= 5 && j >= 0){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j--;	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 0;
+		j = 6;
+		while(i <= 5 && j >= 1){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j--;	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 1;
+		j = 6;
+		while(i <= 5 && j >= 2){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j--;	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 2;
+		j = 6;
+		while(i <= 5 && j >= 3){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j--;	
+		}
+	
 	
 	//Test diagonale gauche
-	for(k = 3; k >= 1; k--){
 		player1 = 0;
 		player2 = 0;
 		i = 0;
-
-		j = k;
-		while(i <= 6-k && j <= 6){
+		j = 3;
+		while(i <= 3 && j <= 6){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -211,15 +303,12 @@ int gagne(int grille[N][M]){
 			i++;
 			j++;	
 		}
-	}
 
-	for(k = 0; k <= 2; k++){
 		player1 = 0;
 		player2 = 0;
-		j = 0;
-
-		i = k;
-		while(i <= 6-k && j <= 5-k){
+		i = 0;
+		j = 2;
+		while(i <= 4 && j <= 6){
 			if(grille[i][j] == 1){
 				player1++;
 				player2 = 0;
@@ -239,7 +328,106 @@ int gagne(int grille[N][M]){
 			i++;
 			j++;	
 		}
-	}
+
+		player1 = 0;
+		player2 = 0;
+		i = 0;
+		j = 1;
+		while(i <= 5 && j <= 6){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j++;	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 0;
+		j = 0;
+		while(i <= 5 && j <= 5){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j++;	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 1;
+		j = 0;
+		while(i <= 5 && j <= 4){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j++;	
+		}
+
+		player1 = 0;
+		player2 = 0;
+		i = 2;
+		j = 0;
+		while(i <= 5 && j <= 3){
+			if(grille[i][j] == 1){
+				player1++;
+				player2 = 0;
+				if(player1 == 4)
+					return 1;
+			}
+			else if(grille[i][j] == 2){
+				player2++;
+				player1 = 0;
+				if(player2 == 4)
+					return 2;
+			}
+			else{
+				player1 = 0;
+				player2 = 0;
+			}
+			i++;
+			j++;	
+		}
 
 	return 0;
 }
