@@ -288,13 +288,15 @@ int gagne_avance(t_piece grille[N][M]){
 		for(j = 0; j < M; j++){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -312,13 +314,15 @@ int gagne_avance(t_piece grille[N][M]){
 		for(i = 0; i < N; i++){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -338,13 +342,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 3 && j >= 0){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -363,13 +369,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 4 && j >= 0){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -388,13 +396,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j >= 0){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -413,13 +423,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j >= 1){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -438,13 +450,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j >= 2){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -463,13 +477,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j >= 3){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -490,13 +506,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 3 && j <= 6){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -515,13 +533,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 4 && j <= 6){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -540,13 +560,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j <= 6){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -565,13 +587,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j <= 5){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -590,13 +614,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j <= 4){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
@@ -615,13 +641,15 @@ int gagne_avance(t_piece grille[N][M]){
 		while(i <= 5 && j <= 3){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				player2 = 0;
+				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
-			else if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
+			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				player1 = 0;
+				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 				if(player2 == 4)
 					return 2;
 			}
