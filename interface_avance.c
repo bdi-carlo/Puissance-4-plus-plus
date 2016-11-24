@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+<<<<<<< HEAD
 #include "new_fonctions.h"
 
 int fin_jeux_avance(){
@@ -72,3 +73,6 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 	}
 
 }
+=======
+#include "new_fonctions.h"
+>>>>>>> f629ae424dccd42bbe86405465e0d2b50138b592
