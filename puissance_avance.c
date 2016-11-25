@@ -45,10 +45,10 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour){
 	}		
 }
 
-//Programme permettant la construction du jeu Puissance 4 classique
+//Programme permettant la construction du jeu Puissance 4++
 void puissance_avance(){
 	t_piece grille[N][M];
-	int colonne, ligne, pions, nb_tours, num_joueur, tour, nb_joueurs, type, win;
+	int colonne, ligne, pions, nb_tours, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4 ;
 	char joueur1[L],joueur2[L],joueur3[L],joueur4[L];
 
 /****************************** INITIALISATION ****************************************/
@@ -70,6 +70,11 @@ void puissance_avance(){
 	nb_tours = 21;
 	pions = 1;
 	tour = 1;
+	nb_block1 = 2 ; 
+	nb_block2 = 2 ; 
+	nb_block3 = 2 ; 
+	nb_block4 = 2 ;
+	
 	
 /****************************** 2 JOUEURS ********************************************/
 	
@@ -91,7 +96,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+				//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block1 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block1 > 0){
+				nb_block1--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block1);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -133,7 +149,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block2 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block2 > 0){
+				nb_block2--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block2);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -182,7 +209,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block1 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block1 > 0){
+				nb_block1--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block1);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -224,7 +262,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block2 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block2 > 0){
+				nb_block2--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block2);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -267,7 +316,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block3 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block3 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block3 > 0){
+				nb_block3--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block3);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -318,7 +378,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block1 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block1 > 0){
+				nb_block1--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block1);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -360,7 +431,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block2 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block2 > 0){
+				nb_block2--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block2);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -403,7 +485,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block3 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block3 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block3 > 0){
+				nb_block3--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block3);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
@@ -447,7 +540,18 @@ void puissance_avance(){
 				printf("\n      - Bloquante (3) ");
 				printf("\n\n>> Choix : ");
 				scanf("%i", &type);
-			}while(type < 1 || type > 3);
+				
+			//Verification du nombre de piece bloquante
+				if(type == 3 && nb_block4 == 0)
+						printf("\nVous n'avez plus de piece bloquante.\n");
+				
+			}while(type < 1 || type > 3 || (type == 3 && nb_block4 == 0));
+			
+			//Verification du nombre de piece bloquante et decrementation si on en a joue une
+			if(type == 3 && nb_block4 > 0){
+				nb_block4--;
+				printf("\nIl vous reste %i piece bloquante a jouer.",nb_block4);
+			}
 			
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
