@@ -3,7 +3,6 @@
 #include <unistd.h>
 #include "new_fonctions.h"
 
-//Menu de fin de jeu
 int fin_jeux_avance(){
 	int choix;
 
@@ -24,7 +23,7 @@ int fin_jeux_avance(){
 		switch(choix)
 		{	case 1: puissance_avance(); return choix;
 			case 2: menu(); return choix;
-			case 3: return choix;
+			case 3: printf("Au revoir \n"); break;
 			default: printf("\nErreur: votre choix doit etre compris entre 1 et 3\n");
 		}
 	}while(choix < 1 || choix > 3);
@@ -35,23 +34,24 @@ int nb_joueur(){
 
 	printf("\n ------------------------------- ");
 	printf("\n|	    PUISSANCE 4++       |");
+	printf("\n| 	Retour Menu (1)		|");
+	printf("\n|			|");
 	printf("\n|	  Nombre de joueurs     |");
-	printf("\n|				|");
-	printf("\n| 	 1 - 2 joueurs		|");
-	printf("\n|  	 2 - 3 joueurs		|");
-	printf("\n|  	 3 - 4 joueurs		|");
+	printf("\n| 		2 joueurs		|");
+	printf("\n|  		3 joueurs		|");
+	printf("\n|  		4 joueurs		|");
 	printf("\n|				|");
 	printf("\n ------------------------------- ");
 
 	do{
 		printf("\n>>Votre choix : ");
 		scanf("%d",&choix);
-	}while(choix < 1 || choix > 3);
+	}while(choix < 1 || choix > 4);
 
-	return choix+1;
+	return choix;
 }
 
-//Demande aux joueurs leur pseudo
+
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs){
 	system("clear");
 	printf("\nVeuillez choisir vos pseudos :\n");
@@ -71,5 +71,4 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 		printf("\nJoueur 4 (pions verts) : ");
 		scanf("%s", pseudo4);
 	}
-
 }
