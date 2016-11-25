@@ -481,54 +481,32 @@ int gagne_avance(t_piece grille[N][M]){
 		for(j = 0; j < M; j++){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
-					player3 = 0;
-				if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
-					player4 = 0;
 				if(player1 == 4)
 					return 1;
 			}
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
-					player3 = 0;
-				if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
-					player4 = 0;
 				if(player2 == 4)
 					return 2;
 			}
 			if(grille[i][j].valeur_pion1 == 3 || grille[i][j].valeur_pion2 == 3){
 				player3++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
-					player4 = 0;
 				if(player3 == 4)
 					return 3;
 			}
 			if(grille[i][j].valeur_pion1 == 4 || grille[i][j].valeur_pion2 == 4){
 				player4++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
-					player3 = 0;
 				if(player4 == 4)
 					return 4;
 			}
-			else{
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 				player1 = 0;
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
 				player2 = 0;
+			if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
 				player3 = 0;
+			if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
 				player4 = 0;
-			}
 		}
 	}
 
@@ -541,54 +519,32 @@ int gagne_avance(t_piece grille[N][M]){
 		for(i = 0; i < N; i++){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
-					player3 = 0;
-				if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
-					player4 = 0;
 				if(player1 == 4)
 					return 1;
 			}
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
-					player3 = 0;
-				if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
-					player4 = 0;
 				if(player2 == 4)
 					return 2;
 			}
 			if(grille[i][j].valeur_pion1 == 3 || grille[i][j].valeur_pion2 == 3){
 				player3++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
-					player4 = 0;
 				if(player3 == 4)
 					return 3;
 			}
 			if(grille[i][j].valeur_pion1 == 4 || grille[i][j].valeur_pion2 == 4){
 				player4++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
-					player3 = 0;
 				if(player4 == 4)
 					return 4;
 			}
-			else{
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 				player1 = 0;
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
 				player2 = 0;
+			if(grille[i][j].valeur_pion1 != 3 && grille[i][j].valeur_pion2 != 3)
 				player3 = 0;
+			if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
 				player4 = 0;
-			}
 		}
 	}
 

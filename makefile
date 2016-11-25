@@ -3,7 +3,7 @@ COMMANDE = -g -Wextra
 
 #compile tout les fichiers et crée un executable
 all : ${FICHIERS}
-	gcc -o exe ${FICHIERS}
+	gcc -o exe ${FICHIERS} ${COMMANDE}
 
 #compilation de toutes les dépendances
 game.o : game.c new_fonctions.h
