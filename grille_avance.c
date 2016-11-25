@@ -279,7 +279,7 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 int gagne_avance(t_piece grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
-	int i, j;
+	int i, j, k;
 
 	//Test en ligne
 	for(i = 0; i < N; i++){
@@ -288,22 +288,21 @@ int gagne_avance(t_piece grille[N][M]){
 		for(j = 0; j < M; j++){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
+			
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
 				if(player2 == 4)
-					return 2;
+					return 1;
 			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
+			
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
+			
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 		}
 	}
 
@@ -314,352 +313,142 @@ int gagne_avance(t_piece grille[N][M]){
 		for(i = 0; i < N; i++){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
+			
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
 				if(player2 == 4)
-					return 2;
+					return 1;
 			}
 			
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
+			
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+					player1 = 0;
 		}
 	}
 
 	//Test diagonale droite
+	for(k = 3; k <= 5; k++){
 		player1 = 0;
 		player2 = 0;
 		i = 0;
-		j = 3;
-		while(i <= 3 && j >= 0){
+
+		j = k;
+		while(i <= k && j >= 0){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
+			
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
 				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
-		j = 4;
-		while(i <= 4 && j >= 0){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(player1 == 4)
 					return 1;
 			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
-		j = 5;
-		while(i <= 5 && j >= 0){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+			
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
 					player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+			
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
 			i++;
 			j--;	
 		}
+	}
+		
 
+	for(k = 0; k <= 2; k++){
 		player1 = 0;
 		player2 = 0;
-		i = 0;
 		j = 6;
-		while(i <= 5 && j >= 1){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
 
-		player1 = 0;
-		player2 = 0;
-		i = 1;
-		j = 6;
-		while(i <= 5 && j >= 2){
+		i = k;
+		while(i <= 5 && j >= k+1){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
+			
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
 				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j--;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 2;
-		j = 6;
-		while(i <= 5 && j >= 3){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(player1 == 4)
 					return 1;
 			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+			
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
+			
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
 			i++;
 			j--;	
-		}
-	
-	
+		}	
+	}
+			
 	//Test diagonale gauche
+	for(k = 3; k >= 1; k--){
 		player1 = 0;
 		player2 = 0;
 		i = 0;
-		j = 3;
-		while(i <= 3 && j <= 6){
+
+		j = k;
+		while(i <= 6-k && j <= 6){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
+			
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
 				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
-		j = 2;
-		while(i <= 4 && j <= 6){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(player1 == 4)
 					return 1;
 			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 0;
-		j = 1;
-		while(i <= 5 && j <= 6){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+			
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
 					player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+			
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
 			i++;
 			j++;	
 		}
+	}
 
+	for(k = 0; k <= 2; k++){
 		player1 = 0;
 		player2 = 0;
-		i = 0;
 		j = 0;
-		while(i <= 5 && j <= 5){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(player1 == 4)
-					return 1;
-			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
 
-		player1 = 0;
-		player2 = 0;
-		i = 1;
-		j = 0;
-		while(i <= 5 && j <= 4){
+		i = k;
+		while(i <= 6-k && j <= 5-k){
 			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
 				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
 				if(player1 == 4)
 					return 1;
 			}
+			
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
-					player1 = 0;
 				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
-			i++;
-			j++;	
-		}
-
-		player1 = 0;
-		player2 = 0;
-		i = 2;
-		j = 0;
-		while(i <= 5 && j <= 3){
-			if(grille[i][j].valeur_pion1 == 1 || grille[i][j].valeur_pion2 == 1){
-				player1++;
-				if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
-					player2 = 0;
-				if(player1 == 4)
 					return 1;
 			}
-			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
-				player2++;
-				if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
+			
+			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
+					player2 = 0;
+			
+			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 					player1 = 0;
-				if(player2 == 4)
-					return 2;
-			}
-			else{
-				player1 = 0;
-				player2 = 0;
-			}
 			i++;
 			j++;	
 		}
+	}
 
 	return 0;
 }
