@@ -143,4 +143,5 @@ void puissance_classique(){
 /******************** Affichage du résultat de la partie ******************************/
 
 	affich_result(grille, joueur1, joueur2, tour);
+	fin_jeux() ;
 }

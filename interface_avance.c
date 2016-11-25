@@ -34,18 +34,19 @@ int nb_joueur(){
 
 	printf("\n ------------------------------- ");
 	printf("\n|	    PUISSANCE 4++       |");
-	printf("\n|	  Nombre de joueurs     |");
+	printf("\n|	    Retour Menu (1)     |");
 	printf("\n|				|");
-	printf("\n| 	 1 - 2 joueurs		|");
-	printf("\n|  	 2 - 3 joueurs		|");
-	printf("\n|  	 3 - 4 joueurs		|");
+	printf("\n|	  Nombre de joueurs     |");
+	printf("\n| 	    2 joueurs		|");
+	printf("\n|  	    3 joueurs		|");
+	printf("\n|  	    4 joueurs		|");
 	printf("\n|				|");
 	printf("\n ------------------------------- ");
 
 	do{
 		printf("\n>>Votre choix : ");
 		scanf("%d",&choix);
-	}while(choix < 1 || choix > 3);
+	}while(choix < 1 || choix > 4);
 
 	return choix+1;
 }
