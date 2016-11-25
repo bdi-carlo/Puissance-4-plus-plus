@@ -113,6 +113,13 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			
 			}
+			
+			//Quand le joueur 4 joue une piece creuse sur sa propore piece pleine ou inversement
+            else if((matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse) || (matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type2 == creuse && matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type1 == pleine)){
+            	couleur("41:31");
+            	printf(" @ ");
+            	couleur("0");
+            }
 
 /******************************************************* JOUEUR 2 **********************************************************/
 
@@ -206,7 +213,7 @@ int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 
 //Place le pion a une ligne donnee et une colonne donnee
 void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type){
-	int i;
+	int i = ligne+1;
 
 	colonne--;
 
@@ -215,7 +222,14 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 	if(num_joueur == 1){
 		if(type == 1){
 			//Verifie si en dessous il y a un ou deux pions en dessous et si ils peuvent fusionner
-			if(matrice[ligne+1][colonne].valeur_pion1 != 1 && matrice[ligne+1][colonne].type1 == pleine && matrice[ligne+1][colonne].valeur_pion2 == 0){
+			if(matrice[i][colonne].type1 == pleine && matrice[i][colonne].valeur_pion2 == 0){
+				while(i < N-1 || matrice[i][colonne].type1 == pleine || matrice[i][colonne].valeur_pion2 == 0){
+					i++;
+				}
+				matrice[ligne+1][colonne].valeur_pion2 = 1;
+				matrice[ligne+1][colonne].type2 = pleine;
+			}
+
 				matrice[ligne+1][colonne].valeur_pion2 = 1;
 				matrice[ligne+1][colonne].type2 = creuse;
 			}
