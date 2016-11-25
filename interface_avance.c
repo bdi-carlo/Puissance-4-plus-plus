@@ -23,7 +23,7 @@ int fin_jeux_avance(){
 		switch(choix)
 		{	case 1: puissance_avance(); return choix;
 			case 2: menu(); return choix;
-			case 3: return choix;
+			case 3: printf("\n Au revoir !\n"); break ;
 			default: printf("\nErreur: votre choix doit etre compris entre 1 et 3\n");
 		}
 	}while(choix < 1 || choix > 3);
@@ -48,7 +48,7 @@ int nb_joueur(){
 		scanf("%d",&choix);
 	}while(choix < 1 || choix > 4);
 
-	return choix+1;
+	return choix;
 }
 
 
