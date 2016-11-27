@@ -7,6 +7,34 @@
 #define N 6
 #define M 7
 
+/**
+*\file grille_avance.c
+*\brief Interface du jeu Puissance 4 ++
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+*/
+
+/**
+*\fn void init_matrice_avance(t_piece matrice[N][M])
+*\brief Initialise à vide la grille du Puissance 4++
+
+*\fn int grille_pleine(t_piece matrice[N][M])
+*\brief Verifie si la grille est pleine ou non
+
+*\fn void afficher_matrice_avance(t_piece matrice[N][M])
+*\brief Affiche la grille du Puissance 4 du jeu en cours
+
+*\fn int choix_ligne_avance(t_piece matrice[N][M], int colonne)
+*\brief Retourne la premiere ligne libre
+
+*\fn void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type)
+*\brief Place le pion dans la colonne sélectionné et sur la bonne ligne
+
+*\fn int gagne_avance(t_piece grille[N][M])
+*\brief Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non
+*/
+
 //Initialise à vide la grille du Puissance 4++
 void init_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
@@ -90,11 +118,11 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				printf(" 0 ");
 				couleur("0");
 				}
-			
+
 			}
 
 			//Quand le joueur 1 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
-			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){ 
+			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
 				couleur("41;34");
 				printf(" 0 ");
@@ -110,7 +138,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				printf(" 0 ");
 				couleur("0");
 				}
-			
+
 			}
 
 /******************************************************* JOUEUR 2 **********************************************************/
@@ -139,7 +167,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 			//Quand le joueur 2 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 			else if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse){
-			
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 					couleur("44;31");
 					printf(" 0 ");
@@ -155,11 +183,11 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+
 			}
 			//Quand le joueur 2 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine){
-			
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 					couleur("41;34");
 					printf(" 0 ");
@@ -175,7 +203,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+
 			}
 
 
@@ -205,7 +233,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 			//Quand le joueur 3 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
-			
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 					couleur("45;31");
 					printf(" 0 ");
@@ -221,11 +249,11 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+
 			}
 			//Quand le joueur 3 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
-			
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 					couleur("41;35");
 					printf(" 0 ");
@@ -241,7 +269,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+
 			}
 /******************************************************* JOUEUR 4 **********************************************************/
 
@@ -269,7 +297,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 			//Quand le joueur 4 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
-			
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 					couleur("43;31");
 					printf(" 0 ");
@@ -285,11 +313,11 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+
 			}
 			//Quand le joueur 4 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
-			
+
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 					couleur("41;32");
 					printf(" 0 ");
@@ -305,7 +333,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+
 			}
 		}
 		printf("  	|\n");
@@ -322,7 +350,7 @@ int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 
 	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
 	colonne--;
-	
+
 	//Boucle permettant de chercher la premiere la ligne sans pion
 	for(i = 1; i <= N; i++){
 		if(matrice[N-i][colonne].valeur_pion1 != 0)ligne--;
@@ -469,7 +497,7 @@ int gagne_avance(t_piece grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
 	int player3 = 0;
-	int player4 = 0; 
+	int player4 = 0;
 	int i, j, k;
 
 	//Test en ligne
@@ -563,7 +591,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player1 == 4)
 					return 1;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
 				if(player2 == 4)
@@ -579,7 +607,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player4 == 4)
 					return 4;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 				player1 = 0;
 			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
@@ -589,10 +617,10 @@ int gagne_avance(t_piece grille[N][M]){
 			if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
 				player4 = 0;
 			i++;
-			j--;	
+			j--;
 		}
 	}
-		
+
 
 	for(k = 0; k <= 2; k++){
 		player1 = 0;
@@ -608,7 +636,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player1 == 4)
 					return 1;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
 				if(player2 == 4)
@@ -624,7 +652,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player4 == 4)
 					return 4;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 				player1 = 0;
 			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
@@ -634,10 +662,10 @@ int gagne_avance(t_piece grille[N][M]){
 			if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
 				player4 = 0;
 			i++;
-			j--;	
-		}	
+			j--;
+		}
 	}
-			
+
 	//Test diagonale gauche
 	for(k = 3; k >= 1; k--){
 		player1 = 0;
@@ -653,7 +681,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player1 == 4)
 					return 1;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
 				if(player2 == 4)
@@ -669,7 +697,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player4 == 4)
 					return 4;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 				player1 = 0;
 			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
@@ -679,7 +707,7 @@ int gagne_avance(t_piece grille[N][M]){
 			if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
 				player4 = 0;
 			i++;
-			j++;	
+			j++;
 		}
 	}
 
@@ -697,7 +725,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player1 == 4)
 					return 1;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 == 2 || grille[i][j].valeur_pion2 == 2){
 				player2++;
 				if(player2 == 4)
@@ -713,7 +741,7 @@ int gagne_avance(t_piece grille[N][M]){
 				if(player4 == 4)
 					return 4;
 			}
-			
+
 			if(grille[i][j].valeur_pion1 != 1 && grille[i][j].valeur_pion2 != 1)
 				player1 = 0;
 			if(grille[i][j].valeur_pion1 != 2 && grille[i][j].valeur_pion2 != 2)
@@ -723,7 +751,7 @@ int gagne_avance(t_piece grille[N][M]){
 			if(grille[i][j].valeur_pion1 != 4 && grille[i][j].valeur_pion2 != 4)
 				player4 = 0;
 			i++;
-			j++;	
+			j++;
 		}
 	}
 

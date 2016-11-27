@@ -3,6 +3,25 @@
 #include <unistd.h>
 #include "new_fonctions.h"
 
+/**
+*\file interface_avance.c
+*\brief Interface du jeu Puissance 4 ++
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+*/
+
+/**
+*\fn int fin_jeux_avance()
+*\brief Menu de la fin de la partie
+
+*\fn int nb_joueurs()
+*\brief Choix du nombre de joueurs
+
+*\fn void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs)
+*\brief Choix des pseudos
+*/
+
 int fin_jeux_avance(){
 	int choix;
 
@@ -15,7 +34,7 @@ int fin_jeux_avance(){
 	printf("\n|				|");
 	printf("\n ------------------------------- ");
 
-	do{		
+	do{
 		printf("\n>> Votre choix : ");
 		scanf("%d",&choix);
 
@@ -55,7 +74,7 @@ int nb_joueur(){
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs){
 	system("clear");
 	printf("\nVeuillez choisir vos pseudos :\n");
-	
+
 	printf("\nJoueur 1 (pions rouges) : ");
 	scanf("%s", pseudo1);
 
