@@ -74,52 +74,63 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			}
 
-			//Quand le joueur 1 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			//Quand le joueur 1 a joue une piece pleine et qu'un autre joueur ou lui meme joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine){
+
+				//Joueur 2
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
-				couleur("44;31");
-				printf(" 0 ");
-				couleur("0");
+					couleur("44;31");
+					printf(" 0 ");
+					couleur("0");
 				}
+				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
-				couleur("45;31");
-				printf(" 0 ");
-				couleur("0");
+					couleur("45;31");
+					printf(" 0 ");
+					couleur("0");
 				}
+				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
-				couleur("43;31");
-				printf(" 0 ");
-				couleur("0");
+					couleur("43;31");
+					printf(" 0 ");
+					couleur("0");
 				}
-			
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
+		        	couleur("41;31");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}
 			}
 
-			//Quand le joueur 1 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
-			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){ 
+			//Quand le joueur 1 a joue une piece creuse et qu'un autre joueur ou lui meme joue une piece pleine par dessus
+			else if(matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == creuse){
+
+				//Joueur 2
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
-				couleur("41;34");
-				printf(" 0 ");
-				couleur("0");
+					couleur("41;34");
+					printf(" 0 ");
+					couleur("0");
 				}
+				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
-				couleur("41;35");
-				printf(" 0 ");
-				couleur("0");
+					couleur("41;35");
+					printf(" 0 ");
+					couleur("0");
 				}
+				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
-				couleur("41;32");
-				printf(" 0 ");
-				couleur("0");
+					couleur("41;32");
+					printf(" 0 ");
+					couleur("0");
 				}
-			
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine ){
+		        	couleur("41;31");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}
 			}
-			
-			//Quand le joueur 4 joue une piece creuse sur sa propore piece pleine ou inversement
-            else if((matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type1 == pleine && matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse) || (matrice[i][j].valeur_pion1 == 1 && matrice[i][j].type2 == creuse && matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type1 == pleine)){
-            	couleur("41:31");
-            	printf(" @ ");
-            	couleur("0");
-            }
 
 /******************************************************* JOUEUR 2 **********************************************************/
 
@@ -145,51 +156,221 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				}
 			}
 
-			//Quand le joueur 2 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			//Quand le joueur 2 a joue une piece creuse et qu'un autre joueur ou lui meme joue une piece pleine par dessus
 			else if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == creuse){
 			
+				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 					couleur("44;31");
 					printf(" 0 ");
 					couleur("0");
 				}
+				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
 					couleur("44;35");
 					printf(" 0 ");
 					couleur("0");
 				}
+				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
 					couleur("44;32");
 					printf(" 0 ");
 					couleur("0");
 				}
-			
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
+		        	couleur("44;34");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}			
 			}
+
 			//Quand le joueur 2 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 2 && matrice[i][j].type1 == pleine){
 			
+				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 					couleur("41;34");
 					printf(" 0 ");
 					couleur("0");
 				}
+				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
 					couleur("45;34");
 					printf(" 0 ");
 					couleur("0");
 				}
+				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
 					couleur("43;34");
 					printf(" 0 ");
 					couleur("0");
+				}
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+		        	couleur("44;34");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}	
+			}
+
+/******************************************************* JOUEUR 3 **********************************************************/
+
+			//Quand le joueur 3 joue une piece bloquante ou qu'aucun autre joueur ne joue de piece par desssus
+			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].valeur_pion2 == 0){
+				//Bloquante
+				if(matrice[i][j].type1 == bloquante){
+					couleur("35");
+					printf(" @ ");
+					couleur("0");
+				}
+				//Creuse
+				else if(matrice[i][j].type1 == creuse){
+					couleur("35");
+					printf(" 〇");
+					couleur("0");
+				}
+				//Pleine
+				else if(matrice[i][j].type1 == pleine){
+					couleur("35");
+					printf(" ⯄ ");
+					couleur("0");
+				}
+			}
+
+			//Quand le joueur 3 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
+			
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
+					couleur("45;31");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
+					couleur("45;34");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
+					couleur("45;32");
+					printf(" 0 ");
+					couleur("0");
+				}
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+		        	couleur("45;35");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}
+			}
+
+			//Quand le joueur 3 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
+			
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
+					couleur("41;35");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+					couleur("44;35");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
+					couleur("43;35");
+					printf(" 0 ");
+					couleur("0");
+				}
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+		        	couleur("45;35");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}
+			
+			}
+
+/******************************************************* JOUEUR 4 **********************************************************/
+
+			//Quand le joueur 4 joue une piece bloquante ou qu'aucun autre joueur ne joue de piece par desssus
+			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].valeur_pion2 == 0){
+				//Bloquante
+				if(matrice[i][j].type1 == bloquante){
+					couleur("32");
+					printf(" @ ");
+					couleur("0");
+				}
+				//Creuse
+				else if(matrice[i][j].type1 == creuse){
+					couleur("32");
+					printf(" 〇");
+					couleur("0");
+				}
+				//Pleine
+				else if(matrice[i][j].type1 == pleine){
+					couleur("32");
+					printf(" ⯄ ");
+					couleur("0");
+				}
+			}
+
+			//Quand le joueur 4 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
+			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
+			
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
+					couleur("42;31");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
+					couleur("42;35");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+					couleur("42;34");
+					printf(" 0 ");
+					couleur("0");
+				}
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+		        	couleur("42;32");
+		        	printf(" 0 ");
+		        	couleur("0");
+				}
+			
+			}
+
+			//Quand le joueur 4 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
+			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
+			
+				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
+					couleur("41;32");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+					couleur("45;32");
+					printf(" 0 ");
+					couleur("0");
+				}
+				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
+					couleur("44;32");
+					printf(" 0 ");
+					couleur("0");
+				}
+				//Lui meme
+ 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+		        	couleur("42;32");
+		        	printf(" 0 ");
+		        	couleur("0");
 				}
 			
 			}
 		}
 		printf("  	|\n");
 	}
-
-
 	printf("|					|");
 	printf("\n|	   1  2  3  4  5  6  7  	|");
 	printf("\n ---------------------------------------");
@@ -213,7 +394,7 @@ int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 
 //Place le pion a une ligne donnee et une colonne donnee
 void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type){
-	int i = ligne+1;
+	int i;
 
 	colonne--;
 
@@ -222,27 +403,39 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 	if(num_joueur == 1){
 		if(type == 1){
 			//Verifie si en dessous il y a un ou deux pions en dessous et si ils peuvent fusionner
+			i = ligne+1;
 			if(matrice[i][colonne].type1 == pleine && matrice[i][colonne].valeur_pion2 == 0){
-				while(i < N-1 || matrice[i][colonne].type1 == pleine || matrice[i][colonne].valeur_pion2 == 0){
+				while(i < N){
+					if(matrice[i][colonne].type1 == bloquante || matrice[i][colonne].type1 == creuse || matrice[i][colonne].valeur_pion2 != 0)
+						break;
 					i++;
 				}
-				matrice[ligne+1][colonne].valeur_pion2 = 1;
-				matrice[ligne+1][colonne].type2 = pleine;
+				i--;
+				if(matrice[i][colonne].type1 == pleine && matrice[i][colonne].valeur_pion2 == 0){
+					matrice[i][colonne].valeur_pion2 = 1;
+					matrice[i][colonne].type2 = creuse;
+				}
 			}
 
-				matrice[ligne+1][colonne].valeur_pion2 = 1;
-				matrice[ligne+1][colonne].type2 = creuse;
-			}
 			else{
 				matrice[ligne][colonne].valeur_pion1 = 1;
 				matrice[ligne][colonne].type1 = creuse;
 			}
 		}
 		else if(type == 2){
-			//Verifie si en dessous il y a un pion
-			if(matrice[ligne+1][colonne].valeur_pion1 != 1 && matrice[ligne+1][colonne].type1 == creuse && matrice[ligne+1][colonne].valeur_pion2 == 0){
-				matrice[ligne+1][colonne].valeur_pion2 = 1;
-				matrice[ligne+1][colonne].type2 = pleine;
+			//Verifie si en dessous il y a un ou deux pions en dessous et si ils peuvent fusionner
+			i = ligne+1;
+			if(matrice[i][colonne].type1 == creuse && matrice[i][colonne].valeur_pion2 == 0){
+				while(i < N){
+					if(matrice[i][colonne].type1 == bloquante || matrice[i][colonne].type1 == pleine || matrice[i][colonne].valeur_pion2 != 0)
+						break;
+					i++;
+				}
+				i--;
+				if(matrice[i][colonne].type1 == creuse && matrice[i][colonne].valeur_pion2 == 0){
+					matrice[i][colonne].valeur_pion2 = 1;
+					matrice[i][colonne].type2 = pleine;
+				}
 			}
 
 			else{
@@ -260,21 +453,40 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 
 	else if(num_joueur == 2){
 		if(type == 1){
-			//Verifie si en dessous il y a un pion
-			if(matrice[ligne+1][colonne].valeur_pion1 != 2 && matrice[ligne+1][colonne].type1 == pleine && matrice[ligne+1][colonne].valeur_pion2 == 0){
-				matrice[ligne+1][colonne].valeur_pion2 = 2;
-				matrice[ligne+1][colonne].type2 = creuse;
+			//Verifie si en dessous il y a un ou deux pions en dessous et si ils peuvent fusionner
+			i = ligne+1;
+			if(matrice[i][colonne].type1 == pleine && matrice[i][colonne].valeur_pion2 == 0){
+				while(i < N){
+					if(matrice[i][colonne].type1 == bloquante || matrice[i][colonne].type1 == creuse || matrice[i][colonne].valeur_pion2 != 0)
+						break;
+					i++;
+				}
+				i--;
+				if(matrice[i][colonne].type1 == pleine && matrice[i][colonne].valeur_pion2 == 0){
+					matrice[i][colonne].valeur_pion2 = 2;
+					matrice[i][colonne].type2 = creuse;
+				}
 			}
+
 			else{
 				matrice[ligne][colonne].valeur_pion1 = 2;
 				matrice[ligne][colonne].type1 = creuse;
 			}
 		}
 		else if(type == 2){
-			//Verifie si en dessous il y a un pion
-			if(matrice[ligne+1][colonne].valeur_pion1 != 2 && matrice[ligne+1][colonne].type1 == creuse && matrice[ligne+1][colonne].valeur_pion2 == 0){
-				matrice[ligne+1][colonne].valeur_pion2 = 2;
-				matrice[ligne+1][colonne].type2 = pleine;
+			//Verifie si en dessous il y a un ou deux pions en dessous et si ils peuvent fusionner
+			i = ligne+1;
+			if(matrice[i][colonne].type1 == creuse && matrice[i][colonne].valeur_pion2 == 0){
+				while(i < N){
+					if(matrice[i][colonne].type1 == bloquante || matrice[i][colonne].type1 == pleine || matrice[i][colonne].valeur_pion2 != 0)
+						break;
+					i++;
+				}
+				i--;
+				if(matrice[i][colonne].type1 == creuse && matrice[i][colonne].valeur_pion2 == 0){
+					matrice[i][colonne].valeur_pion2 = 2;
+					matrice[i][colonne].type2 = pleine;
+				}
 			}
 
 			else{

@@ -31,5 +31,6 @@ int gagne_avance(t_piece grille[N][M]);
 void affich_result_avance(t_piece grille[N][M], int win, int tour);
 int grille_pleine(t_piece matrice[N][M]);
 int fin_jeux_avance();
-
+int nb_joueur();
+void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs);
 void puissance_avance();
