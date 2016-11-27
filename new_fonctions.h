@@ -2,6 +2,22 @@
 #define M 7
 #define L 20
 
+/**
+*\file new_fonctions.c
+*\brief Prototypes des fonctions utilisées
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+*/
+
+/**
+*\struct t_piece
+*\brief Structure pour définir un pion
+
+*\enum t_type
+*\brief type de la pièce
+
+*/
 //Enumeration permettant de savoir le type de la piece
 typedef enum{vide,creuse,pleine,bloquante}t_type;
 

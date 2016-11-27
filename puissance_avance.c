@@ -9,7 +9,7 @@
 
 /**
 *\file puissance_avance.c
-*\brief Puissance 4 classique
+*\brief Puissance 4 ++
 *\author Benjamin, Julien, Arthur
 *\version 1.0
 *\date Novembre 2016
