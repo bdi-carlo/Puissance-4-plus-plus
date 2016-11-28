@@ -34,3 +34,4 @@ int fin_jeux_avance();
 int nb_joueur();
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs);
 void puissance_avance();
+void afficher_regles();
