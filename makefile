@@ -29,3 +29,8 @@ clean_exe :
 	rm -rf *.exe
 clean_txt :
 	rm -rf *.txt
+clean_~ :
+	rm -rf *~
+
+#suppression de tous les fichiers sauf les fichiers sources
+mrproper : clean_o clean_exe clean_txt clean_~
