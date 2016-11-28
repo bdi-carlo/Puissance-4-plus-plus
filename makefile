@@ -19,7 +19,9 @@ interface_avance.o : interface_avance.c
 	gcc -c interface_avance.c ${COMMANDE}
 grille_avance.o : grille_avance.c
 	gcc -c grille_avance.c ${COMMANDE}
-puissance_avance.o : puissance_avance.c
+grille_avance.o : grille_avance.c new_fonctions.h
+	gcc -c grille_avance.c ${COMMANDE}
+puissance_avance.o : puissance_avance.c new_fonctions.h
 	gcc -c puissance_avance.c ${COMMANDE}
 	
 #suppression des fichiers temporaires
@@ -29,3 +31,8 @@ clean_exe :
 	rm -rf *.exe
 clean_txt :
 	rm -rf *.txt
+clean_~ :
+	rm -rf *~
+
+#suppression de tous les fichiers sauf les fichiers sources
+mrproper : clean_o clean_exe clean_txt clean_~

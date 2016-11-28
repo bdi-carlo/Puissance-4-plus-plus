@@ -41,7 +41,7 @@ void enregistrement_score_classique(char joueur[L], int nb_coups){
 	fclose(fichier);
 }
 
-
+//Fonction qui permet d'afficher le resultat de la partie
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour){
 	system("clear");
 
@@ -73,7 +73,7 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	}	
 }
 
-
+//Programme permettant la construction du jeu Puissance 4 classique
 void puissance_classique(){
 	int grille[N][M];
 	int colonne, ligne, pions, nb_tours, num_joueur, tour;

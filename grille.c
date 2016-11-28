@@ -41,6 +41,7 @@
  -
  -*/
 
+//Initialise à vide la grille du Puissance 4
 void init_matrice(int matrice[N][M]){
 	int i,j;
 
@@ -51,6 +52,8 @@ void init_matrice(int matrice[N][M]){
 	}
 }
 
+
+//Affiche la grille du Puissance 4 du jeu en cours
 void afficher_matrice(int matrice[N][M]){
 	int i,j;
 
@@ -78,7 +81,7 @@ void afficher_matrice(int matrice[N][M]){
 	printf("\n");
 }
 
-
+//Retourne la bonne ligne
 int choix_ligne(int matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
@@ -93,6 +96,7 @@ int choix_ligne(int matrice[N][M], int colonne){
 	return ligne;
 }
 
+//Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
 void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
 	colonne--;
@@ -103,6 +107,7 @@ void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 		matrice[ligne][colonne] = 2;
 }
 
+//Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
 int gagne(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;

@@ -29,7 +29,6 @@
 
 */
 
-
 int fin_jeux_avance(){
 	int choix;
 
@@ -61,22 +60,22 @@ int nb_joueur(){
 
 	printf("\n ------------------------------- ");
 	printf("\n|	    PUISSANCE 4++       |");
-	printf("\n|	  Nombre de joueurs     |");
+	printf("\n|	   Retour Menu (1)      |");
 	printf("\n|				|");
-	printf("\n| 	 1 - 2 joueurs		|");
-	printf("\n|  	 2 - 3 joueurs		|");
-	printf("\n|  	 3 - 4 joueurs		|");
+	printf("\n|	  Nombre de joueurs:    |");
+	printf("\n| 	      2 joueurs		|");
+	printf("\n|  	      3 joueurs		|");
+	printf("\n|  	      4 joueurs		|");
 	printf("\n|				|");
 	printf("\n ------------------------------- ");
 
 	do{
 		printf("\n>>Votre choix : ");
 		scanf("%d",&choix);
-	}while(choix < 1 || choix > 3);
+	}while(choix < 1 || choix > 4);
 
-	return choix+1;
+	return choix;
 }
-
 
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs){
 	system("clear");
@@ -97,5 +96,27 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 		printf("\nJoueur 4 (pions verts) : ");
 		scanf("%s", pseudo4);
 	}
+}
 
+//Fonction affichant les regles
+void afficher_regles(){
+	int regles;
+	do{
+		system("clear");
+		printf("\n+--------------------------------------------------------------------------------------------------------------+");
+		printf("\n|													       |");
+		printf("\n|						 Regles du jeu  					       |");
+		printf("\n|													       |");
+		printf("\n|	- Pour gagner la partie il suffit d'aligner 4 pions de sa couleur				       |");
+		printf("\n|	- Le joueur a à sa disposition 3 types de pièces : Bloquantes, Creuses et Pleines		       |");
+		printf("\n|		* Une pièce creuse peut passer au dessus d’une pièce pleine (ou s’arrêter dessus)	       |");
+		printf("\n|		* Une pièce pleine peut passer au travers d’une pièce creuse (ou s’arrêter dessus)	       |");
+		printf("\n|		* Deux pièces de même type ne peuvent pas se traverser					       |");
+		printf("\n|		* Une pièce bloquante ne peut être traversée ni par une pièce creuse ni par une pièce pleine.  |");
+		printf("\n|		* Les joueurs n’ont droit qu’à 2 pièces bloquantes durant une partie.			       |");
+		printf("\n|													       |");
+		printf("\n+--------------------------------------------------------------------------------------------------------------+");
+		printf("\n \n				    Tapez 1 pour passer au jeu : ");
+		scanf("%i",&regles);
+	}while(regles != 1);
 }
