@@ -7,14 +7,14 @@
 #define M 7
 #define L 20
 
-void player1(t_piece grille[N][M], int *nb_block1, int pions){
+void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 1;
 
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-		printf("joueur1: Colonne: ");
+		printf("%s: Colonne: ",pseudo1);
 		scanf("%i", &colonne);
 
 		do{
@@ -65,15 +65,15 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions){
 	afficher_matrice_avance(grille);
 }
 
-void player2(t_piece grille[N][M], int *nb_block2, int pions){
+void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 2;
 
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-	printf("joueur2: Colonne: ");
-	scanf("%i", &colonne);
+		printf("%s: Colonne: ",pseudo2);
+		scanf("%i", &colonne);
 
 		do{
 			printf("Type: - Creuse (1) ");
@@ -123,15 +123,15 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions){
 	afficher_matrice_avance(grille);
 }
 
-void player3(t_piece grille[N][M], int *nb_block3, int pions){
+void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 3;
 
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-	printf("joueur3: Colonne: ");
-	scanf("%i", &colonne);
+		printf("%s: Colonne: ",pseudo3);
+		scanf("%i", &colonne);
 
 		do{
 			printf("Type: - Creuse (1) ");
@@ -181,15 +181,15 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions){
 	afficher_matrice_avance(grille);
 }
 
-void player4(t_piece grille[N][M], int *nb_block4, int pions){
+void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 4;
 
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-	printf("joueur4: Colonne: ");
-	scanf("%i", &colonne);
+		printf("%s: Colonne: ",pseudo4);
+		scanf("%i", &colonne);
 
 		do{
 			printf("Type: - Creuse (1) ");
@@ -240,8 +240,9 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions){
 }
 
 //Fonction qui permet d'afficher le resultat de la partie
-void affich_result_avance(t_piece grille[N][M], int win, int tour){
+void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L]){
 	system("clear");
+	
 
 	if(win == 0){
 		printf("\n ---------------------------------------");
@@ -252,26 +253,26 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour){
 	
 	else if(win == 1){
 		printf("\n ---------------------------------------");
-		printf("\n|	        Joueur 1 A GAGNE 	|");
+		printf("\n|	        %s A GAGNE 	|",pseudo1);
 		
 		afficher_matrice_avance(grille);
 	}
 
 	else if(win == 2){
 		printf("\n ---------------------------------------");
-		printf("\n|	        Joueur 2 A GAGNE 	|");
+		printf("\n|	        %s A GAGNE 	|",pseudo2);
 		
 		afficher_matrice_avance(grille);
 	}
 	else if(win == 3){
-		printf("\n ---------------------------------------");
-		printf("\n|	        Joueur 3 A GAGNE 		|");
+		printf("\n ---------------------------------------",pseudo3);
+		printf("\n|	        %s A GAGNE 		|");
 		
 		afficher_matrice_avance(grille);
 	}	
 	else if(win == 4){
 		printf("\n ---------------------------------------");
-		printf("\n|	        Joueur 4 A GAGNE 		|");
+		printf("\n|	        %s A GAGNE 		|",pseudo4);
 		
 		afficher_matrice_avance(grille);
 	}
@@ -315,7 +316,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions);
+				player1(grille, &nb_block1, pions, joueur1);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -325,7 +326,7 @@ void puissance_avance(){
 				pions ++;
 
 				//Joueur 2 joue
-				player2(grille, &nb_block2, pions);
+				player2(grille, &nb_block2, pions, joueur2);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -343,7 +344,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions);
+				player1(grille, &nb_block1, pions,joueur1);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -352,7 +353,7 @@ void puissance_avance(){
 /****************************** joueur 2 joue *****************************************/
 
 				//Joueur 2 joue
-				player2(grille, &nb_block2, pions);
+				player2(grille, &nb_block2, pions, joueur2);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -362,7 +363,7 @@ void puissance_avance(){
 				pions ++;
 				
 				//Joueur 3 joue
-				player3(grille, &nb_block3, pions);
+				player3(grille, &nb_block3, pions, joueur3);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -380,7 +381,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions);
+				player1(grille, &nb_block1, pions, joueur1);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -389,7 +390,7 @@ void puissance_avance(){
 /****************************** joueur 2 joue *****************************************/
 
 				//Joueur 2 joue
-				player2(grille, &nb_block2, pions);
+				player2(grille, &nb_block2, pions, joueur2);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -398,7 +399,7 @@ void puissance_avance(){
 /****************************** joueur 3 joue *****************************************/
 
 				//Joueur 3 joue
-				player3(grille, &nb_block3, pions);
+				player3(grille, &nb_block3, pions, joueur3);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -409,7 +410,7 @@ void puissance_avance(){
 				pions ++;
 				
 				//Joueur 4 joue
-				player4(grille, &nb_block3, pions);
+				player4(grille, &nb_block3, pions, joueur4);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -421,6 +422,6 @@ void puissance_avance(){
 
 /******************** Affichage du résultat de la partie ******************************/
 
-		affich_result_avance(grille, win, tour);
+		affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
 	}
 }
