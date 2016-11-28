@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "new_fonctions.h"
+#include "../include/new_fonctions.h"
 
 /**
 

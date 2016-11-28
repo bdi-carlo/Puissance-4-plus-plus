@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "new_fonctions.h"
+#include "../include/new_fonctions.h"
 
 #define couleur(param) printf("\033[%sm",param)
 #define N 6
