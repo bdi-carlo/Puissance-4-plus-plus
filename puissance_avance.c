@@ -96,15 +96,15 @@ void puissance_avance(){
 						scanf("%i", &type);
 				
 						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_blok1 == 0)
+						if(type == 3 && nb_block1 == 0)
 								printf("\nJoueur 1 n'a plus de piece bloquante.\n");
 				
-					}while(type < 1 || type > 3 || (type == 3 && nb_blok1 == 0));
+					}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
 			
 					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_blok1 > 0){
-						nb_blok1--;
-						printf("\nJoueur 1: Reste %i piece bloquante a joue.",nb_blok1);
+					if(type == 3 && nb_block1 > 0){
+						nb_block1--;
+						printf("\nJoueur 1: Reste %i piece bloquante a joue.",nb_block1);
 					}
 			
 					if(colonne < 1 || colonne > 7)
@@ -156,15 +156,15 @@ void puissance_avance(){
 						scanf("%i", &type);
 				
 						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_blok2 == 0)
+						if(type == 3 && nb_block2 == 0)
 								printf("\nJoueur 2 n'a plus de piece bloquante.\n");
 				
-					}while(type < 1 || type > 3 || (type == 3 && nb_blok2 == 0));
+					}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
 			
 					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_blok2 > 0){
-						nb_blok2--;
-						printf("\nJoueur 2: Reste %i piece bloquante a joue.",nb_blok2);
+					if(type == 3 && nb_block2 > 0){
+						nb_block2--;
+						printf("\nJoueur 2: Reste %i piece bloquante a joue.",nb_block2);
 					}
 			
 					if(colonne < 1 || colonne > 7)
