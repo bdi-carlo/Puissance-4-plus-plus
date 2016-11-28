@@ -7,6 +7,238 @@
 #define M 7
 #define L 20
 
+void player1(t_piece grille[N][M], int *nb_block1, int pions){
+	int num_joueur, ligne, colonne, type, test;
+
+	num_joueur = 1;
+
+	//Demande où il veut jouer et avec quel type de piece
+	do{			
+		printf("joueur1: Colonne: ");
+		scanf("%i", &colonne);
+
+		do{
+			printf("Type: - Creuse (1) ");
+			printf("\n      - Pleine (2) ");
+			printf("\n      - Bloquante (3) ");
+			printf("\n\n>> Choix : ");
+			scanf("%i", &type);
+				
+			//Verification du nombre de piece bloquante
+			if(type == 3 && *nb_block1 == 0)
+					printf("\nJoueur 1 n'a plus de piece bloquante.\n");
+			
+		}while(type < 1 || type > 3 || (type == 3 && *nb_block1 == 0));
+			
+		//Verification du nombre de piece bloquante et decrementation si on en a joue une
+		if(type == 3 && *nb_block1 > 0){
+			(*nb_block1)--;
+			printf("\nJoueur 1: Reste %i piece bloquante a joue.",*nb_block1);
+		}
+			
+		if(colonne < 1 || colonne > 7)
+			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			
+		else{
+			//Placement du pion sur la grille si et seulement si la colonne le permet
+			test = 0;
+			ligne = choix_ligne_avance(grille, colonne);
+			if(ligne < 0){
+				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+					test = 1;
+				}
+				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
+					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+			}
+			else
+				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		}
+	}while(colonne < 1 || colonne > 7 || test == 1);
+		
+	//Affichage du numéro du tour
+	system("clear");
+	printf("\n ---------------------------------------");
+	printf("\n|	       TOUR NUMERO %i		|",pions);
+
+	//Mise à jour de la grille
+	afficher_matrice_avance(grille);
+}
+
+void player2(t_piece grille[N][M], int *nb_block2, int pions){
+	int num_joueur, ligne, colonne, type, test;
+
+	num_joueur = 2;
+
+	//Demande où il veut jouer et avec quel type de piece
+	do{			
+	printf("joueur2: Colonne: ");
+	scanf("%i", &colonne);
+
+		do{
+			printf("Type: - Creuse (1) ");
+			printf("\n      - Pleine (2) ");
+			printf("\n      - Bloquante (3) ");
+			printf("\n\n>> Choix : ");
+			scanf("%i", &type);
+				
+			//Verification du nombre de piece bloquante
+			if(type == 3 && *nb_block2 == 0)
+					printf("\nJoueur 2 n'a plus de piece bloquante.\n");
+				
+		}while(type < 1 || type > 3 || (type == 3 && *nb_block2 == 0));
+			
+		//Verification du nombre de piece bloquante et decrementation si on en a joue une
+		if(type == 3 && *nb_block2 > 0){
+			(*nb_block2)--;
+			printf("\nJoueur 2: Reste %i piece bloquante a joue.",*nb_block2);
+		}
+			
+		if(colonne < 1 || colonne > 7)
+			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			
+		else{
+			//Placement du pion sur la grille si et seulement si la colonne le permet
+			test = 0;
+			ligne = choix_ligne_avance(grille, colonne);
+			if(ligne < 0){
+				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+					test = 1;
+				}
+				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
+					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+			}
+			else
+				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		}
+	}while(colonne < 1 || colonne > 7 || test == 1);
+		
+	//Affichage du numéro du tour
+	system("clear");
+	printf("\n ---------------------------------------");
+	printf("\n|	       TOUR NUMERO %i		|",pions);
+
+	//Mise à jour de la grille
+	afficher_matrice_avance(grille);
+}
+
+void player3(t_piece grille[N][M], int *nb_block3, int pions){
+	int num_joueur, ligne, colonne, type, test;
+
+	num_joueur = 3;
+
+	//Demande où il veut jouer et avec quel type de piece
+	do{			
+	printf("joueur3: Colonne: ");
+	scanf("%i", &colonne);
+
+		do{
+			printf("Type: - Creuse (1) ");
+			printf("\n      - Pleine (2) ");
+			printf("\n      - Bloquante (3) ");
+			printf("\n\n>> Choix : ");
+			scanf("%i", &type);
+				
+			//Verification du nombre de piece bloquante
+			if(type == 3 && *nb_block3 == 0)
+					printf("\nJoueur 3 n'a plus de piece bloquante.\n");
+				
+		}while(type < 1 || type > 3 || (type == 3 && *nb_block3 == 0));
+			
+		//Verification du nombre de piece bloquante et decrementation si on en a joue une
+		if(type == 3 && *nb_block3 > 0){
+			(*nb_block3)--;
+			printf("\nJoueur 3: Reste %i piece bloquante a joue.",*nb_block3);
+		}
+			
+		if(colonne < 1 || colonne > 7)
+			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			
+		else{
+			//Placement du pion sur la grille si et seulement si la colonne le permet
+			test = 0;
+			ligne = choix_ligne_avance(grille, colonne);
+			if(ligne < 0){
+				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+					test = 1;
+				}
+				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
+					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+			}
+			else
+				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		}
+	}while(colonne < 1 || colonne > 7 || test == 1);
+		
+	//Affichage du numéro du tour
+	system("clear");
+	printf("\n ---------------------------------------");
+	printf("\n|	       TOUR NUMERO %i		|",pions);
+
+	//Mise à jour de la grille
+	afficher_matrice_avance(grille);
+}
+
+void player4(t_piece grille[N][M], int *nb_block4, int pions){
+	int num_joueur, ligne, colonne, type, test;
+
+	num_joueur = 4;
+
+	//Demande où il veut jouer et avec quel type de piece
+	do{			
+	printf("joueur4: Colonne: ");
+	scanf("%i", &colonne);
+
+		do{
+			printf("Type: - Creuse (1) ");
+			printf("\n      - Pleine (2) ");
+			printf("\n      - Bloquante (3) ");
+			printf("\n\n>> Choix : ");
+			scanf("%i", &type);
+				
+			//Verification du nombre de piece bloquante
+			if(type == 3 && *nb_block4 == 0)
+					printf("\nJoueur 4 n'a plus de piece bloquante.\n");
+				
+		}while(type < 1 || type > 3 || (type == 3 && *nb_block4 == 0));
+			
+		//Verification du nombre de piece bloquante et decrementation si on en a joue une
+		if(type == 3 && *nb_block4 > 0){
+			(*nb_block4)--;
+			printf("\nJoueur 4: Reste %i piece bloquante a joue.",*nb_block4);
+		}
+			
+		if(colonne < 1 || colonne > 7)
+			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			
+		else{
+			//Placement du pion sur la grille si et seulement si la colonne le permet
+			test = 0;
+			ligne = choix_ligne_avance(grille, colonne);
+			if(ligne < 0){
+				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+					test = 1;
+				}
+				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
+					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+			}
+			else
+				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		}
+	}while(colonne < 1 || colonne > 7 || test == 1);
+		
+	//Affichage du numéro du tour
+	system("clear");
+	printf("\n ---------------------------------------");
+	printf("\n|	       TOUR NUMERO %i		|",pions);
+
+	//Mise à jour de la grille
+	afficher_matrice_avance(grille);
+}
+
 //Fonction qui permet d'afficher le resultat de la partie
 void affich_result_avance(t_piece grille[N][M], int win, int tour){
 	system("clear");
@@ -48,7 +280,7 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour){
 //Programme permettant la construction du jeu Puissance 4 classique
 void puissance_avance(){
 	t_piece grille[N][M];
-	int colonne, ligne, pions, nb_tours, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4, test;
+	int colonne, ligne, pions, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4, test;
 	char joueur1[L],joueur2[L],joueur3[L],joueur4[L];
 
 /****************************** INITIALISATION ****************************************/
@@ -79,122 +311,20 @@ void puissance_avance(){
 		if(nb_joueurs == 2){
 			while(!grille_pleine(grille)){
 
-/****************************** JOUEUR 1 JOUE *****************************************/
+/****************************** joueur 1 joue *****************************************/
 
-				num_joueur = 1;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-					printf("joueur1: Colonne: ");
-					scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block1 == 0)
-								printf("\nJoueur 1 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block1 > 0){
-						nb_block1--;
-						printf("\nJoueur 1: Reste %i piece bloquante a joue.",nb_block1);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 1 joue
+				player1(grille, &nb_block1, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
 				if(win == 1)break;
 
-/****************************** JOUEUR 2 JOUE *****************************************/
-
-				num_joueur = 2;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-				printf("joueur2: Colonne: ");
-				scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block2 == 0)
-								printf("\nJoueur 2 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block2 > 0){
-						nb_block2--;
-						printf("\nJoueur 2: Reste %i piece bloquante a joue.",nb_block2);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
+/****************************** joueur 2 joue *****************************************/
 				pions ++;
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
 
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 2 joue
+				player2(grille, &nb_block2, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -209,182 +339,29 @@ void puissance_avance(){
 		else if(nb_joueurs == 3){
 			while(!grille_pleine(grille)){
 
-/****************************** JOUEUR 1 JOUE *****************************************/
+/****************************** joueur 1 joue *****************************************/
 
-				num_joueur = 1;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-					printf("joueur1: Colonne: ");
-					scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block1 == 0)
-								printf("\nJoueur 1 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block1 > 0){
-						nb_block1--;
-						printf("\nJoueur 1: Reste %i piece bloquante a joue.",nb_block1);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 1 joue
+				player1(grille, &nb_block1, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
 				if(win == 1)break;
 
-/****************************** JOUEUR 2 JOUE *****************************************/
+/****************************** joueur 2 joue *****************************************/
 
-				num_joueur = 2;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-				printf("joueur2: Colonne: ");
-				scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block2 == 0)
-								printf("\nJoueur 2 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block2 > 0){
-						nb_block2--;
-						printf("\nJoueur 2: Reste %i piece bloquante a joue.",nb_block2);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				pions ++;
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 2 joue
+				player2(grille, &nb_block2, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
 				if(win == 2)break;
 
-/****************************** JOUEUR 3 JOUE *****************************************/
-
-				num_joueur = 3;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-					printf("joueur3: Colonne: ");
-					scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
+/****************************** joueur 3 joue *****************************************/
+				pions ++;
 				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block3 == 0)
-								printf("\nJoueur 3 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block3 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block3 > 0){
-						nb_block3--;
-						printf("\nJoueur 3: Reste %i piece bloquante a joue.",nb_block3);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 3 joue
+				player3(grille, &nb_block3, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -399,242 +376,39 @@ void puissance_avance(){
 		else if(nb_joueurs == 4){
 			while(!grille_pleine(grille)){
 
-/****************************** JOUEUR 1 JOUE *****************************************/
+/****************************** joueur 1 joue *****************************************/
 
-				num_joueur = 1;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-					printf("joueur1: Colonne: ");
-					scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block1 == 0)
-								printf("\nJoueur 1 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block1 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block1 > 0){
-						nb_block1--;
-						printf("\nJoueur 1: Reste %i piece bloquante a joue.",nb_block1);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 1 joue
+				player1(grille, &nb_block1, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
 				if(win == 1)break;
 
-/****************************** JOUEUR 2 JOUE *****************************************/
+/****************************** joueur 2 joue *****************************************/
 
-				num_joueur = 2;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-				printf("joueur2: Colonne: ");
-				scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block2 == 0)
-								printf("\nJoueur 2 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block2 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block2 > 0){
-						nb_block2--;
-						printf("\nJoueur 2: Reste %i piece bloquante a joue.",nb_block2);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				pions ++;
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 2 joue
+				player2(grille, &nb_block2, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
 				if(win == 2)break;
 
-/****************************** JOUEUR 3 JOUE *****************************************/
+/****************************** joueur 3 joue *****************************************/
 
-				num_joueur = 3;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-					printf("joueur3: Colonne: ");
-					scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
-				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block3 == 0)
-								printf("\nJoueur 3 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block3 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block3 > 0){
-						nb_block3--;
-						printf("\nJoueur 3: Reste %i piece bloquante a joue.",nb_block3);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 3 joue
+				player3(grille, &nb_block3, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
 				if(win == 3)break;
 
-/****************************** JOUEUR 4 JOUE *****************************************/
+/****************************** joueur 4 joue *****************************************/
 
-				num_joueur = 4;
-
-				//Demande où il veut jouer et avec quel type de piece
-				do{			
-					printf("joueur4: Colonne: ");
-					scanf("%i", &colonne);
-
-					do{
-						printf("Type: - Creuse (1) ");
-						printf("\n      - Pleine (2) ");
-						printf("\n      - Bloquante (3) ");
-						printf("\n\n>> Choix : ");
-						scanf("%i", &type);
+				pions ++;
 				
-						//Verification du nombre de piece bloquante
-						if(type == 3 && nb_block4 == 0)
-								printf("\nJoueur 4 n'a plus de piece bloquante.\n");
-				
-					}while(type < 1 || type > 3 || (type == 3 && nb_block4 == 0));
-			
-					//Verification du nombre de piece bloquante et decrementation si on en a joue une
-					if(type == 3 && nb_block4 > 0){
-						nb_block4--;
-						printf("\nJoueur 4: Reste %i piece bloquante a joue.",nb_block4);
-					}
-			
-					if(colonne < 1 || colonne > 7)
-						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-					else{
-						//Placement du pion sur la grille si et seulement si la colonne le permet
-						test = 0;
-						ligne = choix_ligne_avance(grille, colonne);
-						if(ligne < 0){
-							if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-								printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-								test = 1;
-							}
-							else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-								placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-						}
-						else
-							placer_pions_avance(grille, colonne, ligne, num_joueur, type);
-					}
-				}while(colonne < 1 || colonne > 7 || test == 1);
-		
-				//Affichage du numéro du tour
-				system("clear");
-				printf("\n ---------------------------------------");
-				printf("\n|	       TOUR NUMERO %i		|",pions);
-
-				//Mise à jour de la grille
-				afficher_matrice_avance(grille);
+				//Joueur 4 joue
+				player4(grille, &nb_block3, pions);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
