@@ -278,14 +278,14 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 	
 	else if(win == 1){
 		printf("\n ---------------------------------------");
-		printf("\n|	        %s A GAGNE 	|",pseudo1);
+		printf("\n|	        %s A GAGNE 		|",pseudo1);
 		
 		afficher_matrice_avance(grille);
 	}
 
 	else if(win == 2){
 		printf("\n ---------------------------------------");
-		printf("\n|	        %s A GAGNE 	|",pseudo2);
+		printf("\n|	        %s A GAGNE 		|",pseudo2);
 		
 		afficher_matrice_avance(grille);
 	}

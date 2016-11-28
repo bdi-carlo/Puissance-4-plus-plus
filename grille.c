@@ -16,8 +16,8 @@
  -*\date Novembre 2016
  -
  -*/
- -
- -/**
+
+/**
  -
  -
  -*\fn void init_matrice(int matrice[N][M])
