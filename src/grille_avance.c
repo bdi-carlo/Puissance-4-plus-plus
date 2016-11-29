@@ -7,7 +7,37 @@
 #define N 6
 #define M 7
 
-//Initialise à vide la grille du Puissance 4++
+/**
+*\file grille_avance.c
+*\brief Interface du jeu Puissance 4 ++
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+*/
+
+
+/**
+*\fn void init_matrice_avance(t_piece matrice[N][M])
+*\brief Initialise à vide la grille du Puissance 4++
+
+*\fn int grille_pleine(t_piece matrice[N][M])
+*\brief Verifie si la grille est pleine ou non
+
+*\fn void afficher_matrice_avance(t_piece matrice[N][M])
+*\brief Affiche la grille du Puissance 4++ en cours
+
+*\fn int choix_ligne_avance(t_piece matrice[N][M], int colonne)
+*\brief Retourne la premiere ligne libre
+
+*\fn void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type)
+*\brief Place le pion dans la colonne sélectionné et sur la bonne ligne
+
+*\fn int gagne_avance(t_piece grille[N][M])
+*\brief Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non
+*/
+
+
+
 void init_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
 
@@ -21,7 +51,6 @@ void init_matrice_avance(t_piece matrice[N][M]){
 	}
 }
 
-//Verifie si la grille est pleine ou non
 int grille_pleine(t_piece matrice[N][M]){
 	int i,j;
 
@@ -39,7 +68,7 @@ int grille_pleine(t_piece matrice[N][M]){
 	return 1;
 }
 
-//Affiche la grille du Puissance 4 du jeu en cours
+
 void afficher_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
 
@@ -377,7 +406,6 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 	printf("\n");
 }
 
-//Retourne la premiere ligne libre
 int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
@@ -392,7 +420,6 @@ int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 	return ligne;
 }
 
-//Place le pion a une ligne donnee et une colonne donnee
 void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type){
 	int i;
 
@@ -603,7 +630,6 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 	}
 }
 
-//Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
 int gagne_avance(t_piece grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
