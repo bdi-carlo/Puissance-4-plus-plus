@@ -7,35 +7,31 @@
 #define M 7
 
 /**
- -
- -*\file grille.c
- -*\brief Affiche la grille, place les pions et détermine le gagnant
- -
- -*\author Benjamin, Julien, Arthur
- -*\version 1.0
- -*\date Novembre 2016
- -
- -*/
+*\file grille.c
+*\brief Affiche la grille, place les pions et détermine le gagnant
+
+*\author Benjamin, Julien, Arthur
+*\version 1.0
+*\date Novembre 2016
+*/
+
 
 /**
- -
- -
- -*\fn void init_matrice(int matrice[N][M])
- -*\brief Initialise à vide la grille du Puissance 4
- -
- -*\fn void afficher_matrice(int matrice[N][M])
- -*\brief Affiche la grille du Puissance 4 du jeu en cours
- -
- -*\fn int choix_ligne(int matrice[N][M], int colonne)
- -*\brief Retourne la bonne ligne pour placer le pion
- -
- -*\fn void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur)
- -*\brief Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
- -
- -*\fn int gagne(int grille[N][M])
- -*\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
- -
- -*/
+*\fn void init_matrice(int matrice[N][M])
+*\brief Initialise à vide la grille du Puissance 4
+
+*\fn void afficher_matrice(int matrice[N][M])
+*\brief Affiche la grille du Puissance 4 du jeu en cours
+
+*\fn int choix_ligne(int matrice[N][M], int colonne)
+*\brief Retourne la bonne ligne pour placer le pion
+
+*\fn void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur)
+*\brief Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
+
+*\fn int gagne(int grille[N][M])
+*\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
+*/
 
 
 void init_matrice(int matrice[N][M]){

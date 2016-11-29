@@ -25,7 +25,7 @@
 *\brief Affichage du resultat de la partie
 
 *\fn void puissance_classique()
-*\brief Programme permettant la construction du jeu Puissance 4 classique
+*\brief Construction du Puissance 4 classique
 */
 
 

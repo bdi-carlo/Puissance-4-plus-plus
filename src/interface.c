@@ -6,19 +6,16 @@
 #define couleur(param) printf("\033[%sm",param)
 
 /**
-
 *\file interface.c
 *\brief Interface du Puissance 4
 
 *\author Benjamin, Julien, Arthur
 *\version 1.0
 *\date Novembre 2016
-
 */
 
+
 /**
-
-
 *\fn int menu()
 *\brief Menu pour commencer la partie
 
@@ -27,8 +24,6 @@
 
 *\fn void pseudo_classique(char pseudo1[L], char pseudo2[L], int nb_joueurs)
 *\brief Demande les pseudos des joueurs
-
-
 */
 
 
