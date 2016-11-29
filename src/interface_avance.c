@@ -4,19 +4,15 @@
 #include "../include/new_fonctions.h"
 
 /**
-
 *\file interface_avance.c
 *\brief Interface du Puissance 4
 
 *\author Benjamin, Julien, Arthur
 *\version 1.0
 *\date Novembre 2016
-
 */
 
 /**
-
-
 *\fn int fin_jeux_avance()
 *\brief Menu pour la fin de la partie
 
@@ -24,9 +20,10 @@
 *\brief Choix du nombre de joueurs
 
 *\fn void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs)
-*\brief Demande aux joueurs leur pseudo
+*\brief Choix des pseudos
 
-
+*\fn void afficher_regles()
+*\brief Affiche les règles du Puissance 4++
 */
 
 int fin_jeux_avance(){
@@ -98,7 +95,6 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 	}
 }
 
-//Fonction affichant les regles
 void afficher_regles(){
 	int regles;
 	do{

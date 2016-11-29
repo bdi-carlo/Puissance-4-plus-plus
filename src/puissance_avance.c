@@ -9,7 +9,7 @@
 
 /**
 
-*\file puissance_classique.c
+*\file puissance_avance.c
 *\brief Puissance 4 classique
 *\author Benjamin, Julien, Arthur
 *\version 1.0
@@ -18,17 +18,23 @@
 */
 
 /**
+*\fn void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L])
+*\brief Choix du type et de la position de la pièce du Joueur 1
 
+*\fn void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L])
+*\brief Choix du type et de la position de la pièce du Joueur 2
 
-*\fn save_score_avance(char joueur[L], int nb_coups)
-*\brief Enregistrement du score du gagnant
+*\fn void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L])
+*\brief Choix du type et de la position de la pièce du Joueur 3
 
-*\fn affich_result_avance(int grille[N][M], char joueur1[L], char joueur2[L], char joueur3[L], char joueur4[L], int tour)
-*\brief Affichage du resultat de la partie
+*\fn void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L])
+*\brief Choix du type et de la position de la pièce du Joueur 4
 
-*\fn puissance_avance()
-*\brief Programme permettant la construction du jeu Puissance 4 classique à 2, 3 ou 4 joueurs
+*\fn void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L])
+*\brief Affichage du résultat
 
+*\fn void puissance_avance()
+*\brief Construction du Puissance 4++
 
 */
 
@@ -264,7 +270,6 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 	afficher_matrice_avance(grille);
 }
 
-//Fonction qui permet d'afficher le resultat de la partie
 void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L]){
 	system("clear");
 	
@@ -303,7 +308,6 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 	}
 }
 
-//Programme permettant la construction du jeu Puissance 4 classique
 void puissance_avance(){
 	t_piece grille[N][M];
 	int colonne, ligne, pions, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4, test;

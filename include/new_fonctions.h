@@ -3,19 +3,24 @@
 #define L 20
 
 /**
-
 *\file new_fonctions.c
 *\brief Prototypes des fonctions utilisées
 *\author Benjamin, Julien, Arthur
 *\version 1.0
 *\date Novembre 2016
-
 */
 
-//Enumeration permettant de savoir le type de la piece
+/**
+*\struct t_piece
+*\brief Structure pour définir un pion
+*\enum t_type
+*\brief type de la pièce
+*/
+
+
 typedef enum{vide,creuse,pleine,bloquante}t_type;
 
-//Strucuture pour connaitre le type et la valeur du pion
+
 typedef struct{int valeur_pion1; t_type type1;int valeur_pion2; t_type type2;}t_piece;
 
 int menu();
