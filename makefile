@@ -6,7 +6,7 @@ INCLUDE = ./include/new_fonctions.h
 
 #compile tout les fichiers et crée un executable
 all : ${FICHIERS}
-	gcc -o ${BIN}Puissance_4++.exe ${FICHIERS}
+	gcc -o Puissance_4++.exe ${FICHIERS}
 
 #compilation de toutes les dépendances
 game.o : ${SRC}game.c ${INCLUDE}
