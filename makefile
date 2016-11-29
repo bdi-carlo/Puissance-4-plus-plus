@@ -3,10 +3,11 @@ COMMANDE = -g -Wextra
 BIN = ./bin/
 SRC = ./src/
 INCLUDE = ./include/new_fonctions.h
+EXE = Puissance_4++.exe
 
 #compile tout les fichiers et crée un executable
 all : ${FICHIERS}
-	gcc -o Puissance_4++.exe ${FICHIERS}
+	gcc -o ${EXE} ${FICHIERS}
 
 #compilation de toutes les dépendances
 game.o : ${SRC}game.c ${INCLUDE}
@@ -35,12 +36,11 @@ puissance_avance.o : ${SRC}puissance_avance.c ${INCLUDE}
 #suppression des fichiers temporaires
 clean_o :
 	rm -rf *.o
-clean_exe :
-	rm -rf *.exe
 clean_txt :
 	rm -rf *.txt
 clean_~ :
 	rm -rf *~
 
 #suppression de tous les fichiers sauf les fichiers sources
-mrproper : clean_o clean_exe clean_txt clean_~
+mrproper : clean_o clean_txt clean_~
+	rm -rf ${EXE}
