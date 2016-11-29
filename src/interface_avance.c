@@ -59,8 +59,8 @@ int nb_joueur(){
 	int choix;
 
 	printf("\n ------------------------------- ");
-	printf("\n|	    PUISSANCE 4++       |");
-	printf("\n|	   Retour Menu (1)      |");
+	printf("\n|	  PUISSANCE 4 avance    |");
+	printf("\n|	    Retour Menu (1)     |");
 	printf("\n|				|");
 	printf("\n|	  Nombre de joueurs:    |");
 	printf("\n| 	      2 joueurs		|");

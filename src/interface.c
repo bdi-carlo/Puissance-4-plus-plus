@@ -44,7 +44,7 @@ int menu(){
 	printf("\n|	        Menu            |");
 	printf("\n|				|");
 	printf("\n|  1 - Puissance 4 classique	|");
-	printf("\n|  2 - Puissance 4 ++		|");
+	printf("\n|  2 - Puissance 4 avance	|");
 	printf("\n|  3 - Quitter			|");
 	printf("\n|				|");
 	printf("\n ------------------------------- ");
