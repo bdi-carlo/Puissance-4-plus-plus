@@ -1,12 +1,12 @@
-FICHIERS =  game.o interface.o puissance_classique.o grille.o interface_avance.o puissance_avance.o grille_avance.o
+OBJET =  game.o interface.o puissance_classique.o grille.o interface_avance.o puissance_avance.o grille_avance.o
 COMMANDE = -g -Wextra
 BIN = ./bin/
 SRC = ./src/
 INCLUDE = ./include/new_fonctions.h
 
 #compile tout les fichiers et crée un executable
-all : ${FICHIERS}
-	gcc -o Puissance_4++.exe ${FICHIERS}
+all : ${OBJET}
+	gcc -o Puissance_4++.exe ${OBJET}
 
 #compilation de toutes les dépendances
 game.o : ${SRC}game.c ${INCLUDE}

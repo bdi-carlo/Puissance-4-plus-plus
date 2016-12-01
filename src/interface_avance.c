@@ -103,7 +103,7 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 
 	if(nb_joueurs ==  3 || nb_joueurs == 4){
 		do{
-			couleur("35");
+			couleur("33");
 			printf("\nJoueur 3: ");
 			scanf("%s", pseudo3);
 			couleur("0");

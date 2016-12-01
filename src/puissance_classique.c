@@ -104,7 +104,7 @@ void puissance_classique(){
 	
 	system("clear");
 	printf("\n+---------------------------------------+");
-	printf("\n|	       TOUR NUMERO 1		|");
+	printf("\n|	       TOUR NUMERO %i		|",pions);
 	afficher_matrice(grille);
 	
 	test = 0;
