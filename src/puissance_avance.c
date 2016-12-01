@@ -99,7 +99,7 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 		
 	//Affichage du numéro du tour
 	system("clear");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO %i		|",pions);
 
 	//Mise à jour de la grille
@@ -166,7 +166,7 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 		
 	//Affichage du numéro du tour
 	system("clear");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO %i		|",pions);
 
 	//Mise à jour de la grille
@@ -233,7 +233,7 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 		
 	//Affichage du numéro du tour
 	system("clear");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO %i		|",pions);
 
 	//Mise à jour de la grille
@@ -300,7 +300,7 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 		
 	//Affichage du numéro du tour
 	system("clear");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO %i		|",pions);
 
 	//Mise à jour de la grille
@@ -313,33 +313,33 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 	
 
 	if(win == 0){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	         MATCH NUL		|");
 	
 		afficher_matrice_avance(grille);
 	}
 	
 	else if(win == 1){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|",pseudo1);
 		
 		afficher_matrice_avance(grille);
 	}
 
 	else if(win == 2){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|",pseudo2);
 		
 		afficher_matrice_avance(grille);
 	}
 	else if(win == 3){
-		printf("\n ---------------------------------------",pseudo3);
+		printf("\n+---------------------------------------+",pseudo3);
 		printf("\n|	        %s A GAGNE 		|");
 		
 		afficher_matrice_avance(grille);
 	}	
 	else if(win == 4){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|",pseudo4);
 		
 		afficher_matrice_avance(grille);
@@ -363,7 +363,7 @@ void puissance_avance(){
 		//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
 		init_matrice_avance(grille);
 		system("clear");
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	       TOUR NUMERO 1		|");
 		afficher_matrice_avance(grille);
 
