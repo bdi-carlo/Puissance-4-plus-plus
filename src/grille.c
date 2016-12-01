@@ -5,6 +5,7 @@
 #define couleur(param) printf("\033[%sm",param)
 #define N 6
 #define M 7
+#define L 20
 
 /**
 *\file grille.c
@@ -33,6 +34,46 @@
 *\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
 */
 
+//Enregistre la grille dans un fichier pour la reprendre ulterieurement
+void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L]){
+	int i,j;
+	FILE * fichier;
+
+	fichier = fopen("partie_classique.txt", "w");
+	
+	for(i = 0; i < N; i++){
+		for(j = 0; j < M; j++){
+			fprintf(fichier, "%i ", matrice[i][j]);
+		}
+	}
+	fprintf(fichier, "%i ", tour);
+	fprintf(fichier, "%s ", pseudo1);
+	fprintf(fichier, "%s ", pseudo2);
+
+	fclose(fichier);
+}
+
+int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L]){
+	int i,j;
+	FILE * fichier;
+
+	fichier = fopen("partie_classique.txt", "r");
+
+	if(!fichier)
+		return 1;
+
+	for(i = 0; i < N; i++){
+		for(j = 0; j < M; j++){
+			fscanf(fichier, "%i ", &matrice[i][j]);
+		}
+	}
+	fscanf(fichier, "%i", &(*tour));
+	fscanf(fichier, "%s", pseudo1);
+	fscanf(fichier, "%s", pseudo2);
+
+	fclose(fichier);
+	return 0;
+}
 
 void init_matrice(int matrice[N][M]){
 	int i,j;
@@ -43,8 +84,6 @@ void init_matrice(int matrice[N][M]){
 		}
 	}
 }
-
-
 
 void afficher_matrice(int matrice[N][M]){
 	int i,j;
@@ -73,7 +112,6 @@ void afficher_matrice(int matrice[N][M]){
 	printf("\n");
 }
 
-
 int choix_ligne(int matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
@@ -88,7 +126,6 @@ int choix_ligne(int matrice[N][M], int colonne){
 	return ligne;
 }
 
-
 void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
 	colonne--;
@@ -98,7 +135,6 @@ void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 	else if(num_joueur == 2)
 		matrice[ligne][colonne] = 2;
 }
-
 
 int gagne(int grille[N][M]){
 	int player1 = 0;

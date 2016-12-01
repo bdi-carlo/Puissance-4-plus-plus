@@ -57,7 +57,6 @@ int menu(){
 	return 0;
 }
 
-
 int fin_jeux(){
 	int choix;
 
@@ -84,7 +83,6 @@ int fin_jeux(){
 	}while(choix < 1 || choix > 3);
 }
 
-
 void pseudo_classique(char pseudo1[L], char pseudo2[L]){
 	system("clear");
 	printf("\nVeuillez choisir vos pseudos sachant qu'ils ne doivent pas depasser 5 caracteres \n \n");
@@ -107,4 +105,50 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L]){
 		if(strlen(pseudo2) > 5)
 			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
 	}while(strlen(pseudo2) > 5);
+}
+
+int quitter(){
+	int choix;
+	system("clear");
+
+	printf("\n ------------------------------- ");
+	printf("\n|	       Quitter          |");
+	printf("\n|				|");
+	printf("\n|  1 - Quitter sans sauvegarder	|");
+	printf("\n|  2 - Quitter et sauvegarder	|");
+	printf("\n|				|");
+	printf("\n ------------------------------- ");
+
+	do{
+		printf("\n>> Votre choix : ");
+		scanf("%d",&choix);
+
+		if(choix < 1 || choix > 2)
+			printf("\nErreur: votre choix doit etre 1 ou 2\n");
+	}while(choix < 1 || choix > 2);
+	
+	return choix;
+}
+
+int begin(){
+	int choix;
+	system("clear");
+
+	printf("\n ------------------------------------- ");
+	printf("\n|    		  Début          	|");
+	printf("\n|					|");
+	printf("\n|  1 - Commenecer une nouvelle partie	|");
+	printf("\n|  2 - Charger la partie precedente	|");
+	printf("\n|					|");
+	printf("\n ------------------------------------- ");
+
+	do{
+		printf("\n>> Votre choix : ");
+		scanf("%d",&choix);
+
+		if(choix < 1 || choix > 2)
+			printf("\nErreur: votre choix doit etre 1 ou 2\n");
+	}while(choix < 1 || choix > 2);
+	
+	return choix;
 }
