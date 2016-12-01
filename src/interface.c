@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 #include "../include/new_fonctions.h"
 
@@ -25,9 +26,6 @@
 *\fn void pseudo_classique(char pseudo1[L], char pseudo2[L])
 *\brief Demande les pseudos des joueurs
 */
-
-
-#define couleur(param) printf("\033[%sm",param)
 
 int menu(){
 	int choix;
@@ -89,11 +87,24 @@ int fin_jeux(){
 
 void pseudo_classique(char pseudo1[L], char pseudo2[L]){
 	system("clear");
-	printf("\nVeuillez choisir vos pseudos :\n");
+	printf("\nVeuillez choisir vos pseudos sachant qu'ils ne doivent pas depasser 5 caracteres \n \n");
 	
-	printf("\nJoueur 1 (pions rouges) : ");
-	scanf("%s", pseudo1);
+	do{
+		couleur("31");
+		printf("\nJoueur 1: ");
+		scanf("%s", pseudo1);
+		couleur("0");
+		if(strlen(pseudo1) > 5)
+			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+	}while(strlen(pseudo1) > 5);
+	couleur("0");
 
-	printf("\nJoueur 2 (pions bleus) : ");
-	scanf("%s", pseudo2);
+	do{
+		couleur("34");
+		printf("\nJoueur 2: ");
+		scanf("%s", pseudo2);
+		couleur("0");
+		if(strlen(pseudo2) > 5)
+			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+	}while(strlen(pseudo2) > 5);
 }

@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 #include "../include/new_fonctions.h"
+
+#define couleur(param) printf("\033[%sm",param)
 
 /**
 *\file interface_avance.c
@@ -76,23 +79,50 @@ int nb_joueur(){
 
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs){
 	system("clear");
-	printf("\nVeuillez choisir vos pseudos :\n");
-	
-	printf("\nJoueur 1 (pions rouges) : ");
-	scanf("%s", pseudo1);
 
-	printf("\nJoueur 2 (pions bleus) : ");
-	scanf("%s", pseudo2);
+	printf("\nVeuillez choisir vos pseudos sachant qu'ils ne doivent pas depasser 5 caracteres \n \n");
+	
+	do{
+		couleur("31");
+		printf("\nJoueur 1: ");
+		scanf("%s", pseudo1);
+		couleur("0");
+		if(strlen(pseudo1) > 5)
+			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+	}while(strlen(pseudo1) > 5);
+	couleur("0");
+
+	do{
+		couleur("34");
+		printf("\nJoueur 2: ");
+		scanf("%s", pseudo2);
+		couleur("0");
+		if(strlen(pseudo2) > 5)
+			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+	}while(strlen(pseudo2) > 5);
 
 	if(nb_joueurs ==  3 || nb_joueurs == 4){
-		printf("\nJoueur 3 (pions magentas) : ");
-		scanf("%s", pseudo3);
+		do{
+			couleur("35");
+			printf("\nJoueur 3: ");
+			scanf("%s", pseudo3);
+			couleur("0");
+			if(strlen(pseudo3) > 5)
+				printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+		}while(strlen(pseudo3) > 5);
 	}
 
 	if(nb_joueurs == 4){
-		printf("\nJoueur 4 (pions verts) : ");
-		scanf("%s", pseudo4);
+		do{
+			couleur("32");
+			printf("\nJoueur 4: ");
+			scanf("%s", pseudo4);
+			couleur("0");
+			if(strlen(pseudo4) > 5)
+				printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+		}while(strlen(pseudo4) > 5);
 	}
+	couleur("0");
 }
 
 void afficher_regles(){

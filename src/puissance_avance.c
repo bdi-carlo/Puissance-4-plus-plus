@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include "../include/new_fonctions.h"
 
+#define couleur(param) printf("\033[%sm",param)
 #define N 6
 #define M 7
 #define L 20
@@ -42,12 +43,21 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 1;
-
+	couleur("31");
+	printf("		  %s  ",pseudo1);
+	couleur("0");
 	//Demande où il veut jouer et avec quel type de piece
-	do{			
-		printf("%s: Colonne: ",pseudo1);
-		scanf("%i", &colonne);
-
+	do{	
+			
+		do{
+			
+			printf("\nColonne: ");
+			scanf("%i", &colonne);
+			printf("\n");
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+		}while(colonne < 1 || colonne > 7);
+		
 		do{
 			printf("Type: - Creuse (1) ");
 			printf("\n      - Pleine (2) ");
@@ -58,7 +68,8 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 			//Verification du nombre de piece bloquante
 			if(type == 3 && *nb_block1 == 0)
 					printf("\nJoueur 1 n'a plus de piece bloquante.\n");
-			
+			if(type < 1 || type > 3)
+				printf("Erreur: entrez un type de piece entre 1 et 3 compris: \n");
 		}while(type < 1 || type > 3 || (type == 3 && *nb_block1 == 0));
 			
 		//Verification du nombre de piece bloquante et decrementation si on en a joue une
@@ -67,8 +78,7 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 			printf("\nJoueur 1: Reste %i piece bloquante a joue.",*nb_block1);
 		}
 			
-		if(colonne < 1 || colonne > 7)
-			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+		
 			
 		else{
 			//Placement du pion sur la grille si et seulement si la colonne le permet
@@ -85,7 +95,7 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 			else
 				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
 		}
-	}while(colonne < 1 || colonne > 7 || test == 1);
+	}while(test == 1);
 		
 	//Affichage du numéro du tour
 	system("clear");
@@ -94,18 +104,26 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 
 	//Mise à jour de la grille
 	afficher_matrice_avance(grille);
+		couleur("0");
 }
 
 void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 2;
-
+	couleur("34");
+	printf("		  %s  ",pseudo2);
+	couleur("0");
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-		printf("%s: Colonne: ",pseudo2);
-		scanf("%i", &colonne);
-
+		do{
+			
+			printf("\nColonne: ");
+			scanf("%i", &colonne);
+			printf("\n");
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+		}while(colonne < 1 || colonne > 7);
 		do{
 			printf("Type: - Creuse (1) ");
 			printf("\n      - Pleine (2) ");
@@ -116,7 +134,8 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 			//Verification du nombre de piece bloquante
 			if(type == 3 && *nb_block2 == 0)
 					printf("\nJoueur 2 n'a plus de piece bloquante.\n");
-				
+			if(type < 1 || type > 3)
+				printf("Erreur: entrez un type de piece entre 1 et 3 compris: \n");
 		}while(type < 1 || type > 3 || (type == 3 && *nb_block2 == 0));
 			
 		//Verification du nombre de piece bloquante et decrementation si on en a joue une
@@ -152,18 +171,26 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 
 	//Mise à jour de la grille
 	afficher_matrice_avance(grille);
+	couleur("0");
 }
 
 void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 3;
-
+	couleur("35");
+	printf("		   %s  ",pseudo3);
+	couleur("0");
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-		printf("%s: Colonne: ",pseudo3);
-		scanf("%i", &colonne);
-
+		do{
+			
+			printf("\nColonne: ");
+			scanf("%i", &colonne);
+			printf("\n");
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+		}while(colonne < 1 || colonne > 7);
 		do{
 			printf("Type: - Creuse (1) ");
 			printf("\n      - Pleine (2) ");
@@ -173,8 +200,9 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 				
 			//Verification du nombre de piece bloquante
 			if(type == 3 && *nb_block3 == 0)
-					printf("\nJoueur 3 n'a plus de piece bloquante.\n");
-				
+					printf("\nJoueur 2 n'a plus de piece bloquante.\n");
+			if(type < 1 || type > 3)
+				printf("Erreur: entrez un type de piece entre 1 et 3 compris: \n");
 		}while(type < 1 || type > 3 || (type == 3 && *nb_block3 == 0));
 			
 		//Verification du nombre de piece bloquante et decrementation si on en a joue une
@@ -210,18 +238,26 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 
 	//Mise à jour de la grille
 	afficher_matrice_avance(grille);
+	couleur("0");
 }
 
 void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 	int num_joueur, ligne, colonne, type, test;
 
 	num_joueur = 4;
-
+	couleur("32");
+	printf("		   %s  ",pseudo4);
+	couleur("0");
 	//Demande où il veut jouer et avec quel type de piece
 	do{			
-		printf("%s: Colonne: ",pseudo4);
-		scanf("%i", &colonne);
-
+		do{
+			
+			printf("\nColonne: ");
+			scanf("%i", &colonne);
+			printf("\n");
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+		}while(colonne < 1 || colonne > 7);
 		do{
 			printf("Type: - Creuse (1) ");
 			printf("\n      - Pleine (2) ");
@@ -231,8 +267,9 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 				
 			//Verification du nombre de piece bloquante
 			if(type == 3 && *nb_block4 == 0)
-					printf("\nJoueur 4 n'a plus de piece bloquante.\n");
-				
+					printf("\nJoueur 2 n'a plus de piece bloquante.\n");
+			if(type < 1 || type > 3)
+				printf("Erreur: entrez un type de piece entre 1 et 3 compris: \n");
 		}while(type < 1 || type > 3 || (type == 3 && *nb_block4 == 0));
 			
 		//Verification du nombre de piece bloquante et decrementation si on en a joue une
@@ -268,6 +305,7 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 
 	//Mise à jour de la grille
 	afficher_matrice_avance(grille);
+	couleur("0");
 }
 
 void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L]){

@@ -6,6 +6,7 @@
 #define N 6
 #define M 7
 #define L 20
+#define couleur(param) printf("\033[%sm",param)
 
 /**
 
@@ -93,10 +94,12 @@ void puissance_classique(){
 /****************************** JOUEUR 1 JOUE *****************************************/
 
 		num_joueur = 1;
-
+		couleur("31");
+		printf("		  %s  ",joueur1);
+		couleur("0");
 		//Demande où il veut jouer
 		do{			
-			printf("\n%s: Colonne: ",joueur1);
+			printf("\nColonne: ");
 			scanf("%i", &colonne);
 			
 			if(colonne < 1 || colonne > 7)
@@ -126,10 +129,12 @@ void puissance_classique(){
 /****************************** JOUEUR 2 JOUE *****************************************/
 
 		num_joueur = 2;
-		
+		couleur("34");
+		printf("		  %s  ",joueur2);
+		couleur("0");
 		//Demande où il veut jouer
 		do{			
-			printf("\n%s: Colonne: ",joueur2);
+			printf("\nColonne: ");
 			scanf("%i", &colonne);
 			
 			if(colonne < 1 || colonne > 7)
