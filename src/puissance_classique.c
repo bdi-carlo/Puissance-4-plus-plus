@@ -91,7 +91,7 @@ void puissance_classique(){
 
 	if((party == 1 && debut == 2) || debut == 1){
 		//Initialisation des pseudos
-		pseudo_classique(joueur1, joueur2);
+		pseudo_classique(joueur1, joueur2, party, debut);
 
 		//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
 		init_matrice(grille);
@@ -100,10 +100,7 @@ void puissance_classique(){
 		tour = 1;
 	}
 	
-	system("clear");
-	if(party == 1 && debut == 2)
-		printf("\nAUCUNE PARTIE ENREGISTRE\n");
-	
+	system("clear");	
 	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO %i		|",pions);
 	afficher_matrice(grille);

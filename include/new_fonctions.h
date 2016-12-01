@@ -41,7 +41,7 @@ int begin();
 int load_classique(int grille[N][M], int *tour, char pseudo1[L], char pseudo2[L]);
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour);
 
-void pseudo_classique(char pseudo1[L], char pseudo2[L]);
+void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut);
 void enregistrement_score_classique(char joueur[L], int nb_coups);
 void puissance_classique();
 int fin_jeux();

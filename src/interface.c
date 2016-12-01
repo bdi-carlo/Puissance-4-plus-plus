@@ -83,8 +83,11 @@ int fin_jeux(){
 	}while(choix < 1 || choix > 3);
 }
 
-void pseudo_classique(char pseudo1[L], char pseudo2[L]){
+void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 	system("clear");
+	if(party == 1 && debut == 2)
+		printf("\nAUCUNE PARTIE ENREGISTRE\n");
+		
 	printf("\nVeuillez choisir vos pseudos sachant qu'ils ne doivent pas depasser 5 caracteres \n \n");
 	
 	do{
