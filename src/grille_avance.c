@@ -402,7 +402,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 	}
 	printf("|					|");
 	printf("\n|	   1  2  3  4  5  6  7  	|");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n");
 }
 

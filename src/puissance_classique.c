@@ -42,14 +42,14 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	system("clear");
 
 	if(gagne(grille) == 0){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	         MATCH NUL		|");
 	
 		afficher_matrice(grille);
 	}
 	
 	else if(gagne(grille) == 1){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|",joueur1);
 		
 		afficher_matrice(grille);
@@ -59,7 +59,7 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 	}
 
 	else if(gagne(grille) == 2){
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|",joueur2);
 		
 		afficher_matrice(grille);
@@ -82,7 +82,7 @@ void puissance_classique(){
 	//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
 	init_matrice(grille);
 	system("clear");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO 1		|");
 	afficher_matrice(grille);
 	
@@ -117,7 +117,7 @@ void puissance_classique(){
 		
 		//Affichage du numéro du tour
 		system("clear");
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	       TOUR NUMERO %i		|",pions);
 
 		//Mise à jour de la grille
@@ -153,7 +153,7 @@ void puissance_classique(){
 		//Affichage du numéro du tour
 		system("clear");
 		pions ++;
-		printf("\n ---------------------------------------");
+		printf("\n+---------------------------------------+");
 		printf("\n|	       TOUR NUMERO %i		|",pions);
 
 		//Mise à jour de la grille
