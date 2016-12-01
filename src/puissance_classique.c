@@ -85,9 +85,7 @@ void puissance_classique(){
 	debut = begin();
 	if(debut == 2){
 		party = load_classique(grille, &tour, joueur1, joueur2);
-		if(party == 1)
-			printf("\nAUCUNE PARTIE ENREGISTRE\n");
-		else
+		if(party == 0)	
 			pions = tour;
 	}
 
@@ -103,6 +101,9 @@ void puissance_classique(){
 	}
 	
 	system("clear");
+	if(party == 1 && debut == 2)
+		printf("\nAUCUNE PARTIE ENREGISTRE\n");
+	
 	printf("\n+---------------------------------------+");
 	printf("\n|	       TOUR NUMERO %i		|",pions);
 	afficher_matrice(grille);
