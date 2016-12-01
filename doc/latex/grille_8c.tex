@@ -1,0 +1,56 @@
+\hypertarget{grille_8c}{}\section{Référence du fichier src/grille.c}
+\label{grille_8c}\index{src/grille.\+c@{src/grille.\+c}}
+
+
+Affiche la grille, place les pions et détermine le gagnant.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Graphe des dépendances par inclusion de grille.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{grille_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{grille_8c_aabcb2d6536b6c0ab41f99493c911489b}
+
+\item 
+\#define {\bfseries N}~6\hypertarget{grille_8c_a0240ac851181b84ac374872dc5434ee4}{}\label{grille_8c_a0240ac851181b84ac374872dc5434ee4}
+
+\item 
+\#define {\bfseries M}~7\hypertarget{grille_8c_a52037c938e3c1b126c6277da5ca689d0}{}\label{grille_8c_a52037c938e3c1b126c6277da5ca689d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{grille_8c_a2a7a61f5c76a056d79195ecd83ee5a34}{init\+\_\+matrice} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille_8c_a2a7a61f5c76a056d79195ecd83ee5a34}{}\label{grille_8c_a2a7a61f5c76a056d79195ecd83ee5a34}
+
+\begin{DoxyCompactList}\small\item\em Initialise à vide la grille du Puissance 4. \end{DoxyCompactList}\item 
+void \hyperlink{grille_8c_ac941b3c71b60fed563ffd2f9cc43a5be}{afficher\+\_\+matrice} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille_8c_ac941b3c71b60fed563ffd2f9cc43a5be}{}\label{grille_8c_ac941b3c71b60fed563ffd2f9cc43a5be}
+
+\begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4 du jeu en cours. \end{DoxyCompactList}\item 
+int \hyperlink{grille_8c_ac328919dd5debd46e163f09d9c0ff876}{choix\+\_\+ligne} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)\hypertarget{grille_8c_ac328919dd5debd46e163f09d9c0ff876}{}\label{grille_8c_ac328919dd5debd46e163f09d9c0ff876}
+
+\begin{DoxyCompactList}\small\item\em Retourne la bonne ligne pour placer le pion. \end{DoxyCompactList}\item 
+void \hyperlink{grille_8c_aa786481e937edf1c4fe967bba348a6f2}{placer\+\_\+pions} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne, int ligne, int num\+\_\+joueur)\hypertarget{grille_8c_aa786481e937edf1c4fe967bba348a6f2}{}\label{grille_8c_aa786481e937edf1c4fe967bba348a6f2}
+
+\begin{DoxyCompactList}\small\item\em Place le pion du joueur à la colonne qu\textquotesingle{}il veut et à la bonne ligne. \end{DoxyCompactList}\item 
+int \hyperlink{grille_8c_aff6c2bf569aafbe124db9c66d23d7e5f}{gagne} (int grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille_8c_aff6c2bf569aafbe124db9c66d23d7e5f}{}\label{grille_8c_aff6c2bf569aafbe124db9c66d23d7e5f}
+
+\begin{DoxyCompactList}\small\item\em Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Affiche la grille, place les pions et détermine le gagnant. 
+
+\begin{DoxyAuthor}{Auteur}
+Benjamin, Julien, Arthur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Novembre 2016 
+\end{DoxyDate}

@@ -3,7 +3,7 @@
 #define L 20
 
 /**
-*\file new_fonctions.c
+*\file new_fonctions.h
 *\brief Prototypes des fonctions utilisées
 *\author Benjamin, Julien, Arthur
 *\version 1.0
@@ -18,10 +18,15 @@
 */
 
 
-typedef enum{vide,creuse,pleine,bloquante}t_type;
+/**
+Pour le Puissance 4++, une pièce peut être soit creuse, pleine ou bloquante.
+*/   
+typedef enum{vide /**< Pas de pièce*/,creuse /**< Pièce creuse*/,pleine /**< Pièce pleine*/,bloquante /**< Pièce bloquante*/}t_type;
 
-
-typedef struct{int valeur_pion1; t_type type1;int valeur_pion2; t_type type2;}t_piece;
+/**
+Il peut y avoir 2 pièces dans la même case, on définit donc à quel joueur appartiennent les pièces ainsi que leur type.
+*/
+typedef struct{int valeur_pion1 ;/**< Numéro du joueur de la première pièce*/ t_type type1 ;/**< type de la première pièce*/int valeur_pion2 ;/**< Numéro du joueur de la deuxième pièce*/ t_type type2 ;/**< type de la deuxième pièce*/}t_piece;
 
 int menu();
 

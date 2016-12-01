@@ -1,0 +1,156 @@
+\hypertarget{new__fonctions_8h}{}\section{Référence du fichier include/new\+\_\+fonctions.h}
+\label{new__fonctions_8h}\index{include/new\+\_\+fonctions.\+h@{include/new\+\_\+fonctions.\+h}}
+
+
+Prototypes des fonctions utilisées.  
+
+
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__piece}{t\+\_\+piece}
+\begin{DoxyCompactList}\small\item\em Structure pour définir un pion. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries N}~6\hypertarget{new__fonctions_8h_a0240ac851181b84ac374872dc5434ee4}{}\label{new__fonctions_8h_a0240ac851181b84ac374872dc5434ee4}
+
+\item 
+\#define {\bfseries M}~7\hypertarget{new__fonctions_8h_a52037c938e3c1b126c6277da5ca689d0}{}\label{new__fonctions_8h_a52037c938e3c1b126c6277da5ca689d0}
+
+\item 
+\#define {\bfseries L}~20\hypertarget{new__fonctions_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}{}\label{new__fonctions_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}
+
+\end{DoxyCompactItemize}
+\subsection*{Énumérations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70}{t\+\_\+type} \{ \hyperlink{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70af9379cac33a48e7d53e1728bdaec879d}{vide}, 
+\hyperlink{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70ae707fec41e547eff1e748cd39f2a0cad}{creuse}, 
+\hyperlink{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70a8d26893a6da7dd604dd7053135466b31}{pleine}, 
+\hyperlink{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70a717cf6206160be1447aa5dd14437e12e}{bloquante}
+ \}\begin{DoxyCompactList}\small\item\em type de la pièce \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{new__fonctions_8h_ae83fcdbeb2b6757fc741ae953b633ee1}{menu} ()\hypertarget{new__fonctions_8h_ae83fcdbeb2b6757fc741ae953b633ee1}{}\label{new__fonctions_8h_ae83fcdbeb2b6757fc741ae953b633ee1}
+
+\begin{DoxyCompactList}\small\item\em Menu pour commencer la partie. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a2a7a61f5c76a056d79195ecd83ee5a34}{init\+\_\+matrice} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_a2a7a61f5c76a056d79195ecd83ee5a34}{}\label{new__fonctions_8h_a2a7a61f5c76a056d79195ecd83ee5a34}
+
+\begin{DoxyCompactList}\small\item\em Initialise à vide la grille du Puissance 4. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_ac941b3c71b60fed563ffd2f9cc43a5be}{afficher\+\_\+matrice} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_ac941b3c71b60fed563ffd2f9cc43a5be}{}\label{new__fonctions_8h_ac941b3c71b60fed563ffd2f9cc43a5be}
+
+\begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4 du jeu en cours. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_ac328919dd5debd46e163f09d9c0ff876}{choix\+\_\+ligne} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)\hypertarget{new__fonctions_8h_ac328919dd5debd46e163f09d9c0ff876}{}\label{new__fonctions_8h_ac328919dd5debd46e163f09d9c0ff876}
+
+\begin{DoxyCompactList}\small\item\em Retourne la bonne ligne pour placer le pion. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_aa786481e937edf1c4fe967bba348a6f2}{placer\+\_\+pions} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne, int ligne, int num\+\_\+joueur)\hypertarget{new__fonctions_8h_aa786481e937edf1c4fe967bba348a6f2}{}\label{new__fonctions_8h_aa786481e937edf1c4fe967bba348a6f2}
+
+\begin{DoxyCompactList}\small\item\em Place le pion du joueur à la colonne qu\textquotesingle{}il veut et à la bonne ligne. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_aff6c2bf569aafbe124db9c66d23d7e5f}{gagne} (int grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_aff6c2bf569aafbe124db9c66d23d7e5f}{}\label{new__fonctions_8h_aff6c2bf569aafbe124db9c66d23d7e5f}
+
+\begin{DoxyCompactList}\small\item\em Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a64ccdf150731cbfb3af468c0f487a0f7}{affich\+\_\+result} (int grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, char joueur1\mbox{[}L\mbox{]}, char joueur2\mbox{[}L\mbox{]}, int tour)\hypertarget{new__fonctions_8h_a64ccdf150731cbfb3af468c0f487a0f7}{}\label{new__fonctions_8h_a64ccdf150731cbfb3af468c0f487a0f7}
+
+\begin{DoxyCompactList}\small\item\em Affichage du resultat de la partie. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_acaa546d4c4087e0f04a22323d7486e32}{pseudo\+\_\+classique} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]})\hypertarget{new__fonctions_8h_acaa546d4c4087e0f04a22323d7486e32}{}\label{new__fonctions_8h_acaa546d4c4087e0f04a22323d7486e32}
+
+\begin{DoxyCompactList}\small\item\em Demande les pseudos des joueurs. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a1cc3cc1965b4b09e443e0664d0ea70dc}{enregistrement\+\_\+score\+\_\+classique} (char joueur\mbox{[}L\mbox{]}, int nb\+\_\+coups)\hypertarget{new__fonctions_8h_a1cc3cc1965b4b09e443e0664d0ea70dc}{}\label{new__fonctions_8h_a1cc3cc1965b4b09e443e0664d0ea70dc}
+
+\begin{DoxyCompactList}\small\item\em Enregistrement du score du gagnant. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a77a05a3780f0092e667f114584124155}{puissance\+\_\+classique} ()\hypertarget{new__fonctions_8h_a77a05a3780f0092e667f114584124155}{}\label{new__fonctions_8h_a77a05a3780f0092e667f114584124155}
+
+\begin{DoxyCompactList}\small\item\em Construction du Puissance 4 classique. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_aaf7c47a849a327b7fbdbd49703caf145}{fin\+\_\+jeux} ()\hypertarget{new__fonctions_8h_aaf7c47a849a327b7fbdbd49703caf145}{}\label{new__fonctions_8h_aaf7c47a849a327b7fbdbd49703caf145}
+
+\begin{DoxyCompactList}\small\item\em Menu pour la fin de la partie. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a1313836f9c3fda77b7abd9d5d1f5dc2a}{init\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_a1313836f9c3fda77b7abd9d5d1f5dc2a}{}\label{new__fonctions_8h_a1313836f9c3fda77b7abd9d5d1f5dc2a}
+
+\begin{DoxyCompactList}\small\item\em Initialise à vide la grille du Puissance 4++. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a65a875a236cb433561fb5869ce0717af}{afficher\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_a65a875a236cb433561fb5869ce0717af}{}\label{new__fonctions_8h_a65a875a236cb433561fb5869ce0717af}
+
+\begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4++ en cours. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_a893bbf11d6ec250c284d9dc49853ce3a}{choix\+\_\+ligne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)\hypertarget{new__fonctions_8h_a893bbf11d6ec250c284d9dc49853ce3a}{}\label{new__fonctions_8h_a893bbf11d6ec250c284d9dc49853ce3a}
+
+\begin{DoxyCompactList}\small\item\em Retourne la premiere ligne libre. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a1a7fa2b38ffbb81dd1084542b3a4e3c5}{placer\+\_\+pions\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne, int ligne, int num\+\_\+joueur, int type)\hypertarget{new__fonctions_8h_a1a7fa2b38ffbb81dd1084542b3a4e3c5}{}\label{new__fonctions_8h_a1a7fa2b38ffbb81dd1084542b3a4e3c5}
+
+\begin{DoxyCompactList}\small\item\em Place le pion dans la colonne sélectionné et sur la bonne ligne. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{gagne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{}\label{new__fonctions_8h_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}
+
+\begin{DoxyCompactList}\small\item\em Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a76241034cbb33d29399d26db374965ec}{affich\+\_\+result\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int win, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]})\hypertarget{new__fonctions_8h_a76241034cbb33d29399d26db374965ec}{}\label{new__fonctions_8h_a76241034cbb33d29399d26db374965ec}
+
+\begin{DoxyCompactList}\small\item\em Affichage du résultat. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_ab8f1843d7e0f3244bcc758e552a2e5f1}{grille\+\_\+pleine} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{new__fonctions_8h_ab8f1843d7e0f3244bcc758e552a2e5f1}{}\label{new__fonctions_8h_ab8f1843d7e0f3244bcc758e552a2e5f1}
+
+\begin{DoxyCompactList}\small\item\em Verifie si la grille est pleine ou non. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_ab7a4f6c17b423e3a393de561cc192496}{fin\+\_\+jeux\+\_\+avance} ()\hypertarget{new__fonctions_8h_ab7a4f6c17b423e3a393de561cc192496}{}\label{new__fonctions_8h_ab7a4f6c17b423e3a393de561cc192496}
+
+\begin{DoxyCompactList}\small\item\em Menu pour la fin de la partie. \end{DoxyCompactList}\item 
+int \hyperlink{new__fonctions_8h_af18ae061080400f928e5878158833089}{nb\+\_\+joueur} ()\hypertarget{new__fonctions_8h_af18ae061080400f928e5878158833089}{}\label{new__fonctions_8h_af18ae061080400f928e5878158833089}
+
+\begin{DoxyCompactList}\small\item\em Choix du nombre de joueurs. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a999a110c79ff44525dc91f450bccd894}{pseudo\+\_\+avance} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs)\hypertarget{new__fonctions_8h_a999a110c79ff44525dc91f450bccd894}{}\label{new__fonctions_8h_a999a110c79ff44525dc91f450bccd894}
+
+\begin{DoxyCompactList}\small\item\em Choix des pseudos. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a6746b00e648617c6414537b36e08217d}{puissance\+\_\+avance} ()\hypertarget{new__fonctions_8h_a6746b00e648617c6414537b36e08217d}{}\label{new__fonctions_8h_a6746b00e648617c6414537b36e08217d}
+
+\begin{DoxyCompactList}\small\item\em Construction du Puissance 4++. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a3021929c1f432b8ea1a7d20b60493bd2}{afficher\+\_\+regles} ()\hypertarget{new__fonctions_8h_a3021929c1f432b8ea1a7d20b60493bd2}{}\label{new__fonctions_8h_a3021929c1f432b8ea1a7d20b60493bd2}
+
+\begin{DoxyCompactList}\small\item\em Affiche les règles du Puissance 4++. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_ab51765589d909250c6de78fb333ae3e9}{player1} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block1, int pions, char pseudo1\mbox{[}L\mbox{]})\hypertarget{new__fonctions_8h_ab51765589d909250c6de78fb333ae3e9}{}\label{new__fonctions_8h_ab51765589d909250c6de78fb333ae3e9}
+
+\begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 1. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a851876e7c914dec633daef604c4ed800}{player2} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block2, int pions, char pseudo1\mbox{[}L\mbox{]})\hypertarget{new__fonctions_8h_a851876e7c914dec633daef604c4ed800}{}\label{new__fonctions_8h_a851876e7c914dec633daef604c4ed800}
+
+\begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 2. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a4ecbe819ea4aa981c85e248448acdf5e}{player3} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block3, int pions, char pseudo1\mbox{[}L\mbox{]})\hypertarget{new__fonctions_8h_a4ecbe819ea4aa981c85e248448acdf5e}{}\label{new__fonctions_8h_a4ecbe819ea4aa981c85e248448acdf5e}
+
+\begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 3. \end{DoxyCompactList}\item 
+void \hyperlink{new__fonctions_8h_a545b4fd5e6db3a7a79498ee168438568}{player4} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block4, int pions, char pseudo1\mbox{[}L\mbox{]})\hypertarget{new__fonctions_8h_a545b4fd5e6db3a7a79498ee168438568}{}\label{new__fonctions_8h_a545b4fd5e6db3a7a79498ee168438568}
+
+\begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 4. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Prototypes des fonctions utilisées. 
+
+\begin{DoxyAuthor}{Auteur}
+Benjamin, Julien, Arthur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Novembre 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentation du type de l\textquotesingle{}énumération}
+\index{new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}!t\+\_\+type@{t\+\_\+type}}
+\index{t\+\_\+type@{t\+\_\+type}!new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}}
+\subsubsection[{\texorpdfstring{t\+\_\+type}{t_type}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf t\+\_\+type}}\hypertarget{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70}{}\label{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70}
+
+
+type de la pièce 
+
+Pour le Puissance 4++, une pièce peut être soit creuse, pleine ou bloquante. \begin{Desc}
+\item[Valeurs énumérées]\par
+\begin{description}
+\index{vide@{vide}!new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}}\index{new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}!vide@{vide}}\item[{\em 
+vide\hypertarget{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70af9379cac33a48e7d53e1728bdaec879d}{}\label{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70af9379cac33a48e7d53e1728bdaec879d}
+}]Pas de pièce \index{creuse@{creuse}!new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}}\index{new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}!creuse@{creuse}}\item[{\em 
+creuse\hypertarget{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70ae707fec41e547eff1e748cd39f2a0cad}{}\label{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70ae707fec41e547eff1e748cd39f2a0cad}
+}]Pièce creuse \index{pleine@{pleine}!new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}}\index{new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}!pleine@{pleine}}\item[{\em 
+pleine\hypertarget{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70a8d26893a6da7dd604dd7053135466b31}{}\label{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70a8d26893a6da7dd604dd7053135466b31}
+}]Pièce pleine \index{bloquante@{bloquante}!new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}}\index{new\+\_\+fonctions.\+h@{new\+\_\+fonctions.\+h}!bloquante@{bloquante}}\item[{\em 
+bloquante\hypertarget{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70a717cf6206160be1447aa5dd14437e12e}{}\label{new__fonctions_8h_a61532cc2157d912259fdd9aa25ca6d70a717cf6206160be1447aa5dd14437e12e}
+}]Pièce bloquante \end{description}
+\end{Desc}

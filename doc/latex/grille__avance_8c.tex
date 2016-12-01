@@ -1,0 +1,60 @@
+\hypertarget{grille__avance_8c}{}\section{Référence du fichier src/grille\+\_\+avance.c}
+\label{grille__avance_8c}\index{src/grille\+\_\+avance.\+c@{src/grille\+\_\+avance.\+c}}
+
+
+Interface du jeu Puissance 4 ++.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../include/new\+\_\+fonctions.\+h\char`\"{}}\\*
+Graphe des dépendances par inclusion de grille\+\_\+avance.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{grille__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{grille__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}
+
+\item 
+\#define {\bfseries N}~6\hypertarget{grille__avance_8c_a0240ac851181b84ac374872dc5434ee4}{}\label{grille__avance_8c_a0240ac851181b84ac374872dc5434ee4}
+
+\item 
+\#define {\bfseries M}~7\hypertarget{grille__avance_8c_a52037c938e3c1b126c6277da5ca689d0}{}\label{grille__avance_8c_a52037c938e3c1b126c6277da5ca689d0}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}{init\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}{}\label{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}
+
+\begin{DoxyCompactList}\small\item\em Initialise à vide la grille du Puissance 4++. \end{DoxyCompactList}\item 
+int \hyperlink{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{grille\+\_\+pleine} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{}\label{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}
+
+\begin{DoxyCompactList}\small\item\em Verifie si la grille est pleine ou non. \end{DoxyCompactList}\item 
+void \hyperlink{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}{afficher\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}{}\label{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}
+
+\begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4++ en cours. \end{DoxyCompactList}\item 
+int \hyperlink{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}{choix\+\_\+ligne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)\hypertarget{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}{}\label{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}
+
+\begin{DoxyCompactList}\small\item\em Retourne la premiere ligne libre. \end{DoxyCompactList}\item 
+void \hyperlink{grille__avance_8c_a1a7fa2b38ffbb81dd1084542b3a4e3c5}{placer\+\_\+pions\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne, int ligne, int num\+\_\+joueur, int type)\hypertarget{grille__avance_8c_a1a7fa2b38ffbb81dd1084542b3a4e3c5}{}\label{grille__avance_8c_a1a7fa2b38ffbb81dd1084542b3a4e3c5}
+
+\begin{DoxyCompactList}\small\item\em Place le pion dans la colonne sélectionné et sur la bonne ligne. \end{DoxyCompactList}\item 
+int \hyperlink{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{gagne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{}\label{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}
+
+\begin{DoxyCompactList}\small\item\em Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Interface du jeu Puissance 4 ++. 
+
+\begin{DoxyAuthor}{Auteur}
+Benjamin, Julien, Arthur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Novembre 2016 
+\end{DoxyDate}
