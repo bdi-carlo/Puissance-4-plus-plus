@@ -46,6 +46,7 @@ int IA (int grille_IA[ligne][colonne])) {
 	int meilleur_coup = 0 ;
 	int nb = 1 ;
 	int lgn = 0, col ;
+	int max = 0 ;
 	
 	for(col = 0 ; col < 7 ; col ++ ) {
 		if(grille_IA[0][col] = 0) {
@@ -69,6 +70,9 @@ int IA (int grille_IA[ligne][colonne])) {
 					}
 				}
 		}
+		if(nb > max) {
+			
+			max = nb ;
 		nb = 0 ;
 	}
 }
