@@ -140,7 +140,7 @@ int begin(){
 	printf("\n ------------------------------------- ");
 	printf("\n|    		  Début          	|");
 	printf("\n|					|");
-	printf("\n|  1 - Commenecer une nouvelle partie	|");
+	printf("\n|  1 - Commencer une nouvelle partie	|");
 	printf("\n|  2 - Charger la partie precedente	|");
 	printf("\n|					|");
 	printf("\n ------------------------------------- ");

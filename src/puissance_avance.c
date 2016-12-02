@@ -39,7 +39,7 @@
 
 */
 
-void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
+int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour){
 	int num_joueur, ligne, colonne, test;
 	unsigned int type;
 
@@ -47,17 +47,26 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 	couleur("31");
 	printf("		  %s  ",pseudo1);
 	couleur("0");
+	printf("\nRentrer 10 si vous voulez quitter maintenant.\n");
+	
 	//Demande où il veut jouer et avec quel type de piece
-	do{	
+	do{
 			
 		do{
 			
 			printf("\nColonne: ");
 			scanf("%i", &colonne);
 			printf("\n");
-			if(colonne < 1 || colonne > 7)
+			if((colonne < 1 || colonne > 7) && colonne != 10)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-		}while(colonne < 1 || colonne > 7);
+				
+		}while((colonne < 1 || colonne > 7) && colonne != 10);
+
+		if(colonne == 10){
+			if(quitter() == 2)
+				save_quit_avance(grille, tour, pseudo1, pseudo2, pseudo3, pseudo4, nb_joueurs);
+			return 10;
+		}
 		
 		do{
 			printf("Type: - Creuse (1) ");
@@ -104,6 +113,8 @@ void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L]){
 	//Mise à jour de la grille
 	afficher_matrice_avance(grille);
 		couleur("0");
+
+	return 0;
 }
 
 void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
@@ -350,28 +361,51 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 
 void puissance_avance(){
 	t_piece grille[N][M];
-	int colonne, ligne, pions, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4, test;
+	int colonne, ligne, pions, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4, test, menutest, quit, party ,debut;
 	char joueur1[L],joueur2[L],joueur3[L],joueur4[L];
 
 /****************************** INITIALISATION ****************************************/
+	menutest = 0;
+	party = 0;
+	debut = 0;
+	
+	//Demande aux joueurs si ils veulent reprendre une partie en cours ou non
+	debut = begin();
+	if(debut == 2){
+		party = load_avance(grille, &tour, joueur1, joueur2, joueur3, joueur4, &nb_joueurs);
+		if(party == 0)	
+			pions = tour;
+	}
 
-	nb_joueurs = nb_joueur() ;
-	if(nb_joueurs == 1)
-		menu() ;
+	if(debut == 1 || (debut == 2 && party == 1)){
+		nb_joueurs = nb_joueur() ;
+		if(nb_joueurs == 1)
+			menu() ;
+	}
+		
 	else {
 
-		pseudo_avance(joueur1, joueur2, joueur3, joueur4, nb_joueurs) ;
-		afficher_regles();
-		//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
-		init_matrice_avance(grille);
+		if(debut == 1 || (debut == 2 && party == 1)){
+			//Initialisation des pseudos
+			pseudo_avance(joueur1, joueur2, joueur3, joueur4, nb_joueurs);
+
+			//Affichage des regles
+			afficher_regles();
+			
+			//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
+			init_matrice_avance(grille);
+
+			pions = 1;
+			tour = 1;
+		}
+		
 		system("clear");
 		printf("\n+---------------------------------------+");
-		printf("\n|	       TOUR NUMERO 1		|");
+		printf("\n|	       TOUR NUMERO %i		|", pions);
 		afficher_matrice_avance(grille);
 
 		win = 0;
-		pions = 1;
-		tour = 1;
+		quit = 0;
 		nb_block1 = 2;
 		nb_block2 = 2;
 		nb_block3 = 2 ; 
@@ -385,7 +419,10 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions, joueur1);
+				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour) == 10){
+					quit = 1;
+					break;
+				};
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -413,7 +450,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions,joueur1);
+				player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -450,7 +487,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions, joueur1);
+				player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour);
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -491,6 +528,7 @@ void puissance_avance(){
 
 /******************** Affichage du résultat de la partie ******************************/
 
-		affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
+		if(quit == 0)
+			affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
 	}
 }

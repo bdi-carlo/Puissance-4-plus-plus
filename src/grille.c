@@ -64,7 +64,7 @@ int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L
 
 	for(i = 0; i < N; i++){
 		for(j = 0; j < M; j++){
-			fscanf(fichier, "%i ", &matrice[i][j]);
+			fscanf(fichier, "%i", &matrice[i][j]);
 		}
 	}
 	fscanf(fichier, "%i", &(*tour));

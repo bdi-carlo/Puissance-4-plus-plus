@@ -144,59 +144,56 @@ void puissance_classique(){
 				save_quit_classique(grille, tour, joueur1, joueur2);
 			break;
 		}
-
-		else{
 		
-			//Affichage du numéro du tour
-			system("clear");
-			printf("\n ---------------------------------------");
-			printf("\n|	       TOUR NUMERO %i		|", pions);
+		//Affichage du numéro du tour
+		system("clear");
+		printf("\n ---------------------------------------");
+		printf("\n|	       TOUR NUMERO %i		|", pions);
 
-			//Mise à jour de la grille
-			afficher_matrice(grille);
+		//Mise à jour de la grille
+		afficher_matrice(grille);
 		
-			//Test pour savoir si le joueur à gagné
-			if(gagne(grille) == 1)break;
+		//Test pour savoir si le joueur à gagné
+		if(gagne(grille) == 1)break;
 
 /****************************** JOUEUR 2 JOUE *****************************************/
 
-			num_joueur = 2;
+		num_joueur = 2;
 			
-			couleur("34");
-			printf("		  %s  ",joueur2);
-			couleur("0");
+		couleur("34");
+		printf("		  %s  ",joueur2);
+		couleur("0");
 			
-			//Demande où il veut jouer
-			do{			
-				printf("\nColonne: ");
-				scanf("%i", &colonne);
+		//Demande où il veut jouer
+		do{			
+			printf("\nColonne: ");
+			scanf("%i", &colonne);
 			
-				if(colonne < 1 || colonne > 7)
-					printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
+			if(colonne < 1 || colonne > 7)
+				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
 			
-				else{
-					//Placement du pion sur la grille si et seulement si la colonne le permet
-					ligne = choix_ligne(grille, colonne);
-					if(ligne < 0)
-						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-					else
-						placer_pions(grille, colonne, ligne, num_joueur);
-				}
-			}while(colonne < 1 || colonne > 7 || ligne < 0);
+			else{
+				//Placement du pion sur la grille si et seulement si la colonne le permet
+				ligne = choix_ligne(grille, colonne);
+				if(ligne < 0)
+					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				else
+					placer_pions(grille, colonne, ligne, num_joueur);
+			}
+		}while(colonne < 1 || colonne > 7 || ligne < 0);
 
-			//Affichage du numéro du tour
-			system("clear");
-			pions ++;
-			printf("\n ---------------------------------------");
-			printf("\n|	       TOUR NUMERO %i		|",pions);
+		//Affichage du numéro du tour
+		system("clear");
+		pions ++;
+		printf("\n ---------------------------------------");
+		printf("\n|	       TOUR NUMERO %i		|",pions);
 
-			//Mise à jour de la grille
-			afficher_matrice(grille);
+		//Mise à jour de la grille
+		afficher_matrice(grille);
 
-			//Test pour savoir si le joueur à gagné
-			if(gagne(grille) == 2)break;
-			tour++;
-		}
+		//Test pour savoir si le joueur à gagné
+		if(gagne(grille) == 2)break;
+		tour++;
 	}
 
 /******************** Affichage du résultat de la partie ******************************/
