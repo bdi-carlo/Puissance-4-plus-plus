@@ -32,14 +32,14 @@
 int fin_jeux_avance(){
 	int choix;
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	        FIN             |");
 	printf("\n|				|");
 	printf("\n| 	 1 - Rejouer		|");
 	printf("\n|  	 2 - Retour au menu	|");
 	printf("\n|  	 3 - Quitter		|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 
 	do{		
 		printf("\n>> Votre choix : ");
@@ -58,7 +58,7 @@ int fin_jeux_avance(){
 int nb_joueur(){
 	int choix;
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	  PUISSANCE 4 avance    |");
 	printf("\n|	    Retour Menu (1)     |");
 	printf("\n|				|");
@@ -67,7 +67,7 @@ int nb_joueur(){
 	printf("\n|  	      3 joueurs		|");
 	printf("\n|  	      4 joueurs		|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 
 	do{
 		printf("\n>>Votre choix : ");
