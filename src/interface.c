@@ -185,14 +185,18 @@ int begin(){
 	printf("\n|					|");
 	printf("\n|  1 - Commencer une nouvelle partie	|");
 	printf("\n|  2 - Charger la partie precedente	|");
+	printf("\n|  3 - Retour				|");
 	printf("\n|					|");
-	printf("\n ------------------------------------- ");
+	printf("\n+---------------------------------------+ ");
 
 	do{
 		printf("\n>> Votre choix : ");
 		scanf("%d",&choix);
+		
+		if(choix == 3)
+			menu();
 
-		if(choix < 1 || choix > 2)
+		else if(choix < 1 || choix > 2)
 			printf("\nErreur: votre choix doit etre 1 ou 2\n");
 	}while(choix < 1 || choix > 2);
 	
