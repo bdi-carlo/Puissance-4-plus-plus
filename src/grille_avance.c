@@ -68,7 +68,7 @@ int grille_pleine(t_piece matrice[N][M]){
 	return 1;
 }
 
-void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs){
+void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int nb_block1, int nb_block2, int nb_block3, int nb_block4){
 	int i,j;
 	FILE * fichier;
 
@@ -87,20 +87,24 @@ void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pse
 
 	fprintf(fichier, "%s ", pseudo1);
 	fprintf(fichier, "%s ", pseudo2);
+	fprintf(fichier, "%i ", nb_block1);
+	fprintf(fichier, "%i ", nb_block2);
 		
 	if(nb_joueurs == 3 || nb_joueurs == 4){
 		fprintf(fichier, "%s ", pseudo3);
+		fprintf(fichier, "%i ", nb_block3);
 	}
 	
 	if(nb_joueurs == 4){
 		fprintf(fichier, "%s ", pseudo4);
+		fprintf(fichier, "%i ", nb_block4);
 	}
 	
 
 	fclose(fichier);
 }
 
-int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs){
+int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4){
 	int i,j;
 	FILE * fichier;
 
@@ -122,13 +126,17 @@ int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[
 
 	fscanf(fichier, "%s ", pseudo1);
 	fscanf(fichier, "%s ", pseudo2);
+	fscanf(fichier, "%i ", &(*nb_block1));
+	fscanf(fichier, "%i ", &(*nb_block2));
 		
 	if(*nb_joueurs == 3 || *nb_joueurs == 4){
 		fscanf(fichier, "%s ", pseudo3);
+		fscanf(fichier, "%i ", &(*nb_block3));
 	}
 	
 	if(*nb_joueurs == 4){
 		fscanf(fichier, "%s ", pseudo4);
+		fscanf(fichier, "%i ", &(*nb_block4));
 	}
 	
 	fclose(fichier);

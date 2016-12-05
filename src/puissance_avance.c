@@ -39,7 +39,7 @@
 
 */
 
-int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour){
+int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4){
 	int num_joueur, ligne, colonne, test;
 	unsigned int type;
 
@@ -64,7 +64,7 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 
 		if(colonne == 10){
 			if(quitter() == 2)
-				save_quit_avance(grille, tour, pseudo1, pseudo2, pseudo3, pseudo4, nb_joueurs);
+				save_quit_avance(grille, tour, pseudo1, pseudo2, pseudo3, pseudo4, nb_joueurs, *nb_block1, nb_block2, nb_block3, nb_block4);
 			return 10;
 		}
 		
@@ -86,23 +86,22 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 		if(type == 3 && *nb_block1 > 0){
 			(*nb_block1)--;
 			printf("\n%s: Reste %i piece bloquante a joue.", pseudo1, *nb_block1);
-		}		
-			
-		else{
-			//Placement du pion sur la grille si et seulement si la colonne le permet
-			test = 0;
-			ligne = choix_ligne_avance(grille, colonne);
-			if(ligne < 0){
-				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-					test = 1;
-				}
-				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		}			
+
+		//Placement du pion sur la grille
+		test = 0;
+		ligne = choix_ligne_avance(grille, colonne);
+		if(ligne < 0){
+			if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+				printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				test = 1;
 			}
-			else
+			else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
 				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
 		}
+		else
+			placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		
 	}while(test == 1);
 		
 	//Affichage du numéro du tour
@@ -154,26 +153,22 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 			(*nb_block2)--;
 			printf("\n%s: Reste %i piece bloquante a joue.", pseudo2, *nb_block2);
 		}
-			
-		if(colonne < 1 || colonne > 7)
-			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-		else{
-			//Placement du pion sur la grille si et seulement si la colonne le permet
-			test = 0;
-			ligne = choix_ligne_avance(grille, colonne);
-			if(ligne < 0){
-				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-					test = 1;
-				}
-				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+		
+		//Placement du pion sur la grille si et seulement si la colonne le permet
+		test = 0;
+		ligne = choix_ligne_avance(grille, colonne);
+		if(ligne < 0){
+			if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+				printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				test = 1;
 			}
-			else
+			else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
 				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
 		}
-	}while(colonne < 1 || colonne > 7 || test == 1);
+		else
+			placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+			
+	}while(test == 1);
 		
 	//Affichage du numéro du tour
 	system("clear");
@@ -222,26 +217,22 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 			(*nb_block3)--;
 			printf("\n%s: Reste %i piece bloquante a joue.", pseudo3, *nb_block3);
 		}
-			
-		if(colonne < 1 || colonne > 7)
-			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-		else{
-			//Placement du pion sur la grille si et seulement si la colonne le permet
-			test = 0;
-			ligne = choix_ligne_avance(grille, colonne);
-			if(ligne < 0){
-				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-					test = 1;
-				}
-				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+
+		//Placement du pion sur la grille si et seulement si la colonne le permet
+		test = 0;
+		ligne = choix_ligne_avance(grille, colonne);
+		if(ligne < 0){
+			if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+				printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				test = 1;
 			}
-			else
+			else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
 				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
 		}
-	}while(colonne < 1 || colonne > 7 || test == 1);
+		else
+			placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+			
+	}while(test == 1);
 		
 	//Affichage du numéro du tour
 	system("clear");
@@ -290,26 +281,22 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 			(*nb_block4)--;
 			printf("\n%s: Reste %i piece bloquante a joue.", pseudo4, *nb_block4);
 		}
-			
-		if(colonne < 1 || colonne > 7)
-			printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-		else{
-			//Placement du pion sur la grille si et seulement si la colonne le permet
-			test = 0;
-			ligne = choix_ligne_avance(grille, colonne);
-			if(ligne < 0){
-				if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
-					printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-					test = 1;
-				}
-				else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
-					placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+
+		//Placement du pion sur la grille si et seulement si la colonne le permet
+		test = 0;
+		ligne = choix_ligne_avance(grille, colonne);
+		if(ligne < 0){
+			if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
+				printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+				test = 1;
 			}
-			else
+			else if(grille[ligne+1][colonne-1].type1 != type && grille[ligne+1][colonne-1].valeur_pion2 == 0)
 				placer_pions_avance(grille, colonne, ligne, num_joueur, type);
 		}
-	}while(colonne < 1 || colonne > 7 || test == 1);
+		else
+			placer_pions_avance(grille, colonne, ligne, num_joueur, type);
+
+	}while(test == 1);
 		
 	//Affichage du numéro du tour
 	system("clear");
@@ -372,7 +359,7 @@ void puissance_avance(){
 	//Demande aux joueurs si ils veulent reprendre une partie en cours ou non
 	debut = begin();
 	if(debut == 2){
-		party = load_avance(grille, &tour, joueur1, joueur2, joueur3, joueur4, &nb_joueurs);
+		party = load_avance(grille, &tour, joueur1, joueur2, joueur3, joueur4, &nb_joueurs, &nb_block1, &nb_block2, &nb_block3, &nb_block4);
 		if(party == 0)	
 			pions = tour;
 	}
@@ -399,6 +386,10 @@ void puissance_avance(){
 
 			pions = 1;
 			tour = 1;
+			nb_block1 = 2;
+			nb_block2 = 2;
+			nb_block3 = 2 ; 
+			nb_block4 = 2 ;
 		}
 		
 		system("clear");
@@ -408,10 +399,6 @@ void puissance_avance(){
 
 		win = 0;
 		quit = 0;
-		nb_block1 = 2;
-		nb_block2 = 2;
-		nb_block3 = 2 ; 
-		nb_block4 = 2 ;
 
 /****************************** 2 JOUEURS ********************************************/
 
@@ -421,7 +408,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour) == 10){
+				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
 					quit = 1;
 					break;
 				};
@@ -452,7 +439,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour) == 10){
+				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
 					quit = 1;
 					break;
 				};
@@ -492,7 +479,7 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour) == 10){
+				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
 					quit = 1;
 					break;
 				};
