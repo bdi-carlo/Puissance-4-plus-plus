@@ -379,11 +379,13 @@ void puissance_avance(){
 
 	if(debut == 1 || (debut == 2 && party == 1)){
 		nb_joueurs = nb_joueur() ;
-		if(nb_joueurs == 1)
-			menu() ;
+		if(nb_joueurs == 1){
+			menu();
+			menutest = 1;
+		}
 	}
 		
-	else {
+	if(menutest != 1){
 
 		if(debut == 1 || (debut == 2 && party == 1)){
 			//Initialisation des pseudos
@@ -450,7 +452,10 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour);
+				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour) == 10){
+					quit = 1;
+					break;
+				};
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
@@ -487,7 +492,10 @@ void puissance_avance(){
 /****************************** joueur 1 joue *****************************************/
 
 				//Joueur 1 joue
-				player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour);
+				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour) == 10){
+					quit = 1;
+					break;
+				};
 
 				//Test pour savoir si le joueur à gagné
 				win = gagne_avance(grille);
