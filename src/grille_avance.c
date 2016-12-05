@@ -4,8 +4,6 @@
 #include "../include/new_fonctions.h"
 
 #define couleur(param) printf("\033[%sm",param)
-#define N 6
-#define M 7
 
 /**
 *\file grille_avance.c
@@ -89,12 +87,14 @@ void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pse
 	fprintf(fichier, "%s ", pseudo2);
 	fprintf(fichier, "%i ", nb_block1);
 	fprintf(fichier, "%i ", nb_block2);
-		
+
+	//Si on joue a 3 ou 4 joueurs on enregistre le pseudo 3 et le nombre de piece boquante du joueur 3
 	if(nb_joueurs == 3 || nb_joueurs == 4){
 		fprintf(fichier, "%s ", pseudo3);
 		fprintf(fichier, "%i ", nb_block3);
 	}
-	
+
+	//Si on joue 4 joueurs on enregistre le pseudo 4 et le nombre de piece boquante du joueur 4	
 	if(nb_joueurs == 4){
 		fprintf(fichier, "%s ", pseudo4);
 		fprintf(fichier, "%i ", nb_block4);
@@ -128,12 +128,15 @@ int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[
 	fscanf(fichier, "%s ", pseudo2);
 	fscanf(fichier, "%i ", &(*nb_block1));
 	fscanf(fichier, "%i ", &(*nb_block2));
-		
+
+
+	//Si la partie comptais 3 ou 4 joueurs on recupere le pseudo du joueur 3 ainsi que son nombre de piece bloquante
 	if(*nb_joueurs == 3 || *nb_joueurs == 4){
 		fscanf(fichier, "%s ", pseudo3);
 		fscanf(fichier, "%i ", &(*nb_block3));
 	}
-	
+
+	//Si la partie comptais 4 joueurs on recupere le pseudo du joueur 4 ainsi que son nombre de piece bloquante
 	if(*nb_joueurs == 4){
 		fscanf(fichier, "%s ", pseudo4);
 		fscanf(fichier, "%i ", &(*nb_block4));

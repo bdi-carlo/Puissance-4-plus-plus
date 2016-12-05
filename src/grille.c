@@ -5,7 +5,7 @@
 #define couleur(param) printf("\033[%sm",param)
 #define N 6
 #define M 7
-#define L 20
+#define L 7
 
 /**
 *\file grille.c

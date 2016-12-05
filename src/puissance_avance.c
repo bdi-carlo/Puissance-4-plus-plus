@@ -4,9 +4,6 @@
 #include "../include/new_fonctions.h"
 
 #define couleur(param) printf("\033[%sm",param)
-#define N 6
-#define M 7
-#define L 20
 
 /**
 
@@ -44,6 +41,8 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 	unsigned int type;
 
 	num_joueur = 1;
+
+	//Affichage du pseudo
 	couleur("31");
 	printf("		  %s  ",pseudo1);
 	couleur("0");
@@ -51,9 +50,9 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 	
 	//Demande où il veut jouer et avec quel type de piece
 	do{
-			
+
+		//Demande la colonne ou il veut jouer
 		do{
-			
 			printf("\nColonne: ");
 			scanf("%i", &colonne);
 			printf("\n");
@@ -62,12 +61,14 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 				
 		}while((colonne < 1 || colonne > 7) && colonne != 10);
 
+		//Le joueur choisi de quitter la partie, il peut sauvegarder ou non, puis on retourne 10
 		if(colonne == 10){
 			if(quitter() == 2)
 				save_quit_avance(grille, tour, pseudo1, pseudo2, pseudo3, pseudo4, nb_joueurs, *nb_block1, nb_block2, nb_block3, nb_block4);
 			return 10;
 		}
-		
+
+		//Choix du type de la piece
 		do{
 			printf("Type: - Creuse (1) ");
 			printf("\n      - Pleine (2) ");
@@ -78,6 +79,7 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 			//Verification du nombre de piece bloquante
 			if(type == 3 && *nb_block1 == 0)
 					printf("\n%s n'a plus de piece bloquante.\n", pseudo1);
+			//Verifie si le choix est valide
 			if(type < 1 || type > 3)
 				printf("Erreur: entrez un type de piece entre 1 et 3 compris: \n");
 		}while(type < 1 || type > 3 || (type == 3 && *nb_block1 == 0));
@@ -88,10 +90,13 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 			printf("\n%s: Reste %i piece bloquante a joue.", pseudo1, *nb_block1);
 		}			
 
-		//Placement du pion sur la grille
+		//Placement du pion sur la grille, on redemande les etapes precedentes si la colonne est pleine
 		test = 0;
 		ligne = choix_ligne_avance(grille, colonne);
+
+		//Dans le cas ou la premiere ligne vide est au dessus de la grille on regarde si la colonne contient des solutions ou non
 		if(ligne < 0){
+			//Verifie si la colonne est pleine
 			if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
 				printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 				test = 1;
@@ -111,7 +116,7 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 
 	//Mise à jour de la grille
 	afficher_matrice_avance(grille);
-		couleur("0");
+	couleur("0");
 
 	return 0;
 }
@@ -121,11 +126,16 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 	unsigned int type;
 
 	num_joueur = 2;
+	
+	//Affichage du pseudo
 	couleur("34");
 	printf("		  %s  ",pseudo2);
 	couleur("0");
+	
 	//Demande où il veut jouer et avec quel type de piece
-	do{			
+	do{		
+
+		//Demande la colonne ou il veut jouer	
 		do{
 			
 			printf("\nColonne: ");
@@ -134,6 +144,8 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 			if(colonne < 1 || colonne > 7)
 				printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
 		}while(colonne < 1 || colonne > 7);
+
+		//Choix du type de la piece
 		do{
 			printf("Type: - Creuse (1) ");
 			printf("\n      - Pleine (2) ");
@@ -144,6 +156,7 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 			//Verification du nombre de piece bloquante
 			if(type == 3 && *nb_block2 == 0)
 					printf("\n%s n'a plus de piece bloquante.\n", pseudo2);
+			//Verifie si le choix est valide
 			if(type < 1 || type > 3)
 				printf("Erreur: entrez un type de piece entre 1 et 3 compris: \n");
 		}while(type < 1 || type > 3 || (type == 3 && *nb_block2 == 0));
@@ -157,7 +170,10 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 		//Placement du pion sur la grille si et seulement si la colonne le permet
 		test = 0;
 		ligne = choix_ligne_avance(grille, colonne);
+
+		//Dans le cas ou la premiere ligne vide est au dessus de la grille on regarde si la colonne contient des solutions ou non
 		if(ligne < 0){
+			//Verifie si la colonne est pleine
 			if(grille[ligne+1][colonne-1].type1 == bloquante || type == bloquante || grille[ligne+1][colonne-1].type1 == type || grille[ligne+1][colonne-1].valeur_pion2 != 0){
 				printf("Erreur: colonne pleine veuillez en choisir une autre: ");
 				test = 1;
@@ -308,6 +324,14 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 	couleur("0");
 }
 
+void enregistrement_score_avance(char joueur[L], int nb_coups){
+	FILE * fichier;
+
+	fichier = fopen("best_avance.txt", "a");
+	fprintf(fichier, "\n%s	%i", joueur, nb_coups);
+	fclose(fichier);
+}
+
 void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L]){
 	system("clear");
 	
@@ -324,6 +348,12 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 		printf("\n|	        %s A GAGNE 		|", pseudo1);
 		
 		afficher_matrice_avance(grille);
+
+		//Enregistrement du score du joueur
+		enregistrement_score_avance(pseudo1, tour);
+		
+		//On supprime la partie enregistree car on a fini la partie en cours
+		remove ("partie_avance.txt");
 	}
 
 	else if(win == 2){
@@ -331,18 +361,36 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 		printf("\n|	        %s A GAGNE 		|", pseudo2);
 		
 		afficher_matrice_avance(grille);
+
+		//Enregistrement du score du joueur
+		enregistrement_score_avance(pseudo2, tour);
+		
+		//On supprime la partie enregistree car on a fini la partie en cours
+		remove ("partie_avance.txt");
 	}
 	else if(win == 3){
 		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|", pseudo3);
 		
 		afficher_matrice_avance(grille);
+
+		//Enregistrement du score du joueur
+		enregistrement_score_avance(pseudo3, tour);
+		
+		//On supprime la partie enregistree car on a fini la partie en cours
+		remove ("partie_avance.txt");
 	}	
 	else if(win == 4){
 		printf("\n+---------------------------------------+");
 		printf("\n|	        %s A GAGNE 		|", pseudo4);
 		
 		afficher_matrice_avance(grille);
+
+		//Enregistrement du score du joueur
+		enregistrement_score_avance(pseudo4, tour);
+		
+		//On supprime la partie enregistree car on a fini la partie en cours
+		remove ("partie_avance.txt");
 	}
 }
 
@@ -359,11 +407,14 @@ void puissance_avance(){
 	//Demande aux joueurs si ils veulent reprendre une partie en cours ou non
 	debut = begin();
 	if(debut == 2){
+		//Recuperation de la partie
 		party = load_avance(grille, &tour, joueur1, joueur2, joueur3, joueur4, &nb_joueurs, &nb_block1, &nb_block2, &nb_block3, &nb_block4);
+		//Si on a bien recupere la partie on met a jour tour
 		if(party == 0)	
 			pions = tour;
 	}
 
+	//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on demande le nombre de joueur
 	if(debut == 1 || (debut == 2 && party == 1)){
 		nb_joueurs = nb_joueur() ;
 		if(nb_joueurs == 1){
@@ -371,9 +422,11 @@ void puissance_avance(){
 			menutest = 1;
 		}
 	}
-		
+
+	//Si le joueur ne voulais pas retourner au menu on peut jouer
 	if(menutest != 1){
 
+		//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on fais toutes les initialisations de bases
 		if(debut == 1 || (debut == 2 && party == 1)){
 			//Initialisation des pseudos
 			pseudo_avance(joueur1, joueur2, joueur3, joueur4, nb_joueurs);

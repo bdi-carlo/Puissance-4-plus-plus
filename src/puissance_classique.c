@@ -3,9 +3,6 @@
 #include <unistd.h>
 #include "../include/new_fonctions.h"
 
-#define N 6
-#define M 7
-#define L 20
 #define couleur(param) printf("\033[%sm",param)
 
 /**
@@ -34,7 +31,8 @@ void enregistrement_score_classique(char joueur[L], int nb_coups){
 	FILE * fichier;
 
 	fichier = fopen("best_classique.txt", "a");
-	fprintf(fichier, "\n%s	%i", joueur, nb_coups);
+	fprintf(fichier, "\n%s", joueur);
+	fprintf(fichier, " %i", nb_coups);
 	fclose(fichier);
 }
 
@@ -46,6 +44,8 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 		printf("\n|	         MATCH NUL		|");
 	
 		afficher_matrice(grille);
+		
+		//On supprime la partie enregistree car on a fini la partie en cours
 		remove ("partie_classique.txt");
 	}
 	
@@ -57,6 +57,8 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 
 		//Enregistre le score du joueur 1
 		enregistrement_score_classique(joueur1, tour);
+
+		//On supprime la partie enregistree car on a fini la partie en cours
 		remove ("partie_classique.txt");
 	}
 
@@ -68,6 +70,8 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 
 		//Enregistre le score du joueur 2
 		enregistrement_score_classique(joueur2, tour);
+		
+		//On supprime la partie enregistree car on a fini la partie en cours
 		remove ("partie_classique.txt");
 	}	
 }
@@ -196,8 +200,10 @@ void puissance_classique(){
 		tour++;
 	}
 
-/******************** Affichage du résultat de la partie ******************************/
+/***************** Affichage du résultat de la partie et des meilleurs scores *****************/
 
-	if(test == 0)
+	if(test == 0){
 		affich_result(grille, joueur1, joueur2, tour);
+		affich_score_classique();
+	}
 }

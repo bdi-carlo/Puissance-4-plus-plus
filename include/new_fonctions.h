@@ -1,6 +1,6 @@
 #define N 6
 #define M 7
-#define L 20
+#define L 7
 
 /**
 *\file new_fonctions.h
@@ -17,7 +17,6 @@
 *\brief type de la pièce
 */
 
-
 /**
 Pour le Puissance 4++, une pièce peut être soit creuse, pleine ou bloquante.
 */   
@@ -27,6 +26,8 @@ typedef enum{vide /**< Pas de pièce*/,creuse /**< Pièce creuse*/,pleine /**< P
 Il peut y avoir 2 pièces dans la même case, on définit donc à quel joueur appartiennent les pièces ainsi que leur type.
 */
 typedef struct{int valeur_pion1 ;/**< Numéro du joueur de la première pièce*/ t_type type1 ;/**< type de la première pièce*/int valeur_pion2 ;/**< Numéro du joueur de la deuxième pièce*/ t_type type2 ;/**< type de la deuxième pièce*/}t_piece;
+
+typedef struct{int score ; char pseudo[L] ;}t_score;
 
 int menu();
 
@@ -40,6 +41,7 @@ void save_quit(int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L]);
 int begin();
 int load_classique(int grille[N][M], int *tour, char pseudo1[L], char pseudo2[L]);
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour);
+void affich_score_classique();
 
 void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut);
 void enregistrement_score_classique(char joueur[L], int nb_coups);
@@ -60,6 +62,7 @@ void puissance_avance();
 void afficher_regles();
 void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int nb_block1, int nb_block2, int nb_block3, int nb_block4);
 int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4);
+void enregistrement_score_avance(char joueur[L], int nb_coups);
 
 int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4);
 void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo1[L]);
