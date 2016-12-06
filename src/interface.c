@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
 
 #define couleur(param) printf("\033[%sm",param)
 #define T 100
@@ -59,7 +59,7 @@ int menu(){
 }
 
 void affich_score_classique(){
-	int i, j, bien_place, taille;
+	int i, j, taille;
 	t_score temp;
 	
 	FILE * fichier;
@@ -92,7 +92,7 @@ void affich_score_classique(){
 	fclose(fichier);
 
 	//Affichage des 5 meilleurs scores
-	printf("	  	Records   	");
+	printf("	  Records   	");
 	printf("\n");
 	for(i = 0; i < 5 && i < taille; i++){
 		printf("\n	  %i - %s  :  %i", i+1, tab[i].pseudo, tab[i].score);

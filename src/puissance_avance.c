@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
+#include "../include/avance.h"
 
 #define couleur(param) printf("\033[%sm",param)
 
@@ -576,7 +577,9 @@ void puissance_avance(){
 
 /******************** Affichage du résultat de la partie ******************************/
 
-		if(quit == 0)
+		if(quit == 0){
 			affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
+			affich_score_avance();
+		}
 	}
 }

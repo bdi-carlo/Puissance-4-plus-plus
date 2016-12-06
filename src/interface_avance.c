@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
+#include "../include/avance.h"
 
 #define couleur(param) printf("\033[%sm",param)
+#define T 100
 
 /**
 *\file interface_avance.c
@@ -28,6 +30,48 @@
 *\fn void afficher_regles()
 *\brief Affiche les règles du Puissance 4++
 */
+
+void affich_score_avance(){
+	int i, j, taille;
+	t_score temp;
+	
+	FILE * fichier;
+	t_score tab[T];
+
+	fichier = fopen("best_avance.txt", "r");
+
+	//Met tout les scores dans un tableau
+	i = 0;
+	do{
+		fscanf(fichier, "%s", &tab[i].pseudo);
+		fscanf(fichier, "%i", &tab[i].score);
+		i++;
+	}while(!feof(fichier));
+	taille = i;
+
+	//Tri du tableau dans l'ordre croissant des scores pour avoir les meilleurs scores
+	for(i = 0; i < taille; i++){							//Parcours complet de la sequence a trier
+		
+		for(j = taille-1; j > i; j--){						//Parcours de la sequence non triee
+			
+			if(tab[j-1].score > tab[j].score){				
+				temp = tab[j];
+				tab[j] = tab[j-1];				//Permute tab[j] et tab[j-1]
+				tab[j-1] = temp;
+			}
+		}
+	}
+
+	fclose(fichier);
+
+	//Affichage des 5 meilleurs scores
+	printf("	  Records   	");
+	printf("\n");
+	for(i = 0; i < 5 && i < taille; i++){
+		printf("\n	  %i - %s  :  %i", i+1, tab[i].pseudo, tab[i].score);
+	}
+	printf("\n");
+}
 
 int fin_jeux_avance(){
 	int choix;

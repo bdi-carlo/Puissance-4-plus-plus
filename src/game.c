@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
+#include "../include/avance.h"
 
 #define couleur(param) printf("\033[%sm",param)
 
