@@ -171,13 +171,13 @@ void puissance_classique(){
 		couleur("0");
 			
 		//Demande où il veut jouer
-				colonne = IA (grille) ;
+				colonne = IA (grille, tour) ;
 				ligne = choix_ligne(grille, colonne);
 				placer_pions(grille, colonne, ligne, num_joueur);
 	
 
 		//Affichage du numéro du tour
-		system("clear");
+		//system("clear");
 		pions ++;
 		printf("\n ---------------------------------------");
 		printf("\n|	       TOUR NUMERO %i		|",pions);

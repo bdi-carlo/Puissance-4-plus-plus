@@ -30,7 +30,7 @@ typedef struct{int valeur_pion1 ;/**< Numéro du joueur de la première pièce*/
 typedef struct{int score ; char pseudo[L] ;}t_score;
 
 int menu();
-int IA (int grille[N][M]) ;
+int IA (int grille[N][M], int tour) ;
 void init_matrice(int matrice[N][M]);
 void afficher_matrice(int matrice[N][M]);
 int choix_ligne(int matrice[N][M], int colonne);
