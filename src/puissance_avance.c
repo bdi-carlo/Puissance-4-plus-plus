@@ -202,7 +202,7 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 	unsigned int type;
 
 	num_joueur = 3;
-	couleur("35");
+	couleur("33");
 	printf("		   %s  ",pseudo3);
 	couleur("0");
 	//Demande où il veut jouer et avec quel type de piece
