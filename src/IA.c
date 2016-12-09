@@ -22,6 +22,7 @@ int IA (int grille[N][M]) {
 			nb2 = 1 ;
 			
 			if(grille[lgn][j] == 0)
+					printf(" %i ",nb) ;
 				break ;
 			else if(grille[lgn][j] == 1){
 				nb++;
