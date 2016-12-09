@@ -1,81 +1,177 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
+#define N 6
+#define M 7
 
-#define ligne 6
-#define colonne 7
-#define L 20
-
-
-
-void initialiser_grille(int grille_IA[ligne][colonne]) {
-	int i, j ;
-	for(i = 0 ; i < ligne ; i++) {
-		for(j = 0 ; j < colonne ; j++) {
-				grille[i][j] = 0 ;
-				printf(".", grille_IA[i][j]) ;
-		}
-		printf("\n") ;
-	}
-}
-
-void afficher_grille_IA(int grille[ligne][colonne], int grille_IA[ligne][colonne]) {
-
-	
-	int i, j ;
-	
-
-	for(i = 0 ; i < ligne ; i++) {
-		for(j = 0 ; j < colonne ; j++) {
-			if(grille[i][j] == 1) {
-				printf("X", grille_IA[i][j]) ;
-			}
-			else if(grille[i][j] == 2) {
-				printf("O", grille_IA[i][j]) ;
-			}
-			else if(grille[i][j] == 0) {
-				printf(".", grille_IA[i][j]) ;
-			}
-		}
-	}
-}
-
-int IA (int grille_IA[ligne][colonne])) {
-	int best_col[colonne] ;
-	int meilleur_coup = 0 ;
+int IA (int grille[N][M]) {
+	int best_col[7] ;
 	int nb = 1 ;
+	int nb2 = 1 ;
 	int lgn = 0, col ;
 	int max = 0 ;
+	int i, j ;
 	
-	for(col = 0 ; col < 7 ; col ++ ) {
-		if(grille_IA[0][col] = 0) {
-			lgn = choix_ligne(grille_IA, col) ;
-			lgn-- ;
-				if(grille_IA[lgn-1][col] == 1 {
-					while(grille_IA[lgn][col] == 1) {
-					if(nb == 4) 
-						return col ;
-					lgn-- ;
-					nb++ ;
-					
-					}
-				}
-				else if(grille_IA[lgn-1][col] == 2 {
-					while(grille_IA[lgn][col] == 2) {
-					if(nb == 4) 
-						return col ;
-					lgn-- ;
-					nb++ ;
-					}
-				}
-		}
-		if(nb > max) {
+	for(col = 0 ; col < 7 ; col++) {
+		lgn = choix_ligne(grille, col) ;
+
+		// Test ligne vers la gauche
+		for(j = col  ; j > col - 3 ; j--) {
+			nb = 1 ;
+			nb2 = 1 ;
 			
+			if(grille[lgn][j] == 0)
+				break ;
+			else if(grille[lgn][j] == 1){
+				nb++;
+				printf(" %i ",nb) ;
+				nb2 = 1 ;
+			}
+			else if(grille[lgn][j] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+			if(nb == 4 || nb2 == 4)
+				return col ;
+		}
+
+		if(nb > nb2) 
 			max = nb ;
-		nb = 0 ;
+		else
+			max = nb2 ;
+
+		// Test ligne vers la droite
+		for(j = col + 1 ; j < col + 3 ; j++) {
+			nb = 1 ;
+			nb2 = 1 ;
+			if(grille[lgn][j] == 0)
+				break ;
+			else if(grille[lgn][j] == 1){
+				nb++;
+				nb2 = 1 ;
+			}
+			else if(grille[lgn][j] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+		}
+
+		if(nb > max) 
+			max = nb ;
+		if(nb2 > max)
+			max = nb2 ;
+		
+		
+		//Test colonne vers le bas
+		for(j = lgn - 1 ; j > lgn - 3; j--){
+			nb = 1 ;
+			nb2 = 1 ;
+			if(grille[j][col] == 0)
+				break ;
+			else if(grille[j][col] == 1){
+					nb++;
+					nb2 = 1 ;
+			}
+			else if(grille[j][col] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+		}
+
+		if(nb > max) 
+			max = nb ;
+		if(nb2 > max)
+			max = nb2 ;
+
+		//Test diagonale desc.gauche
+		for(j = col - 1, i = lgn-1; j > col - 3, i > lgn -3 ; j--,i--){
+			nb = 1;
+			nb2 = 1;
+			if(grille[i][j] == 0)
+				break ;
+			else if(grille[i][j] == 1){
+				nb++;
+				nb2 = 1 ;
+			}
+			else if(grille[i][j] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+		}
+		
+		if(nb > max) 
+			max = nb ;
+		if(nb2 > max)
+			max = nb2 ;
+
+		//Test diagonale mont.gauche
+		for(j = col - 1, i = lgn + 1; j > col - 3, i < lgn + 3 ; j--,i++){
+			nb = 1;
+			nb2 = 1;
+			if(grille[i][j] == 0)
+				break ;
+			else if(grille[i][j] == 1){
+				nb++;
+				nb2 = 1 ;
+			}
+			else if(grille[i][j] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+		}
+
+		if(nb > max) 
+			max = nb ;
+		if(nb2 > max)
+			max = nb2 ;
+
+		//Test diagonale haut.droite
+		for(j = col + 1, i = lgn + 1; j < col + 3, i < lgn + 3 ; j++,i++){
+			nb = 1;
+			nb2 = 1;
+			if(grille[i][j] == 0)
+				break ;
+			else if(grille[i][j] == 1){
+				nb++;
+				nb2 = 1 ;
+			}
+			else if(grille[i][j] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+		}
+
+		if(nb > max) 
+			max = nb ;
+		if(nb2 > max)
+			max = nb2 ;
+
+		//Test diagonale desc.droite
+		for(j = col + 1, i = lgn - 1; j < col + 3, i > lgn - 3 ; j++,i--){
+			nb = 1;
+			nb2 = 1;
+			if(grille[i][j] == 0)
+				break ;
+			else if(grille[i][j] == 1){
+				nb++;
+				nb2 = 1 ;
+			}
+			else if(grille[i][j] == 2){
+				nb2++;
+				nb = 1 ;
+			}
+		}
+		if(nb > max) 
+			max = nb ;
+		if(nb2 > max)
+			max = nb2 ;
+
+		best_col[col] = max ;
+
 	}
+	/*for(i = 0 ; i < 7 ; i++) {
+			if(best_col[i] == max)
+				return i ;
+	}*/
 }
-				
-	
-	

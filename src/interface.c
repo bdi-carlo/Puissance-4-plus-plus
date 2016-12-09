@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
 
 #define couleur(param) printf("\033[%sm",param)
+#define T 100
 
 /**
 *\file interface.c
@@ -25,9 +27,6 @@
 *\fn void pseudo_classique(char pseudo1[L], char pseudo2[L])
 *\brief Demande les pseudos des joueurs
 */
-
-
-#define couleur(param) printf("\033[%sm",param)
 
 int menu(){
 	int choix;
@@ -59,6 +58,47 @@ int menu(){
 	return 0;
 }
 
+void affich_score_classique(){
+	int i, j, taille;
+	t_score temp;
+	
+	FILE * fichier;
+	t_score tab[T];
+
+	fichier = fopen("best_classique.txt", "r");
+
+	//Met tout les scores dans un tableau
+	i = 0;
+	do{
+		fscanf(fichier, "%s", &tab[i].pseudo);
+		fscanf(fichier, "%i", &tab[i].score);
+		i++;
+	}while(!feof(fichier));
+	taille = i;
+
+	//Tri du tableau dans l'ordre croissant des scores pour avoir les meilleurs scores
+	for(i = 0; i < taille; i++){							//Parcours complet de la sequence a trier
+		
+		for(j = taille-1; j > i; j--){						//Parcours de la sequence non triee
+			
+			if(tab[j-1].score > tab[j].score){				
+				temp = tab[j];
+				tab[j] = tab[j-1];				//Permute tab[j] et tab[j-1]
+				tab[j-1] = temp;
+			}
+		}
+	}
+
+	fclose(fichier);
+
+	//Affichage des 5 meilleurs scores
+	printf("	  Records   	");
+	printf("\n");
+	for(i = 0; i < 5 && i < taille; i++){
+		printf("\n	  %i - %s  :  %i", i+1, tab[i].pseudo, tab[i].score);
+	}
+	printf("\n");
+}
 
 int fin_jeux(){
 	int choix;
@@ -74,7 +114,7 @@ int fin_jeux(){
 	
 	do{
 		printf("\n>> Votre choix : ");
-		scanf("%d",&choix);
+		scanf("%d", &choix);
 
 		/* Traitement du choix de l'utilisateur */
 		switch(choix)
@@ -86,14 +126,79 @@ int fin_jeux(){
 	}while(choix < 1 || choix > 3);
 }
 
-
-void pseudo_classique(char pseudo1[L], char pseudo2[L]){
+void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 	system("clear");
-	printf("\nVeuillez choisir vos pseudos :\n");
+	if(party == 1 && debut == 2)
+		printf("\nAUCUNE PARTIE ENREGISTRE\n");
+		
+	printf("\nVeuillez choisir vos pseudos sachant qu'ils ne doivent pas depasser 5 caracteres \n \n");
 	
-	printf("\nJoueur 1 (pions rouges) : ");
-	scanf("%s", pseudo1);
+	do{
+		couleur("31");
+		printf("\nJoueur 1: ");
+		scanf("%s", pseudo1);
+		couleur("0");
+		if(strlen(pseudo1) > 5)
+			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+	}while(strlen(pseudo1) > 5);
+	couleur("0");
 
-	printf("\nJoueur 2 (pions bleus) : ");
-	scanf("%s", pseudo2);
+	do{
+		couleur("34");
+		printf("\nJoueur 2: ");
+		scanf("%s", pseudo2);
+		couleur("0");
+		if(strlen(pseudo2) > 5)
+			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+	}while(strlen(pseudo2) > 5);
+}
+
+int quitter(){
+	int choix;
+	system("clear");
+
+	printf("\n ------------------------------- ");
+	printf("\n|	       Quitter          |");
+	printf("\n|				|");
+	printf("\n|  1 - Quitter sans sauvegarder	|");
+	printf("\n|  2 - Quitter et sauvegarder	|");
+	printf("\n|				|");
+	printf("\n ------------------------------- ");
+
+	do{
+		printf("\n>> Votre choix : ");
+		scanf("%d",&choix);
+
+		if(choix < 1 || choix > 2)
+			printf("\nErreur: votre choix doit etre 1 ou 2\n");
+	}while(choix < 1 || choix > 2);
+	
+	return choix;
+}
+
+int begin(){
+	int choix;
+	system("clear");
+
+	printf("\n ------------------------------------- ");
+	printf("\n|    		  Début          	|");
+	printf("\n|					|");
+	printf("\n|  1 - Commencer une nouvelle partie	|");
+	printf("\n|  2 - Charger la partie precedente	|");
+	printf("\n|  3 - Retour				|");
+	printf("\n|					|");
+	printf("\n+---------------------------------------+ ");
+
+	do{
+		printf("\n>> Votre choix : ");
+		scanf("%d",&choix);
+		
+		if(choix == 3)
+			menu();
+
+		else if(choix < 1 || choix > 2)
+			printf("\nErreur: votre choix doit etre 1 ou 2\n");
+	}while(choix < 1 || choix > 2);
+	
+	return choix;
 }

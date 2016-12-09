@@ -1,6 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
+#include "../include/avance.h"
+
+#define couleur(param) printf("\033[%sm",param)
 
 /**
 *\file game.c
@@ -18,7 +21,7 @@
 */
 
 int main(){
-
+	couleur("0");
 	int choix = menu();
 	int choix2;
 
@@ -33,4 +36,5 @@ int main(){
 	}
 
 	printf("\nAu revoir !\n");
+	couleur("0");
 }

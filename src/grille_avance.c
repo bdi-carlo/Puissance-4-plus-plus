@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "../include/new_fonctions.h"
+#include "../include/classique.h"
+#include "../include/avance.h"
 
 #define couleur(param) printf("\033[%sm",param)
-#define N 6
-#define M 7
 
 /**
 *\file grille_avance.c
@@ -68,6 +67,85 @@ int grille_pleine(t_piece matrice[N][M]){
 	return 1;
 }
 
+void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int nb_block1, int nb_block2, int nb_block3, int nb_block4){
+	int i,j;
+	FILE * fichier;
+
+	fichier = fopen("partie_avance.txt", "w");
+	
+	for(i = 0; i < N; i++){
+		for(j = 0; j < M; j++){
+			fprintf(fichier, "%i ", matrice[i][j].valeur_pion1);
+			fprintf(fichier, "%i ", matrice[i][j].type1);
+			fprintf(fichier, "%i ", matrice[i][j].valeur_pion2);
+			fprintf(fichier, "%i ", matrice[i][j].type2);
+		}
+	}
+	fprintf(fichier, "%i ", tour);
+	fprintf(fichier, "%i ", nb_joueurs);
+
+	fprintf(fichier, "%s ", pseudo1);
+	fprintf(fichier, "%s ", pseudo2);
+	fprintf(fichier, "%i ", nb_block1);
+	fprintf(fichier, "%i ", nb_block2);
+
+	//Si on joue a 3 ou 4 joueurs on enregistre le pseudo 3 et le nombre de piece boquante du joueur 3
+	if(nb_joueurs == 3 || nb_joueurs == 4){
+		fprintf(fichier, "%s ", pseudo3);
+		fprintf(fichier, "%i ", nb_block3);
+	}
+
+	//Si on joue 4 joueurs on enregistre le pseudo 4 et le nombre de piece boquante du joueur 4	
+	if(nb_joueurs == 4){
+		fprintf(fichier, "%s ", pseudo4);
+		fprintf(fichier, "%i ", nb_block4);
+	}
+	
+
+	fclose(fichier);
+}
+
+int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4){
+	int i,j;
+	FILE * fichier;
+
+	fichier = fopen("partie_avance.txt", "r");
+
+	if(!fichier)
+		return 1;
+
+	for(i = 0; i < N; i++){
+		for(j = 0; j < M; j++){
+			fscanf(fichier, "%i", &matrice[i][j].valeur_pion1);
+			fscanf(fichier, "%i", &matrice[i][j].type1);
+			fscanf(fichier, "%i", &matrice[i][j].valeur_pion2);
+			fscanf(fichier, "%i", &matrice[i][j].type2);
+		}
+	}
+	fscanf(fichier, "%i", &(*tour));
+	fscanf(fichier, "%i ", &(*nb_joueurs));
+
+	fscanf(fichier, "%s ", pseudo1);
+	fscanf(fichier, "%s ", pseudo2);
+	fscanf(fichier, "%i ", &(*nb_block1));
+	fscanf(fichier, "%i ", &(*nb_block2));
+
+
+	//Si la partie comptais 3 ou 4 joueurs on recupere le pseudo du joueur 3 ainsi que son nombre de piece bloquante
+	if(*nb_joueurs == 3 || *nb_joueurs == 4){
+		fscanf(fichier, "%s ", pseudo3);
+		fscanf(fichier, "%i ", &(*nb_block3));
+	}
+
+	//Si la partie comptais 4 joueurs on recupere le pseudo du joueur 4 ainsi que son nombre de piece bloquante
+	if(*nb_joueurs == 4){
+		fscanf(fichier, "%s ", pseudo4);
+		fscanf(fichier, "%i ", &(*nb_block4));
+	}
+	
+	fclose(fichier);
+	return 0;
+}
 
 void afficher_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
@@ -109,25 +187,25 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				//Joueur 2
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
 					couleur("44;31");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
-					couleur("45;31");
-					printf(" 0 ");
+					couleur("43;31");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
-					couleur("43;31");
-					printf(" 0 ");
+					couleur("42;31");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
  				else if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 		        	couleur("41;31");
-		        	printf(" 0 ");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}
 			}
@@ -138,25 +216,25 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				//Joueur 2
 				if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
 					couleur("41;34");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
-					couleur("41;35");
-					printf(" 0 ");
+					couleur("41;33");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
 					couleur("41;32");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
  				else if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine ){
 		        	couleur("41;31");
-		        	printf(" 0 ");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}
 			}
@@ -191,25 +269,25 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 					couleur("44;31");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
-					couleur("44;35");
-					printf(" 0 ");
+					couleur("44;33");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
 					couleur("44;32");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
  				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
 		        	couleur("44;34");
-		        	printf(" 0 ");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}			
 			}
@@ -220,25 +298,25 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 					couleur("41;34");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
-					couleur("45;34");
-					printf(" 0 ");
+					couleur("43;34");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
 					couleur("43;34");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
  				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
 		        	couleur("44;34");
-		        	printf(" 0 ");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}	
 			}
@@ -249,19 +327,19 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].valeur_pion2 == 0){
 				//Bloquante
 				if(matrice[i][j].type1 == bloquante){
-					couleur("35");
+					couleur("33");
 					printf(" @ ");
 					couleur("0");
 				}
 				//Creuse
 				else if(matrice[i][j].type1 == creuse){
-					couleur("35");
+					couleur("33");
 					printf(" 〇");
 					couleur("0");
 				}
 				//Pleine
 				else if(matrice[i][j].type1 == pleine){
-					couleur("35");
+					couleur("33");
 					printf(" ⯄ ");
 					couleur("0");
 				}
@@ -269,52 +347,58 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 			//Quand le joueur 3 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == creuse){
-			
+
+				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
-					couleur("45;31");
-					printf(" 0 ");
+					couleur("43;31");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 2
 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
-					couleur("45;34");
-					printf(" 0 ");
+					couleur("43;34");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
-					couleur("45;32");
-					printf(" 0 ");
+					couleur("43;32");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
  				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
-		        	couleur("45;35");
-		        	printf(" 0 ");
+		        	couleur("43;33");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}
 			}
 
 			//Quand le joueur 3 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 3 && matrice[i][j].type1 == pleine){
-			
+
+				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
-					couleur("41;35");
-					printf(" 0 ");
+					couleur("41;33");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 2
 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
-					couleur("44;35");
-					printf(" 0 ");
+					couleur("44;33");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 4
 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
-					couleur("43;35");
-					printf(" 0 ");
+					couleur("42;33");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
  				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
-		        	couleur("45;35");
-		        	printf(" 0 ");
+		        	couleur("43;33");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}
 			
@@ -346,26 +430,29 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 			//Quand le joueur 4 a joue une piece creuse et qu'un autre joueur joue une piece pleine par dessus
 			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == creuse){
-			
+
+				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == pleine){
 					couleur("42;31");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 2
 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == pleine){
-					couleur("42;35");
-					printf(" 0 ");
+					couleur("42;34");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
-					couleur("42;34");
-					printf(" 0 ");
+					couleur("42;33");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
- 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == pleine){
+ 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == pleine){
 		        	couleur("42;32");
-		        	printf(" 0 ");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}
 			
@@ -373,26 +460,29 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 			//Quand le joueur 4 a joue une piece pleine et qu'un autre joueur joue une piece creuse par dessus
 			else if(matrice[i][j].valeur_pion1 == 4 && matrice[i][j].type1 == pleine){
-			
+
+				//Joueur 1
 				if(matrice[i][j].valeur_pion2 == 1 && matrice[i][j].type2 == creuse){
 					couleur("41;32");
-					printf(" 0 ");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 2
 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
-					couleur("45;32");
-					printf(" 0 ");
+					couleur("44;32");
+					printf(" ⯄ ");
 					couleur("0");
 				}
+				//Joueur 3
 				else if(matrice[i][j].valeur_pion2 == 3 && matrice[i][j].type2 == creuse){
-					couleur("44;32");
-					printf(" 0 ");
+					couleur("43;32");
+					printf(" ⯄ ");
 					couleur("0");
 				}
 				//Lui meme
- 				else if(matrice[i][j].valeur_pion2 == 2 && matrice[i][j].type2 == creuse){
+ 				else if(matrice[i][j].valeur_pion2 == 4 && matrice[i][j].type2 == creuse){
 		        	couleur("42;32");
-		        	printf(" 0 ");
+		        	printf(" ⯄ ");
 		        	couleur("0");
 				}
 			
@@ -402,7 +492,7 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 	}
 	printf("|					|");
 	printf("\n|	   1  2  3  4  5  6  7  	|");
-	printf("\n ---------------------------------------");
+	printf("\n+---------------------------------------+");
 	printf("\n");
 }
 
