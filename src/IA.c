@@ -73,7 +73,7 @@ int IA (int grille[N][M], int tour) {
 		for(j = 0; j < M; j++){
 			player1 = 0;
 			player2 = 0;
-			for(i = 0; i < N; i++){
+			for(i = N-1; i > 0; i--){
 				if(grille[i][j] == 1){
 					player1++;
 					player2 = 0;
