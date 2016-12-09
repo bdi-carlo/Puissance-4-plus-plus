@@ -9,7 +9,7 @@ int IA (int grille[N][M], int tour) {
 	int best_col[7], valeur[N][M];
 	int lgn = 0, col, player1, player2;
 	int max = 0;
-	int i, j;
+	int i, j, k ;
 
 	//Au premier tour l'IA joue aleatoirement
 	if(tour == 1)
@@ -96,6 +96,128 @@ int IA (int grille[N][M], int tour) {
 			}
 		}
 		
+		//Test diagonale droite
+		for(k = 5; k >= 4; k--){
+			player1 = 0;
+			player2 = 0;
+			j = 0;
+
+			i = k;
+			while(i >= 1 && j <= k-1){
+				if(grille[i][j] == 1){
+					player1++;
+					player2 = 0;
+				}
+				else if(grille[i][j] == 2){
+					player2++;
+					player1 = 0;
+				}
+				else if(grille[i][j] == 0){
+					if(valeur[i][j] < player1 + 1 || valeur[i][j] < player2 + 1){
+						if(player1 >= player2)
+							valeur[i][j] = player1 + 1;
+						else if(player2 > player1)
+							valeur[i][j] = player2 + 1;
+					}
+					player1 = 0;
+					player2 = 0;
+				}
+				i--;
+				j++;	
+			}
+		}
+			
+
+		for(k = 1; k <= 2; k++){
+			player1 = 0;
+			player2 = 0;
+			i = 5;
+
+			j = k;
+			while(i >= 3 && j <= 5){
+				if(grille[i][j] == 1){
+					player1++;
+					player2 = 0;
+				}
+				else if(grille[i][j] == 2){
+					player2++;
+					player1 = 0;
+				}
+				else if(grille[i][j] == 0){
+					if(valeur[i][j] < player1 + 1 || valeur[i][j] < player2 + 1){
+						if(player1 >= player2)
+							valeur[i][j] = player1 + 1;
+						else if(player2 > player1)
+							valeur[i][j] = player2 + 1;
+					}
+					player1 = 0;
+					player2 = 0;
+				}
+				i--;
+				j++;	
+			}	
+		}	
+		
+		/*//Test diagonale gauche
+		for(k = 5; k >= 4; k--){
+			player1 = 0;
+			player2 = 0;
+			j = 6;
+
+			i = k;
+			while(i >= 1 && j <= k-1){
+				if(grille[i][j] == 1){
+					player1++;
+					player2 = 0;
+				}
+				else if(grille[i][j] == 2){
+					player2++;
+					player1 = 0;
+				}
+				else if(grille[i][j] == 0){
+					if(valeur[i][j] < player1 + 1 || valeur[i][j] < player2 + 1){
+						if(player1 >= player2)
+							valeur[i][j] = player1 + 1;
+						else if(player2 > player1)
+							valeur[i][j] = player2 + 1;
+					}
+					player1 = 0;
+					player2 = 0;
+				}
+				i--;
+				j--;	
+			}
+		}
+
+		for(k = 5; k >= 4; k--){
+			player1 = 0;
+			player2 = 0;
+			i = 5;
+
+			j = k;
+			while(i <= k && j <= 5){
+				if(grille[i][j] == 1){
+					player1++;
+					player2 = 0;
+				}
+				else if(grille[i][j] == 2){
+					player2++;
+					player1 = 0 ;
+				}
+				else if(grille[i][j] == 0){
+					if(valeur[i][j] < player1 + 1 || valeur[i][j] < player2 + 1){
+						if(player1 >= player2)
+							valeur[i][j] = player1 + 1;
+						else if(player2 > player1)
+							valeur[i][j] = player2 + 1;
+					}
+					player1 = 0;
+					player2 = 0;
+				}
+				i--;
+				j--;	
+			}
+		}*/
 		for(i = 0; i < N; i++){
 			printf("\n");
 			for(j = 0; j < M; j++){
