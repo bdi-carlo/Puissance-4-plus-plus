@@ -11,8 +11,6 @@ int IA (int grille[N][M]) {
 
 		// Test ligne vers la gauche
 		for(j = col-1  ; j > col - 3 ; j--) {
-			if(col == 0) {
-			while(j >= 0 && j <= 7) {
 				if(grille[lgn][j] == 1){
 					nb++;
 					printf(" nb : %i ",nb) ;

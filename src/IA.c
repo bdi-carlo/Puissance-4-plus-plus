@@ -45,25 +45,22 @@ int IA (int grille[N][M], int tour) {
 		}
 		//Test en ligne en partant de la droite
 		for(i = 0; i < N; i++){
-			player1 = 0;
-			player2 = 0;
 			for(j = M - 1; j > 0; j--){
 				if(grille[i][j] == 1){
 					player1++;
 					player2 = 0;
-					valeur[i][j] = 0;
 				}
 				else if(grille[i][j] == 2){
 					player2++;
 					player1 = 0;
-					valeur[i][j] = 0;
 				}
 				else if(grille[i][j] == 0){
-					if(player1 >= player2)
-						valeur[i][j] = player1 + 1;
-					else if(player2 > player1)
-						valeur[i][j] = player2 + 1;
-					
+					if(valeur[i][j] < player1+1 || valeur[i][j] < player2+1){
+						if(player1 >= player2)
+							valeur[i][j] = player1 + 1;
+						else if(player2 > player1)
+							valeur[i][j] = player2 + 1;
+					}
 					player1 = 0;
 					player2 = 0;
 				}
@@ -88,3 +85,4 @@ int IA (int grille[N][M], int tour) {
 		return col + 1;
 	}
 }
+
