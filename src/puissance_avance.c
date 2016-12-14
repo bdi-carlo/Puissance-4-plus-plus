@@ -455,12 +455,12 @@ void puissance_avance(){
 			win = 0;
 			quit = 0;
 
-	/****************************** 2 JOUEURS ********************************************/
+/****************************** 2 JOUEURS ********************************************/
 
 			if(nb_joueurs == 2){
 				while(!grille_pleine(grille)){
 
-	/****************************** joueur 1 joue *****************************************/
+/****************************** joueur 1 joue *****************************************/
 
 					//Joueur 1 joue
 					if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
@@ -472,7 +472,7 @@ void puissance_avance(){
 					win = gagne_avance(grille);
 					if(win == 1)break;
 
-	/****************************** joueur 2 joue *****************************************/
+/****************************** joueur 2 joue *****************************************/
 					pions ++;
 
 					//Joueur 2 joue
@@ -486,12 +486,12 @@ void puissance_avance(){
 				}
 			}
 
-	/****************************** 3 JOUEURS ********************************************/
+/****************************** 3 JOUEURS ********************************************/
 
 			else if(nb_joueurs == 3){
 				while(!grille_pleine(grille)){
 
-	/****************************** joueur 1 joue *****************************************/
+/****************************** joueur 1 joue *****************************************/
 
 					//Joueur 1 joue
 					if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
@@ -503,7 +503,7 @@ void puissance_avance(){
 					win = gagne_avance(grille);
 					if(win == 1)break;
 
-	/****************************** joueur 2 joue *****************************************/
+/****************************** joueur 2 joue *****************************************/
 
 					//Joueur 2 joue
 					player2(grille, &nb_block2, pions, joueur2);
@@ -512,7 +512,7 @@ void puissance_avance(){
 					win = gagne_avance(grille);
 					if(win == 2)break;
 
-	/****************************** joueur 3 joue *****************************************/
+/****************************** joueur 3 joue *****************************************/
 					pions ++;
 				
 					//Joueur 3 joue
@@ -526,12 +526,12 @@ void puissance_avance(){
 				}
 			}
 
-	/****************************** 4 JOUEURS ********************************************/
+/****************************** 4 JOUEURS ********************************************/
 
 			else if(nb_joueurs == 4){
 				while(!grille_pleine(grille)){
 
-	/****************************** joueur 1 joue *****************************************/
+/****************************** joueur 1 joue *****************************************/
 
 					//Joueur 1 joue
 					if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
@@ -543,7 +543,7 @@ void puissance_avance(){
 					win = gagne_avance(grille);
 					if(win == 1)break;
 
-	/****************************** joueur 2 joue *****************************************/
+/****************************** joueur 2 joue *****************************************/
 
 					//Joueur 2 joue
 					player2(grille, &nb_block2, pions, joueur2);
@@ -552,7 +552,7 @@ void puissance_avance(){
 					win = gagne_avance(grille);
 					if(win == 2)break;
 
-	/****************************** joueur 3 joue *****************************************/
+/****************************** joueur 3 joue *****************************************/
 
 					//Joueur 3 joue
 					player3(grille, &nb_block3, pions, joueur3);
@@ -561,7 +561,7 @@ void puissance_avance(){
 					win = gagne_avance(grille);
 					if(win == 3)break;
 
-	/****************************** joueur 4 joue *****************************************/
+/****************************** joueur 4 joue *****************************************/
 
 					pions ++;
 				
@@ -576,13 +576,15 @@ void puissance_avance(){
 				}
 			}
 
-	/******************** Affichage du résultat de la partie ******************************/
+/******************** Affichage du résultat de la partie ******************************/
 
 			if(quit == 0){
 				affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
 				affich_score_avance();
 			}
 		}
+/***************** Menu de fin de Jeu *****************/
+		fin_jeux_avance();
 	}
 	if(debut == 3)
 		menu();

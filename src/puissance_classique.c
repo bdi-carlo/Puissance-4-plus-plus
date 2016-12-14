@@ -115,7 +115,7 @@ void puissance_classique(){
 
 		while(pions <= nb_tours){
 
-	/****************************** JOUEUR 1 JOUE *****************************************/
+/****************************** JOUEUR 1 JOUE *****************************************/
 
 			num_joueur = 1;
 		
@@ -161,7 +161,7 @@ void puissance_classique(){
 			//Test pour savoir si le joueur à gagné
 			if(gagne(grille) == 1)break;
 
-	/****************************** JOUEUR 2 JOUE *****************************************/
+/****************************** JOUEUR 2 JOUE *****************************************/
 
 			num_joueur = 2;
 			
@@ -201,12 +201,14 @@ void puissance_classique(){
 			tour++;
 		}
 
-	/***************** Affichage du résultat de la partie et des meilleurs scores *****************/
+/***************** Affichage du résultat de la partie et des meilleurs scores *****************/
 
 		if(test == 0){
 			affich_result(grille, joueur1, joueur2, tour);
 			affich_score_classique();
 		}
+/***************** Menu de fin de Jeu *****************/
+		fin_jeux();
 	}
 	if(debut == 3)
 		menu();
