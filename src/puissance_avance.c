@@ -407,179 +407,183 @@ void puissance_avance(){
 	
 	//Demande aux joueurs si ils veulent reprendre une partie en cours ou non
 	debut = begin();
-	if(debut == 2){
-		//Recuperation de la partie
-		party = load_avance(grille, &tour, joueur1, joueur2, joueur3, joueur4, &nb_joueurs, &nb_block1, &nb_block2, &nb_block3, &nb_block4);
-		//Si on a bien recupere la partie on met a jour tour
-		if(party == 0)	
-			pions = tour;
-	}
-
-	//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on demande le nombre de joueur
-	if(debut == 1 || (debut == 2 && party == 1)){
-		nb_joueurs = nb_joueur() ;
-		if(nb_joueurs == 1){
-			menu();
-			menutest = 1;
+	if(debut != 3){
+		if(debut == 2){
+			//Recuperation de la partie
+			party = load_avance(grille, &tour, joueur1, joueur2, joueur3, joueur4, &nb_joueurs, &nb_block1, &nb_block2, &nb_block3, &nb_block4);
+			//Si on a bien recupere la partie on met a jour tour
+			if(party == 0)	
+				pions = tour;
 		}
-	}
 
-	//Si le joueur ne voulais pas retourner au menu on peut jouer
-	if(menutest != 1){
-
-		//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on fais toutes les initialisations de bases
+		//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on demande le nombre de joueur
 		if(debut == 1 || (debut == 2 && party == 1)){
-			//Initialisation des pseudos
-			pseudo_avance(joueur1, joueur2, joueur3, joueur4, nb_joueurs);
+			nb_joueurs = nb_joueur() ;
+			if(nb_joueurs == 1){
+				menu();
+				menutest = 1;
+			}
+		}
 
-			//Affichage des regles
-			afficher_regles();
+		//Si le joueur ne voulais pas retourner au menu on peut jouer
+		if(menutest != 1){
+
+			//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on fais toutes les initialisations de bases
+			if(debut == 1 || (debut == 2 && party == 1)){
+				//Initialisation des pseudos
+				pseudo_avance(joueur1, joueur2, joueur3, joueur4, nb_joueurs);
+
+				//Affichage des regles
+				afficher_regles();
 			
-			//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
-			init_matrice_avance(grille);
+				//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
+				init_matrice_avance(grille);
 
-			pions = 1;
-			tour = 1;
-			nb_block1 = 2;
-			nb_block2 = 2;
-			nb_block3 = 2 ; 
-			nb_block4 = 2 ;
-		}
+				pions = 1;
+				tour = 1;
+				nb_block1 = 2;
+				nb_block2 = 2;
+				nb_block3 = 2 ; 
+				nb_block4 = 2 ;
+			}
 		
-		system("clear");
-		printf("\n+---------------------------------------+");
-		printf("\n|	       TOUR NUMERO %i		|", pions);
-		afficher_matrice_avance(grille);
+			system("clear");
+			printf("\n+---------------------------------------+");
+			printf("\n|	       TOUR NUMERO %i		|", pions);
+			afficher_matrice_avance(grille);
 
-		win = 0;
-		quit = 0;
+			win = 0;
+			quit = 0;
 
-/****************************** 2 JOUEURS ********************************************/
+	/****************************** 2 JOUEURS ********************************************/
 
-		if(nb_joueurs == 2){
-			while(!grille_pleine(grille)){
+			if(nb_joueurs == 2){
+				while(!grille_pleine(grille)){
 
-/****************************** joueur 1 joue *****************************************/
+	/****************************** joueur 1 joue *****************************************/
 
-				//Joueur 1 joue
-				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
-					quit = 1;
-					break;
-				};
+					//Joueur 1 joue
+					if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
+						quit = 1;
+						break;
+					};
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 1)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 1)break;
 
-/****************************** joueur 2 joue *****************************************/
-				pions ++;
+	/****************************** joueur 2 joue *****************************************/
+					pions ++;
 
-				//Joueur 2 joue
-				player2(grille, &nb_block2, pions, joueur2);
+					//Joueur 2 joue
+					player2(grille, &nb_block2, pions, joueur2);
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 2)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 2)break;
 
-				tour++;
+					tour++;
+				}
 			}
-		}
 
-/****************************** 3 JOUEURS ********************************************/
+	/****************************** 3 JOUEURS ********************************************/
 
-		else if(nb_joueurs == 3){
-			while(!grille_pleine(grille)){
+			else if(nb_joueurs == 3){
+				while(!grille_pleine(grille)){
 
-/****************************** joueur 1 joue *****************************************/
+	/****************************** joueur 1 joue *****************************************/
 
-				//Joueur 1 joue
-				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
-					quit = 1;
-					break;
-				};
+					//Joueur 1 joue
+					if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
+						quit = 1;
+						break;
+					};
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 1)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 1)break;
 
-/****************************** joueur 2 joue *****************************************/
+	/****************************** joueur 2 joue *****************************************/
 
-				//Joueur 2 joue
-				player2(grille, &nb_block2, pions, joueur2);
+					//Joueur 2 joue
+					player2(grille, &nb_block2, pions, joueur2);
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 2)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 2)break;
 
-/****************************** joueur 3 joue *****************************************/
-				pions ++;
+	/****************************** joueur 3 joue *****************************************/
+					pions ++;
 				
-				//Joueur 3 joue
-				player3(grille, &nb_block3, pions, joueur3);
+					//Joueur 3 joue
+					player3(grille, &nb_block3, pions, joueur3);
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 3)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 3)break;
 
-				tour++;
+					tour++;
+				}
 			}
-		}
 
-/****************************** 4 JOUEURS ********************************************/
+	/****************************** 4 JOUEURS ********************************************/
 
-		else if(nb_joueurs == 4){
-			while(!grille_pleine(grille)){
+			else if(nb_joueurs == 4){
+				while(!grille_pleine(grille)){
 
-/****************************** joueur 1 joue *****************************************/
+	/****************************** joueur 1 joue *****************************************/
 
-				//Joueur 1 joue
-				if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
-					quit = 1;
-					break;
-				};
+					//Joueur 1 joue
+					if(player1(grille, &nb_block1, pions, joueur1, joueur2, joueur3, joueur4, nb_joueurs, tour, nb_block2, nb_block3, nb_block4) == 10){
+						quit = 1;
+						break;
+					};
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 1)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 1)break;
 
-/****************************** joueur 2 joue *****************************************/
+	/****************************** joueur 2 joue *****************************************/
 
-				//Joueur 2 joue
-				player2(grille, &nb_block2, pions, joueur2);
+					//Joueur 2 joue
+					player2(grille, &nb_block2, pions, joueur2);
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 2)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 2)break;
 
-/****************************** joueur 3 joue *****************************************/
+	/****************************** joueur 3 joue *****************************************/
 
-				//Joueur 3 joue
-				player3(grille, &nb_block3, pions, joueur3);
+					//Joueur 3 joue
+					player3(grille, &nb_block3, pions, joueur3);
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 3)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 3)break;
 
-/****************************** joueur 4 joue *****************************************/
+	/****************************** joueur 4 joue *****************************************/
 
-				pions ++;
+					pions ++;
 				
-				//Joueur 4 joue
-				player4(grille, &nb_block3, pions, joueur4);
+					//Joueur 4 joue
+					player4(grille, &nb_block3, pions, joueur4);
 
-				//Test pour savoir si le joueur à gagné
-				win = gagne_avance(grille);
-				if(win == 4)break;
+					//Test pour savoir si le joueur à gagné
+					win = gagne_avance(grille);
+					if(win == 4)break;
 
-				tour++;
+					tour++;
+				}
 			}
-		}
 
-/******************** Affichage du résultat de la partie ******************************/
+	/******************** Affichage du résultat de la partie ******************************/
 
-		if(quit == 0){
-			affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
-			affich_score_avance();
+			if(quit == 0){
+				affich_result_avance(grille, win, tour, joueur1, joueur2, joueur3, joueur4);
+				affich_score_avance();
+			}
 		}
 	}
+	if(debut == 3)
+		menu();
 }

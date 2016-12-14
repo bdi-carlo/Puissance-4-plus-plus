@@ -193,12 +193,9 @@ int begin(){
 		printf("\n>> Votre choix : ");
 		scanf("%d",&choix);
 		
-		if(choix == 3)
-			menu();
-
-		else if(choix < 1 || choix > 2)
+		if(choix < 1 || choix > 3)
 			printf("\nErreur: votre choix doit etre 1 ou 2\n");
-	}while(choix < 1 || choix > 2);
+	}while(choix < 1 || choix > 3);
 	
 	return choix;
 }
