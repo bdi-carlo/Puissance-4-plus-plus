@@ -173,7 +173,7 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 
 *\fn int quitter()
 *\brief Menu qui demande à l'utilisaeur de quitter et/ou sauvegarder pendant une partie
-*\return Retourne le choix de l'utilisateur
+*\return Choix de l'utilisateur
 
 */
 int quitter(){
@@ -203,7 +203,7 @@ int quitter(){
 
 *\fn int begin()
 *\brief Menu au début de la partie
-*\return Retourne le choix de l'utilisateur
+*\return Choix de l'utilisateur
 
 */
 int begin(){

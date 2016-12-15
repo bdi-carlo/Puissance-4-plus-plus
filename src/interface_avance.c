@@ -70,6 +70,7 @@ void affich_score_avance(){
 /**
 *\fn int fin_jeux_avance()
 *\brief Menu pour la fin de la partie du Puissance 4++
+*\return Choix de l'utilisateur
 
 */
 int fin_jeux_avance(){

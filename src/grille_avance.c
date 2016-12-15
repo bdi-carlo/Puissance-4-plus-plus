@@ -41,7 +41,7 @@ void init_matrice_avance(t_piece matrice[N][M]){
 
 *\fn int grille_pleine(t_piece matrice[N][M])
 *\brief Verifie si la grille est pleine ou non
-*\return Renvoie Vrai si la grille est pleine
+*\return Vrai si la grille est pleine
 
 */
 int grille_pleine(t_piece matrice[N][M]){
@@ -109,7 +109,7 @@ void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pse
 
 *\fn int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4)
 *\brief Charge la partie sauvegardée dans le Puissance 4++
-*\return Retourne une erreur si le fichier n'existe pas
+*\return Une erreur si le fichier n'existe pas
 
 */
 int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4){
@@ -513,8 +513,8 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 
 *\fn int choix_ligne_avance(t_piece matrice[N][M], int colonne)
 *\brief Recherche la bonne ligne pour placer le pion dans le Puissance 4++
-*\param On entre la colonne choisie pour trouver la ligne
-*\return Retourne la ligne où le pion doit se placer
+*\param colonne On entre la colonne choisie pour trouver la ligne
+*\return La ligne où le pion doit se placer
 
 */
 int choix_ligne_avance(t_piece matrice[N][M], int colonne){
@@ -751,7 +751,7 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 
 *\fn int gagne_avance(t_piece grille[N][M])
 *\brief Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non
-*\return Retourne le numéro du joueur vainqueur
+*\return Le numéro du joueur vainqueur
 
 */
 int gagne_avance(t_piece grille[N][M]){

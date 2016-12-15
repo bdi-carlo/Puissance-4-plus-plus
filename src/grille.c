@@ -46,7 +46,7 @@ void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseu
 
 *\fn int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L]
 *\brief Charge la partie sauvegardée
-*\return Retourne une erreur si le fichier n'existe pas
+*\return Une erreur si le fichier n'existe pas
 
 */
 int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L]){
@@ -125,8 +125,8 @@ void afficher_matrice(int matrice[N][M]){
 
 *\fn int choix_ligne(int matrice[N][M], int colonne)
 *\brief Recherche la bonne ligne pour placer le pion
-*\param On entre la colonne choisie pour trouver la ligne
-*\return Retourne la ligne où le pion doit se placer
+*\param colonne On entre la colonne choisie pour trouver la ligne
+*\return La ligne où le pion doit se placer
 
 */
 
@@ -164,7 +164,7 @@ void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 
 *\fn int gagne(int grille[N][M])
 *\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
-*\return Retourne le numéro du joueur vainqueur
+*\return Le numéro du joueur vainqueur
 
 */
 int gagne(int grille[N][M]){
