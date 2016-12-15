@@ -266,7 +266,7 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 
 */
 void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
-	int num_joueur, ligne, c olonne, test;
+	int num_joueur, ligne, colonne, test;
 	unsigned int type;
 
 	num_joueur = 4;
