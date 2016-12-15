@@ -8,6 +8,7 @@ INCLUDE2 = ./include/avance.h
 #compile tout les fichiers et crée un executable
 all : ${OBJET}
 	gcc -o Puissance_4++.exe ${OBJET}
+	rm -rf *.o
 
 #compilation de toutes les dépendances
 game.o : ${SRC}game.c ${INCLUDE1} ${INCLUDE2}

@@ -43,7 +43,7 @@ void affich_score_avance(){
 	//Met tout les scores dans un tableau
 	i = 0;
 	do{
-		fscanf(fichier, "%s", &tab[i].pseudo);
+		fscanf(fichier, "%s", tab[i].pseudo);
 		fscanf(fichier, "%i", &tab[i].score);
 		i++;
 	}while(!feof(fichier));

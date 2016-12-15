@@ -117,9 +117,9 @@ int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[
 	for(i = 0; i < N; i++){
 		for(j = 0; j < M; j++){
 			fscanf(fichier, "%i", &matrice[i][j].valeur_pion1);
-			fscanf(fichier, "%i", &matrice[i][j].type1);
+			fscanf(fichier, "%u", &matrice[i][j].type1);
 			fscanf(fichier, "%i", &matrice[i][j].valeur_pion2);
-			fscanf(fichier, "%i", &matrice[i][j].type2);
+			fscanf(fichier, "%u", &matrice[i][j].type2);
 		}
 	}
 	fscanf(fichier, "%i", &(*tour));

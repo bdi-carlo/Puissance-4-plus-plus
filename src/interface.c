@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "../include/classique.h"
+#include "../include/avance.h"
 
 #define couleur(param) printf("\033[%sm",param)
 #define T 100
@@ -70,7 +71,7 @@ void affich_score_classique(){
 	//Met tout les scores dans un tableau
 	i = 0;
 	do{
-		fscanf(fichier, "%s", &tab[i].pseudo);
+		fscanf(fichier, "%s", tab[i].pseudo);
 		fscanf(fichier, "%i", &tab[i].score);
 		i++;
 	}while(!feof(fichier));
