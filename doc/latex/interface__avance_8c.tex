@@ -8,11 +8,25 @@ Interface du Puissance 4.
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include $<$unistd.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}../include/new\+\_\+fonctions.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../include/classique.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/avance.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de interface\+\_\+avance.\+c\+:
 % FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{interface__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{interface__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}
+
+\item 
+\#define {\bfseries T}~100\hypertarget{interface__avance_8c_a0acb682b8260ab1c60b918599864e2e5}{}\label{interface__avance_8c_a0acb682b8260ab1c60b918599864e2e5}
+
+\end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
+\item 
+void {\bfseries affich\+\_\+score\+\_\+avance} ()\hypertarget{interface__avance_8c_a8709bf5190457594c59977bc32771064}{}\label{interface__avance_8c_a8709bf5190457594c59977bc32771064}
+
 \item 
 int \hyperlink{interface__avance_8c_ab7a4f6c17b423e3a393de561cc192496}{fin\+\_\+jeux\+\_\+avance} ()\hypertarget{interface__avance_8c_ab7a4f6c17b423e3a393de561cc192496}{}\label{interface__avance_8c_ab7a4f6c17b423e3a393de561cc192496}
 

@@ -8,27 +8,22 @@ Puissance 4 classique.
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include $<$unistd.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}../include/new\+\_\+fonctions.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/classique.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/avance.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de puissance\+\_\+avance.\+c\+:
 % FIG 0
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define {\bfseries N}~6\hypertarget{puissance__avance_8c_a0240ac851181b84ac374872dc5434ee4}{}\label{puissance__avance_8c_a0240ac851181b84ac374872dc5434ee4}
-
-\item 
-\#define {\bfseries M}~7\hypertarget{puissance__avance_8c_a52037c938e3c1b126c6277da5ca689d0}{}\label{puissance__avance_8c_a52037c938e3c1b126c6277da5ca689d0}
-
-\item 
-\#define {\bfseries L}~20\hypertarget{puissance__avance_8c_aa73214aa5f2f94f63d90bb4e3d99fe53}{}\label{puissance__avance_8c_aa73214aa5f2f94f63d90bb4e3d99fe53}
+\#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{puissance__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{puissance__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}
 
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{puissance__avance_8c_ab51765589d909250c6de78fb333ae3e9}{player1} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block1, int pions, char pseudo1\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_ab51765589d909250c6de78fb333ae3e9}{}\label{puissance__avance_8c_ab51765589d909250c6de78fb333ae3e9}
+int {\bfseries player1} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block1, int pions, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs, int tour, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)\hypertarget{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}{}\label{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}
 
-\begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 1. \end{DoxyCompactList}\item 
+\item 
 void \hyperlink{puissance__avance_8c_a284bba16cf23938d4f51484c13689d76}{player2} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block2, int pions, char pseudo2\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_a284bba16cf23938d4f51484c13689d76}{}\label{puissance__avance_8c_a284bba16cf23938d4f51484c13689d76}
 
 \begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 2. \end{DoxyCompactList}\item 
@@ -38,6 +33,9 @@ void \hyperlink{puissance__avance_8c_aa70c11e0fde5d1e21b462027203d0641}{player3}
 void \hyperlink{puissance__avance_8c_a2b6a0a4dcaf028ac0ea36949596656e5}{player4} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block4, int pions, char pseudo4\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_a2b6a0a4dcaf028ac0ea36949596656e5}{}\label{puissance__avance_8c_a2b6a0a4dcaf028ac0ea36949596656e5}
 
 \begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 4. \end{DoxyCompactList}\item 
+void {\bfseries enregistrement\+\_\+score\+\_\+avance} (char joueur\mbox{[}L\mbox{]}, int nb\+\_\+coups)\hypertarget{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}{}\label{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}
+
+\item 
 void \hyperlink{puissance__avance_8c_a76241034cbb33d29399d26db374965ec}{affich\+\_\+result\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int win, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_a76241034cbb33d29399d26db374965ec}{}\label{puissance__avance_8c_a76241034cbb33d29399d26db374965ec}
 
 \begin{DoxyCompactList}\small\item\em Affichage du résultat. \end{DoxyCompactList}\item 

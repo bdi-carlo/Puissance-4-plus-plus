@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['new_5ffonctions_2eh',['new_fonctions.h',['../new__fonctions_8h.html',1,'']]]
+  ['game_2ec',['game.c',['../game_8c.html',1,'']]],
+  ['grille_2ec',['grille.c',['../grille_8c.html',1,'']]],
+  ['grille_5favance_2ec',['grille_avance.c',['../grille__avance_8c.html',1,'']]]
 ];

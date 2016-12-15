@@ -7,8 +7,9 @@ Interface du Puissance 4.
 
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
 {\ttfamily \#include $<$unistd.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}../include/new\+\_\+fonctions.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/classique.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de interface.\+c\+:
 % FIG 0
 \subsection*{Macros}
@@ -17,7 +18,7 @@ Graphe des dépendances par inclusion de interface.\+c\+:
 \#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{interface_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{interface_8c_aabcb2d6536b6c0ab41f99493c911489b}
 
 \item 
-\#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{interface_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{interface_8c_aabcb2d6536b6c0ab41f99493c911489b}
+\#define {\bfseries T}~100\hypertarget{interface_8c_a0acb682b8260ab1c60b918599864e2e5}{}\label{interface_8c_a0acb682b8260ab1c60b918599864e2e5}
 
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
@@ -26,12 +27,21 @@ Graphe des dépendances par inclusion de interface.\+c\+:
 int \hyperlink{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}{menu} ()\hypertarget{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}{}\label{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}
 
 \begin{DoxyCompactList}\small\item\em Menu pour commencer la partie. \end{DoxyCompactList}\item 
+void {\bfseries affich\+\_\+score\+\_\+classique} ()\hypertarget{interface_8c_a9d84ea2e419040b406791f66231922dc}{}\label{interface_8c_a9d84ea2e419040b406791f66231922dc}
+
+\item 
 int \hyperlink{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}{fin\+\_\+jeux} ()\hypertarget{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}{}\label{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}
 
 \begin{DoxyCompactList}\small\item\em Menu pour la fin de la partie. \end{DoxyCompactList}\item 
-void \hyperlink{interface_8c_acaa546d4c4087e0f04a22323d7486e32}{pseudo\+\_\+classique} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]})\hypertarget{interface_8c_acaa546d4c4087e0f04a22323d7486e32}{}\label{interface_8c_acaa546d4c4087e0f04a22323d7486e32}
+void {\bfseries pseudo\+\_\+classique} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, int party, int debut)\hypertarget{interface_8c_a85390d60212fedf6c6ea9674e996ad08}{}\label{interface_8c_a85390d60212fedf6c6ea9674e996ad08}
 
-\begin{DoxyCompactList}\small\item\em Demande les pseudos des joueurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\item 
+int {\bfseries quitter} ()\hypertarget{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}{}\label{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}
+
+\item 
+int {\bfseries begin} ()\hypertarget{interface_8c_a12c685521781d36e0c27810df62b840c}{}\label{interface_8c_a12c685521781d36e0c27810df62b840c}
+
+\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}

@@ -1,0 +1,109 @@
+\hypertarget{classique_8h}{}\section{Référence du fichier include/classique.h}
+\label{classique_8h}\index{include/classique.\+h@{include/classique.\+h}}
+
+
+Prototypes des fonctions du puissance 4 classique utilisées.  
+
+
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structt__score}{t\+\_\+score}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries N}~6\hypertarget{classique_8h_a0240ac851181b84ac374872dc5434ee4}{}\label{classique_8h_a0240ac851181b84ac374872dc5434ee4}
+
+\item 
+\#define {\bfseries M}~7\hypertarget{classique_8h_a52037c938e3c1b126c6277da5ca689d0}{}\label{classique_8h_a52037c938e3c1b126c6277da5ca689d0}
+
+\item 
+\#define {\bfseries L}~7\hypertarget{classique_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}{}\label{classique_8h_aa73214aa5f2f94f63d90bb4e3d99fe53}
+
+\end{DoxyCompactItemize}
+\subsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classique_8h_ae83fcdbeb2b6757fc741ae953b633ee1}{menu} ()\hypertarget{classique_8h_ae83fcdbeb2b6757fc741ae953b633ee1}{}\label{classique_8h_ae83fcdbeb2b6757fc741ae953b633ee1}
+
+\begin{DoxyCompactList}\small\item\em Menu pour commencer la partie. \end{DoxyCompactList}\item 
+void \hyperlink{classique_8h_a2a7a61f5c76a056d79195ecd83ee5a34}{init\+\_\+matrice} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})
+\begin{DoxyCompactList}\small\item\em Initialise à vide la grille du Puissance 4. \end{DoxyCompactList}\item 
+void \hyperlink{classique_8h_ac941b3c71b60fed563ffd2f9cc43a5be}{afficher\+\_\+matrice} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{classique_8h_ac941b3c71b60fed563ffd2f9cc43a5be}{}\label{classique_8h_ac941b3c71b60fed563ffd2f9cc43a5be}
+
+\begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4 du jeu en cours. \end{DoxyCompactList}\item 
+int \hyperlink{classique_8h_ac328919dd5debd46e163f09d9c0ff876}{choix\+\_\+ligne} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)\hypertarget{classique_8h_ac328919dd5debd46e163f09d9c0ff876}{}\label{classique_8h_ac328919dd5debd46e163f09d9c0ff876}
+
+\begin{DoxyCompactList}\small\item\em Retourne la bonne ligne pour placer le pion. \end{DoxyCompactList}\item 
+void \hyperlink{classique_8h_aa786481e937edf1c4fe967bba348a6f2}{placer\+\_\+pions} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne, int ligne, int num\+\_\+joueur)\hypertarget{classique_8h_aa786481e937edf1c4fe967bba348a6f2}{}\label{classique_8h_aa786481e937edf1c4fe967bba348a6f2}
+
+\begin{DoxyCompactList}\small\item\em Place le pion du joueur à la colonne qu\textquotesingle{}il veut et à la bonne ligne. \end{DoxyCompactList}\item 
+int \hyperlink{classique_8h_aff6c2bf569aafbe124db9c66d23d7e5f}{gagne} (int grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{classique_8h_aff6c2bf569aafbe124db9c66d23d7e5f}{}\label{classique_8h_aff6c2bf569aafbe124db9c66d23d7e5f}
+
+\begin{DoxyCompactList}\small\item\em Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non. \end{DoxyCompactList}\item 
+int {\bfseries quitter} ()\hypertarget{classique_8h_aa9977dddb1e2de8bdeba6e9fb553ad28}{}\label{classique_8h_aa9977dddb1e2de8bdeba6e9fb553ad28}
+
+\item 
+void {\bfseries save\+\_\+quit\+\_\+classique} (int matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]})\hypertarget{classique_8h_a20f731c6c05ef066927607d017256005}{}\label{classique_8h_a20f731c6c05ef066927607d017256005}
+
+\item 
+int {\bfseries begin} ()\hypertarget{classique_8h_a12c685521781d36e0c27810df62b840c}{}\label{classique_8h_a12c685521781d36e0c27810df62b840c}
+
+\item 
+int {\bfseries load\+\_\+classique} (int grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]})\hypertarget{classique_8h_a9f159e7e12c8550862be6b48dd05531d}{}\label{classique_8h_a9f159e7e12c8550862be6b48dd05531d}
+
+\item 
+void \hyperlink{classique_8h_a64ccdf150731cbfb3af468c0f487a0f7}{affich\+\_\+result} (int grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, char joueur1\mbox{[}L\mbox{]}, char joueur2\mbox{[}L\mbox{]}, int tour)\hypertarget{classique_8h_a64ccdf150731cbfb3af468c0f487a0f7}{}\label{classique_8h_a64ccdf150731cbfb3af468c0f487a0f7}
+
+\begin{DoxyCompactList}\small\item\em Affichage du resultat de la partie. \end{DoxyCompactList}\item 
+void {\bfseries affich\+\_\+score\+\_\+classique} ()\hypertarget{classique_8h_a9d84ea2e419040b406791f66231922dc}{}\label{classique_8h_a9d84ea2e419040b406791f66231922dc}
+
+\item 
+void {\bfseries pseudo\+\_\+classique} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, int party, int debut)\hypertarget{classique_8h_a85390d60212fedf6c6ea9674e996ad08}{}\label{classique_8h_a85390d60212fedf6c6ea9674e996ad08}
+
+\item 
+void \hyperlink{classique_8h_a1cc3cc1965b4b09e443e0664d0ea70dc}{enregistrement\+\_\+score\+\_\+classique} (char joueur\mbox{[}L\mbox{]}, int nb\+\_\+coups)\hypertarget{classique_8h_a1cc3cc1965b4b09e443e0664d0ea70dc}{}\label{classique_8h_a1cc3cc1965b4b09e443e0664d0ea70dc}
+
+\begin{DoxyCompactList}\small\item\em Enregistrement du score du gagnant. \end{DoxyCompactList}\item 
+void \hyperlink{classique_8h_a77a05a3780f0092e667f114584124155}{puissance\+\_\+classique} ()\hypertarget{classique_8h_a77a05a3780f0092e667f114584124155}{}\label{classique_8h_a77a05a3780f0092e667f114584124155}
+
+\begin{DoxyCompactList}\small\item\em Construction du Puissance 4 classique. \end{DoxyCompactList}\item 
+int \hyperlink{classique_8h_aaf7c47a849a327b7fbdbd49703caf145}{fin\+\_\+jeux} ()\hypertarget{classique_8h_aaf7c47a849a327b7fbdbd49703caf145}{}\label{classique_8h_aaf7c47a849a327b7fbdbd49703caf145}
+
+\begin{DoxyCompactList}\small\item\em Menu pour la fin de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Description détaillée}
+Prototypes des fonctions du puissance 4 classique utilisées. 
+
+\begin{DoxyAuthor}{Auteur}
+Benjamin, Julien, Arthur 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Novembre 2016 
+\end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{classique.\+h@{classique.\+h}!init\+\_\+matrice@{init\+\_\+matrice}}
+\index{init\+\_\+matrice@{init\+\_\+matrice}!classique.\+h@{classique.\+h}}
+\subsubsection[{\texorpdfstring{init\+\_\+matrice(int matrice[N][M])}{init_matrice(int matrice[N][M])}}]{\setlength{\rightskip}{0pt plus 5cm}void init\+\_\+matrice (
+\begin{DoxyParamCaption}
+\item[{int}]{matrice\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classique_8h_a2a7a61f5c76a056d79195ecd83ee5a34}{}\label{classique_8h_a2a7a61f5c76a056d79195ecd83ee5a34}
+
+
+Initialise à vide la grille du Puissance 4. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em matrice\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}} & Grille du Puissance 4 \\
+\hline
+\end{DoxyParams}

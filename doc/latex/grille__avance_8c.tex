@@ -8,19 +8,14 @@ Interface du jeu Puissance 4 ++.
 {\ttfamily \#include $<$stdio.\+h$>$}\\*
 {\ttfamily \#include $<$stdlib.\+h$>$}\\*
 {\ttfamily \#include $<$unistd.\+h$>$}\\*
-{\ttfamily \#include \char`\"{}../include/new\+\_\+fonctions.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/classique.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/avance.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de grille\+\_\+avance.\+c\+:
 % FIG 0
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define {\bfseries couleur}(param)~printf(\char`\"{}\textbackslash{}033\mbox{[}\%sm\char`\"{},param)\hypertarget{grille__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}{}\label{grille__avance_8c_aabcb2d6536b6c0ab41f99493c911489b}
-
-\item 
-\#define {\bfseries N}~6\hypertarget{grille__avance_8c_a0240ac851181b84ac374872dc5434ee4}{}\label{grille__avance_8c_a0240ac851181b84ac374872dc5434ee4}
-
-\item 
-\#define {\bfseries M}~7\hypertarget{grille__avance_8c_a52037c938e3c1b126c6277da5ca689d0}{}\label{grille__avance_8c_a52037c938e3c1b126c6277da5ca689d0}
 
 \end{DoxyCompactItemize}
 \subsection*{Fonctions}
@@ -32,6 +27,12 @@ void \hyperlink{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}{init\+\_\+m
 int \hyperlink{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{grille\+\_\+pleine} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{}\label{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}
 
 \begin{DoxyCompactList}\small\item\em Verifie si la grille est pleine ou non. \end{DoxyCompactList}\item 
+void {\bfseries save\+\_\+quit\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs, int nb\+\_\+block1, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)\hypertarget{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}{}\label{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}
+
+\item 
+int {\bfseries load\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int $\ast$nb\+\_\+joueurs, int $\ast$nb\+\_\+block1, int $\ast$nb\+\_\+block2, int $\ast$nb\+\_\+block3, int $\ast$nb\+\_\+block4)\hypertarget{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}{}\label{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}
+
+\item 
 void \hyperlink{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}{afficher\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}{}\label{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}
 
 \begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4++ en cours. \end{DoxyCompactList}\item 

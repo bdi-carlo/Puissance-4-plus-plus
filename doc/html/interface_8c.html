@@ -97,8 +97,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <a href="#details">Plus de détails...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="new__fonctions_8h_source.html">../include/new_fonctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="classique_8h_source.html">../include/classique.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de interface.c:</div>
 <div class="dyncontent">
@@ -111,9 +112,9 @@ Macros</h2></td></tr>
 <tr class="memitem:aabcb2d6536b6c0ab41f99493c911489b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabcb2d6536b6c0ab41f99493c911489b"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>couleur</b>(param)&#160;&#160;&#160;printf(&quot;\033[%sm&quot;,param)</td></tr>
 <tr class="separator:aabcb2d6536b6c0ab41f99493c911489b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabcb2d6536b6c0ab41f99493c911489b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabcb2d6536b6c0ab41f99493c911489b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>couleur</b>(param)&#160;&#160;&#160;printf(&quot;\033[%sm&quot;,param)</td></tr>
-<tr class="separator:aabcb2d6536b6c0ab41f99493c911489b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0acb682b8260ab1c60b918599864e2e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0acb682b8260ab1c60b918599864e2e5"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>T</b>&#160;&#160;&#160;100</td></tr>
+<tr class="separator:a0acb682b8260ab1c60b918599864e2e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
@@ -121,14 +122,22 @@ Fonctions</h2></td></tr>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#ae83fcdbeb2b6757fc741ae953b633ee1">menu</a> ()</td></tr>
 <tr class="memdesc:ae83fcdbeb2b6757fc741ae953b633ee1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu pour commencer la partie. <br /></td></tr>
 <tr class="separator:ae83fcdbeb2b6757fc741ae953b633ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d84ea2e419040b406791f66231922dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9d84ea2e419040b406791f66231922dc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>affich_score_classique</b> ()</td></tr>
+<tr class="separator:a9d84ea2e419040b406791f66231922dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf7c47a849a327b7fbdbd49703caf145"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf7c47a849a327b7fbdbd49703caf145"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#aaf7c47a849a327b7fbdbd49703caf145">fin_jeux</a> ()</td></tr>
 <tr class="memdesc:aaf7c47a849a327b7fbdbd49703caf145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Menu pour la fin de la partie. <br /></td></tr>
 <tr class="separator:aaf7c47a849a327b7fbdbd49703caf145"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acaa546d4c4087e0f04a22323d7486e32"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acaa546d4c4087e0f04a22323d7486e32"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_8c.html#acaa546d4c4087e0f04a22323d7486e32">pseudo_classique</a> (char pseudo1[L], char pseudo2[L])</td></tr>
-<tr class="memdesc:acaa546d4c4087e0f04a22323d7486e32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Demande les pseudos des joueurs. <br /></td></tr>
-<tr class="separator:acaa546d4c4087e0f04a22323d7486e32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85390d60212fedf6c6ea9674e996ad08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85390d60212fedf6c6ea9674e996ad08"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>pseudo_classique</b> (char pseudo1[L], char pseudo2[L], int party, int debut)</td></tr>
+<tr class="separator:a85390d60212fedf6c6ea9674e996ad08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9977dddb1e2de8bdeba6e9fb553ad28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa9977dddb1e2de8bdeba6e9fb553ad28"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>quitter</b> ()</td></tr>
+<tr class="separator:aa9977dddb1e2de8bdeba6e9fb553ad28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a12c685521781d36e0c27810df62b840c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a12c685521781d36e0c27810df62b840c"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>begin</b> ()</td></tr>
+<tr class="separator:a12c685521781d36e0c27810df62b840c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Description détaillée</h2>
 <div class="textblock"><p>Interface du Puissance 4. </p>

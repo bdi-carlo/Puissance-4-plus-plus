@@ -98,7 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;unistd.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="new__fonctions_8h_source.html">../include/new_fonctions.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="classique_8h_source.html">../include/classique.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="avance_8h_source.html">../include/avance.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Graphe des dépendances par inclusion de puissance_avance.c:</div>
 <div class="dyncontent">
@@ -108,22 +109,15 @@ Graphe des dépendances par inclusion de puissance_avance.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a0240ac851181b84ac374872dc5434ee4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0240ac851181b84ac374872dc5434ee4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>N</b>&#160;&#160;&#160;6</td></tr>
-<tr class="separator:a0240ac851181b84ac374872dc5434ee4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a52037c938e3c1b126c6277da5ca689d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52037c938e3c1b126c6277da5ca689d0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>M</b>&#160;&#160;&#160;7</td></tr>
-<tr class="separator:a52037c938e3c1b126c6277da5ca689d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa73214aa5f2f94f63d90bb4e3d99fe53"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>L</b>&#160;&#160;&#160;20</td></tr>
-<tr class="separator:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcb2d6536b6c0ab41f99493c911489b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aabcb2d6536b6c0ab41f99493c911489b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>couleur</b>(param)&#160;&#160;&#160;printf(&quot;\033[%sm&quot;,param)</td></tr>
+<tr class="separator:aabcb2d6536b6c0ab41f99493c911489b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:ab51765589d909250c6de78fb333ae3e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab51765589d909250c6de78fb333ae3e9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#ab51765589d909250c6de78fb333ae3e9">player1</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block1, int pions, char pseudo1[L])</td></tr>
-<tr class="memdesc:ab51765589d909250c6de78fb333ae3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choix du type et de la position de la pièce du Joueur 1. <br /></td></tr>
-<tr class="separator:ab51765589d909250c6de78fb333ae3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77f2cbf46c0f7a20c07ea2372e213c21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77f2cbf46c0f7a20c07ea2372e213c21"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>player1</b> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4)</td></tr>
+<tr class="separator:a77f2cbf46c0f7a20c07ea2372e213c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284bba16cf23938d4f51484c13689d76"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a284bba16cf23938d4f51484c13689d76"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a284bba16cf23938d4f51484c13689d76">player2</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block2, int pions, char pseudo2[L])</td></tr>
 <tr class="memdesc:a284bba16cf23938d4f51484c13689d76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choix du type et de la position de la pièce du Joueur 2. <br /></td></tr>
@@ -136,6 +130,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puis
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a2b6a0a4dcaf028ac0ea36949596656e5">player4</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block4, int pions, char pseudo4[L])</td></tr>
 <tr class="memdesc:a2b6a0a4dcaf028ac0ea36949596656e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choix du type et de la position de la pièce du Joueur 4. <br /></td></tr>
 <tr class="separator:a2b6a0a4dcaf028ac0ea36949596656e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90edd1cd55ec27206445060791e10e27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90edd1cd55ec27206445060791e10e27"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>enregistrement_score_avance</b> (char joueur[L], int nb_coups)</td></tr>
+<tr class="separator:a90edd1cd55ec27206445060791e10e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76241034cbb33d29399d26db374965ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76241034cbb33d29399d26db374965ec"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a76241034cbb33d29399d26db374965ec">affich_result_avance</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L])</td></tr>
 <tr class="memdesc:a76241034cbb33d29399d26db374965ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage du résultat. <br /></td></tr>

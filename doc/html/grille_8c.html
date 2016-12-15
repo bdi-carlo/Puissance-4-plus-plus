@@ -116,12 +116,20 @@ Macros</h2></td></tr>
 <tr class="memitem:a52037c938e3c1b126c6277da5ca689d0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52037c938e3c1b126c6277da5ca689d0"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>M</b>&#160;&#160;&#160;7</td></tr>
 <tr class="separator:a52037c938e3c1b126c6277da5ca689d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa73214aa5f2f94f63d90bb4e3d99fe53"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>L</b>&#160;&#160;&#160;7</td></tr>
+<tr class="separator:aa73214aa5f2f94f63d90bb4e3d99fe53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a2a7a61f5c76a056d79195ecd83ee5a34"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a7a61f5c76a056d79195ecd83ee5a34"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grille_8c.html#a2a7a61f5c76a056d79195ecd83ee5a34">init_matrice</a> (int matrice[N][M])</td></tr>
-<tr class="memdesc:a2a7a61f5c76a056d79195ecd83ee5a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise à vide la grille du Puissance 4. <br /></td></tr>
+<tr class="memitem:a20f731c6c05ef066927607d017256005"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a20f731c6c05ef066927607d017256005"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>save_quit_classique</b> (int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L])</td></tr>
+<tr class="separator:a20f731c6c05ef066927607d017256005"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa03afe8d278ec33b1138b645419185e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa03afe8d278ec33b1138b645419185e5"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>load_classique</b> (int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L])</td></tr>
+<tr class="separator:aa03afe8d278ec33b1138b645419185e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a7a61f5c76a056d79195ecd83ee5a34"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grille_8c.html#a2a7a61f5c76a056d79195ecd83ee5a34">init_matrice</a> (int matrice[N][M])</td></tr>
+<tr class="memdesc:a2a7a61f5c76a056d79195ecd83ee5a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise à vide la grille du Puissance 4.  <a href="#a2a7a61f5c76a056d79195ecd83ee5a34">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a2a7a61f5c76a056d79195ecd83ee5a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac941b3c71b60fed563ffd2f9cc43a5be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac941b3c71b60fed563ffd2f9cc43a5be"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grille_8c.html#ac941b3c71b60fed563ffd2f9cc43a5be">afficher_matrice</a> (int matrice[N][M])</td></tr>
@@ -145,7 +153,32 @@ int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="grill
 <dl class="section author"><dt>Auteur</dt><dd>Benjamin, Julien, Arthur </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Novembre 2016 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a2a7a61f5c76a056d79195ecd83ee5a34"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void init_matrice </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>matrice</em>[N][M]</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialise à vide la grille du Puissance 4. </p>
+<dl class="params"><dt>Paramètres</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">matrice[N][M]</td><td>Grille du Puissance 4 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
