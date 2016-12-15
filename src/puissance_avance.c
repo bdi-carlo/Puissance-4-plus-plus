@@ -329,6 +329,12 @@ void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
 	couleur("0");
 }
 
+/**
+
+*\fn void enregistrement_score_avance(char joueur[L], int nb_coups)
+*\brief Enregistrement du score du gagnant pour le Puissance 4++
+
+*/
 void enregistrement_score_avance(char joueur[L], int nb_coups){
 	FILE * fichier;
 
