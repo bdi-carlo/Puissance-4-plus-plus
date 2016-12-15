@@ -17,6 +17,7 @@
 */
 
 
+
 /**
 
 *\fn int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4)
@@ -266,7 +267,7 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 
 */
 void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
-	int num_joueur, ligne, colonne, test;
+	int num_joueur, ligne, c olonne, test;
 	unsigned int type;
 
 	num_joueur = 4;
