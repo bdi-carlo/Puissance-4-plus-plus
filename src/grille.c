@@ -17,35 +17,13 @@
 */
 
 
+
 /**
 
 *\fn void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L])
 *\brief Enregistre la grille dans un fichier pour la reprendre ultérieurement
 
-*\fn int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L]
-*\return Retourne une erreur si le fichier n'existe pas
-
-*\fn void init_matrice(int matrice[N][M])
-*\brief Initialise à vide la grille du Puissance 4
-*\param matrice[N][M] Grille du Puissance 4
-
-*\fn void afficher_matrice(int matrice[N][M])
-*\brief Affiche la grille du Puissance 4 du jeu en cours
-
-*\fn int choix_ligne(int matrice[N][M], int colonne)
-*\brief Recherche la bonne ligne pour placer le pion
-*\param On entre la colonne choisie pour trouver la ligne
-*\return Retourne la ligne où le pion doit se placer
-
-*\fn void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur)
-*\brief Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
-
-*\fn int gagne(int grille[N][M])
-*\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
-*\return Retourne le numéro du joueur vainqueur
 */
-
-
 void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L]){
 	int i,j;
 	FILE * fichier;
@@ -64,6 +42,13 @@ void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseu
 	fclose(fichier);
 }
 
+/**
+
+*\fn int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L]
+*\brief Charge la partie sauvegardée
+*\return Retourne une erreur si le fichier n'existe pas
+
+*/
 int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L]){
 	int i,j;
 	FILE * fichier;
@@ -86,6 +71,13 @@ int load_classique(int matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L
 	return 0;
 }
 
+/**
+
+*\fn void init_matrice(int matrice[N][M])
+*\brief Initialise à vide la grille du Puissance 4
+*\param matrice[N][M] Grille du Puissance 4
+
+*/
 void init_matrice(int matrice[N][M]){
 	int i,j;
 
@@ -96,6 +88,12 @@ void init_matrice(int matrice[N][M]){
 	}
 }
 
+/**
+
+*\fn void afficher_matrice(int matrice[N][M])
+*\brief Affiche la grille du Puissance 4 du jeu en cours
+
+*/
 void afficher_matrice(int matrice[N][M]){
 	int i,j;
 
@@ -123,6 +121,15 @@ void afficher_matrice(int matrice[N][M]){
 	printf("\n");
 }
 
+/**
+
+*\fn int choix_ligne(int matrice[N][M], int colonne)
+*\brief Recherche la bonne ligne pour placer le pion
+*\param On entre la colonne choisie pour trouver la ligne
+*\return Retourne la ligne où le pion doit se placer
+
+*/
+
 int choix_ligne(int matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
@@ -137,6 +144,12 @@ int choix_ligne(int matrice[N][M], int colonne){
 	return ligne;
 }
 
+/**
+
+*\fn void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur)
+*\brief Place le pion du joueur à la colonne qu'il veut et à la bonne ligne
+
+*/
 void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 	//Car l'utilisateur choisi une colonne entre 1 et 7 or la matrice est entre 0 et 6
 	colonne--;
@@ -147,6 +160,13 @@ void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur){
 		matrice[ligne][colonne] = 2;
 }
 
+/**
+
+*\fn int gagne(int grille[N][M])
+*\brief Parcours la grille du Puissance 4 pour savoir si un joueur a gagné ou non
+*\return Retourne le numéro du joueur vainqueur
+
+*/
 int gagne(int grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
