@@ -30,14 +30,14 @@ int menu(){
 
 	system("clear");
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	        Menu            |");
 	printf("\n|				|");
 	printf("\n|  1 - Puissance 4 classique	|");
 	printf("\n|  2 - Puissance 4 avance	|");
 	printf("\n|  3 - Quitter			|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	
 	do{
 		printf("\n>> Votre choix : ");
@@ -113,14 +113,14 @@ void affich_score_classique(){
 int fin_jeux(){
 	int choix;
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	        FIN             |");
 	printf("\n|				|");
 	printf("\n| 	 1 - Rejouer		|");
 	printf("\n|  	 2 - Retour au menu	|");
 	printf("\n|  	 3 - Quitter		|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	
 	do{
 		printf("\n>> Votre choix : ");
@@ -180,13 +180,13 @@ int quitter(){
 	int choix;
 	system("clear");
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	       Quitter          |");
 	printf("\n|				|");
 	printf("\n|  1 - Quitter sans sauvegarder	|");
 	printf("\n|  2 - Quitter et sauvegarder	|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 
 	do{
 		printf("\n>> Votre choix : ");
@@ -210,7 +210,7 @@ int begin(){
 	int choix;
 	system("clear");
 
-	printf("\n ------------------------------------- ");
+	printf("\n+---------------------------------------+ ");
 	printf("\n|    		  Début          	|");
 	printf("\n|					|");
 	printf("\n|  1 - Commencer une nouvelle partie	|");
