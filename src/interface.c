@@ -20,17 +20,6 @@
 
 /**
 
-
-*\fn int fin_jeux()
-*\brief Menu pour la fin de la partie
-*\return 
-
-*\fn void pseudo_classique(char pseudo1[L], char pseudo2[L])
-*\brief Demande les pseudos des joueurs
-*/
-
-/**
-
 *\fn int menu()
 *\brief Menu pour commencer la partie
 
@@ -68,6 +57,9 @@ int menu(){
 /**
 
 *\fn void affich_score_classique()
+*\brief Affiche les meilleurs scores
+
+*/
 void affich_score_classique(){
 	int i, j, taille;
 	t_score temp;
@@ -110,6 +102,13 @@ void affich_score_classique(){
 	printf("\n");
 }
 
+/**
+
+*\fn int fin_jeux()
+*\brief Menu pour la fin de la partie
+*\return 
+
+*/
 int fin_jeux(){
 	int choix;
 
@@ -136,6 +135,12 @@ int fin_jeux(){
 	}while(choix < 1 || choix > 3);
 }
 
+/**
+
+*\fn void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut)
+*\brief Demande les pseudos des joueurs
+
+*/
 void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 	system("clear");
 	if(party == 1 && debut == 2)
@@ -163,6 +168,13 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 	}while(strlen(pseudo2) > 5);
 }
 
+/**
+
+\fn int quitter()
+\brief Menu qui demande à l'utilisaeur de quitter et/ou sauvegarder pendant une partie
+\return Retourne le choix de l'utilisateur
+
+*/
 int quitter(){
 	int choix;
 	system("clear");
@@ -186,6 +198,13 @@ int quitter(){
 	return choix;
 }
 
+/**
+
+\fn int begin()
+\brief Menu au début de la partie
+\return Retourne le choix de l'utilisateur
+
+*/
 int begin(){
 	int choix;
 	system("clear");
