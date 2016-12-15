@@ -18,16 +18,22 @@
 
 
 /**
-*\fn int menu()
-*\brief Menu pour commencer la partie
+
 
 *\fn int fin_jeux()
 *\brief Menu pour la fin de la partie
+*\return 
 
 *\fn void pseudo_classique(char pseudo1[L], char pseudo2[L])
 *\brief Demande les pseudos des joueurs
 */
 
+/**
+
+*\fn int menu()
+*\brief Menu pour commencer la partie
+
+*/
 int menu(){
 	int choix;
 
@@ -58,6 +64,9 @@ int menu(){
 	return 0;
 }
 
+/**
+
+*\fn void affich_score_classique()
 void affich_score_classique(){
 	int i, j, taille;
 	t_score temp;
