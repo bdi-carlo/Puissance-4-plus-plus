@@ -24,26 +24,22 @@ Graphe des dépendances par inclusion de grille\+\_\+avance.\+c\+:
 void \hyperlink{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}{init\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}{}\label{grille__avance_8c_a1313836f9c3fda77b7abd9d5d1f5dc2a}
 
 \begin{DoxyCompactList}\small\item\em Initialise à vide la grille du Puissance 4++. \end{DoxyCompactList}\item 
-int \hyperlink{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{grille\+\_\+pleine} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{}\label{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}
-
+int \hyperlink{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{grille\+\_\+pleine} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})
 \begin{DoxyCompactList}\small\item\em Verifie si la grille est pleine ou non. \end{DoxyCompactList}\item 
-void {\bfseries save\+\_\+quit\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs, int nb\+\_\+block1, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)\hypertarget{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}{}\label{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}
+void \hyperlink{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}{save\+\_\+quit\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs, int nb\+\_\+block1, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)\hypertarget{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}{}\label{grille__avance_8c_ab3a9ec4a9e94b558fa6fd20215290f82}
 
-\item 
-int {\bfseries load\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int $\ast$nb\+\_\+joueurs, int $\ast$nb\+\_\+block1, int $\ast$nb\+\_\+block2, int $\ast$nb\+\_\+block3, int $\ast$nb\+\_\+block4)\hypertarget{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}{}\label{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}
-
-\item 
+\begin{DoxyCompactList}\small\item\em Enregistre la grille et le nombre de pièces bloquantes restantes pour chaque joueur dans un fichier dans le Puissance 4++. \end{DoxyCompactList}\item 
+int \hyperlink{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}{load\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int $\ast$nb\+\_\+joueurs, int $\ast$nb\+\_\+block1, int $\ast$nb\+\_\+block2, int $\ast$nb\+\_\+block3, int $\ast$nb\+\_\+block4)
+\begin{DoxyCompactList}\small\item\em Charge la partie sauvegardée dans le Puissance 4++. \end{DoxyCompactList}\item 
 void \hyperlink{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}{afficher\+\_\+matrice\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}{}\label{grille__avance_8c_a65a875a236cb433561fb5869ce0717af}
 
 \begin{DoxyCompactList}\small\item\em Affiche la grille du Puissance 4++ en cours. \end{DoxyCompactList}\item 
-int \hyperlink{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}{choix\+\_\+ligne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)\hypertarget{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}{}\label{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}
-
-\begin{DoxyCompactList}\small\item\em Retourne la premiere ligne libre. \end{DoxyCompactList}\item 
+int \hyperlink{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}{choix\+\_\+ligne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne)
+\begin{DoxyCompactList}\small\item\em Recherche la bonne ligne pour placer le pion dans le Puissance 4++. \end{DoxyCompactList}\item 
 void \hyperlink{grille__avance_8c_a1a7fa2b38ffbb81dd1084542b3a4e3c5}{placer\+\_\+pions\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} matrice\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int colonne, int ligne, int num\+\_\+joueur, int type)\hypertarget{grille__avance_8c_a1a7fa2b38ffbb81dd1084542b3a4e3c5}{}\label{grille__avance_8c_a1a7fa2b38ffbb81dd1084542b3a4e3c5}
 
-\begin{DoxyCompactList}\small\item\em Place le pion dans la colonne sélectionné et sur la bonne ligne. \end{DoxyCompactList}\item 
-int \hyperlink{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{gagne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})\hypertarget{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{}\label{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}
-
+\begin{DoxyCompactList}\small\item\em Place le pion dans la colonne sélectionné et sur la bonne ligne dans le Puissance 4++. \end{DoxyCompactList}\item 
+int \hyperlink{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{gagne\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]})
 \begin{DoxyCompactList}\small\item\em Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -59,3 +55,78 @@ Benjamin, Julien, Arthur
 \begin{DoxyDate}{Date}
 Novembre 2016 
 \end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}!choix\+\_\+ligne\+\_\+avance@{choix\+\_\+ligne\+\_\+avance}}
+\index{choix\+\_\+ligne\+\_\+avance@{choix\+\_\+ligne\+\_\+avance}!grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}}
+\subsubsection[{\texorpdfstring{choix\+\_\+ligne\+\_\+avance(t\+\_\+piece matrice[N][M], int colonne)}{choix_ligne_avance(t_piece matrice[N][M], int colonne)}}]{\setlength{\rightskip}{0pt plus 5cm}int choix\+\_\+ligne\+\_\+avance (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+piece}}]{matrice\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}, }
+\item[{int}]{colonne}
+\end{DoxyParamCaption}
+)}\hypertarget{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}{}\label{grille__avance_8c_a893bbf11d6ec250c284d9dc49853ce3a}
+
+
+Recherche la bonne ligne pour placer le pion dans le Puissance 4++. 
+
+
+\begin{DoxyParams}{Paramètres}
+{\em colonne} & On entre la colonne choisie pour trouver la ligne \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+La ligne où le pion doit se placer 
+\end{DoxyReturn}
+\index{grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}!gagne\+\_\+avance@{gagne\+\_\+avance}}
+\index{gagne\+\_\+avance@{gagne\+\_\+avance}!grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}}
+\subsubsection[{\texorpdfstring{gagne\+\_\+avance(t\+\_\+piece grille[N][M])}{gagne_avance(t_piece grille[N][M])}}]{\setlength{\rightskip}{0pt plus 5cm}int gagne\+\_\+avance (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+piece}}]{grille\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}{}\label{grille__avance_8c_a56a6f64d5e3aaa97db2e9bd3f4ad28dd}
+
+
+Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non. 
+
+\begin{DoxyReturn}{Renvoie}
+Le numéro du joueur vainqueur 
+\end{DoxyReturn}
+\index{grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}!grille\+\_\+pleine@{grille\+\_\+pleine}}
+\index{grille\+\_\+pleine@{grille\+\_\+pleine}!grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}}
+\subsubsection[{\texorpdfstring{grille\+\_\+pleine(t\+\_\+piece matrice[N][M])}{grille_pleine(t_piece matrice[N][M])}}]{\setlength{\rightskip}{0pt plus 5cm}int grille\+\_\+pleine (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+piece}}]{matrice\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}{}\label{grille__avance_8c_ab8f1843d7e0f3244bcc758e552a2e5f1}
+
+
+Verifie si la grille est pleine ou non. 
+
+\begin{DoxyReturn}{Renvoie}
+Vrai si la grille est pleine 
+\end{DoxyReturn}
+\index{grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}!load\+\_\+avance@{load\+\_\+avance}}
+\index{load\+\_\+avance@{load\+\_\+avance}!grille\+\_\+avance.\+c@{grille\+\_\+avance.\+c}}
+\subsubsection[{\texorpdfstring{load\+\_\+avance(t\+\_\+piece matrice[N][M], int $\ast$tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int $\ast$nb\+\_\+joueurs, int $\ast$nb\+\_\+block1, int $\ast$nb\+\_\+block2, int $\ast$nb\+\_\+block3, int $\ast$nb\+\_\+block4)}{load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1, int *nb_block2, int *nb_block3, int *nb_block4)}}]{\setlength{\rightskip}{0pt plus 5cm}int load\+\_\+avance (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+piece}}]{matrice\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}, }
+\item[{int $\ast$}]{tour, }
+\item[{char}]{pseudo1\mbox{[}\+L\mbox{]}, }
+\item[{char}]{pseudo2\mbox{[}\+L\mbox{]}, }
+\item[{char}]{pseudo3\mbox{[}\+L\mbox{]}, }
+\item[{char}]{pseudo4\mbox{[}\+L\mbox{]}, }
+\item[{int $\ast$}]{nb\+\_\+joueurs, }
+\item[{int $\ast$}]{nb\+\_\+block1, }
+\item[{int $\ast$}]{nb\+\_\+block2, }
+\item[{int $\ast$}]{nb\+\_\+block3, }
+\item[{int $\ast$}]{nb\+\_\+block4}
+\end{DoxyParamCaption}
+)}\hypertarget{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}{}\label{grille__avance_8c_a79fcddade7d37414a5cbb2fc894f73f3}
+
+
+Charge la partie sauvegardée dans le Puissance 4++. 
+
+\begin{DoxyReturn}{Renvoie}
+Une erreur si le fichier n\textquotesingle{}existe pas 
+\end{DoxyReturn}

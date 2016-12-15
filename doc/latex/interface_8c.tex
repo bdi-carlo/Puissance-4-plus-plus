@@ -10,6 +10,7 @@ Interface du Puissance 4.
 {\ttfamily \#include $<$string.\+h$>$}\\*
 {\ttfamily \#include $<$unistd.\+h$>$}\\*
 {\ttfamily \#include \char`\"{}../include/classique.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/avance.\+h\char`\"{}}\\*
 Graphe des dépendances par inclusion de interface.\+c\+:
 % FIG 0
 \subsection*{Macros}
@@ -24,24 +25,20 @@ Graphe des dépendances par inclusion de interface.\+c\+:
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}{menu} ()\hypertarget{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}{}\label{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}
-
+int \hyperlink{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}{menu} ()
 \begin{DoxyCompactList}\small\item\em Menu pour commencer la partie. \end{DoxyCompactList}\item 
-void {\bfseries affich\+\_\+score\+\_\+classique} ()\hypertarget{interface_8c_a9d84ea2e419040b406791f66231922dc}{}\label{interface_8c_a9d84ea2e419040b406791f66231922dc}
+void \hyperlink{interface_8c_a9d84ea2e419040b406791f66231922dc}{affich\+\_\+score\+\_\+classique} ()\hypertarget{interface_8c_a9d84ea2e419040b406791f66231922dc}{}\label{interface_8c_a9d84ea2e419040b406791f66231922dc}
 
-\item 
-int \hyperlink{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}{fin\+\_\+jeux} ()\hypertarget{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}{}\label{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}
-
+\begin{DoxyCompactList}\small\item\em Affiche les meilleurs scores. \end{DoxyCompactList}\item 
+int \hyperlink{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}{fin\+\_\+jeux} ()
 \begin{DoxyCompactList}\small\item\em Menu pour la fin de la partie. \end{DoxyCompactList}\item 
-void {\bfseries pseudo\+\_\+classique} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, int party, int debut)\hypertarget{interface_8c_a85390d60212fedf6c6ea9674e996ad08}{}\label{interface_8c_a85390d60212fedf6c6ea9674e996ad08}
+void \hyperlink{interface_8c_a85390d60212fedf6c6ea9674e996ad08}{pseudo\+\_\+classique} (char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, int party, int debut)\hypertarget{interface_8c_a85390d60212fedf6c6ea9674e996ad08}{}\label{interface_8c_a85390d60212fedf6c6ea9674e996ad08}
 
-\item 
-int {\bfseries quitter} ()\hypertarget{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}{}\label{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}
-
-\item 
-int {\bfseries begin} ()\hypertarget{interface_8c_a12c685521781d36e0c27810df62b840c}{}\label{interface_8c_a12c685521781d36e0c27810df62b840c}
-
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Demande les pseudos des joueurs. \end{DoxyCompactList}\item 
+int \hyperlink{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}{quitter} ()
+\begin{DoxyCompactList}\small\item\em Menu qui demande à l\textquotesingle{}utilisaeur de quitter et/ou sauvegarder pendant une partie. \end{DoxyCompactList}\item 
+int \hyperlink{interface_8c_a12c685521781d36e0c27810df62b840c}{begin} ()
+\begin{DoxyCompactList}\small\item\em Menu au début de la partie. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Description détaillée}
@@ -56,3 +53,62 @@ Benjamin, Julien, Arthur
 \begin{DoxyDate}{Date}
 Novembre 2016 
 \end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{interface.\+c@{interface.\+c}!begin@{begin}}
+\index{begin@{begin}!interface.\+c@{interface.\+c}}
+\subsubsection[{\texorpdfstring{begin()}{begin()}}]{\setlength{\rightskip}{0pt plus 5cm}int begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_8c_a12c685521781d36e0c27810df62b840c}{}\label{interface_8c_a12c685521781d36e0c27810df62b840c}
+
+
+Menu au début de la partie. 
+
+\begin{DoxyReturn}{Renvoie}
+Choix de l\textquotesingle{}utilisateur 
+\end{DoxyReturn}
+\index{interface.\+c@{interface.\+c}!fin\+\_\+jeux@{fin\+\_\+jeux}}
+\index{fin\+\_\+jeux@{fin\+\_\+jeux}!interface.\+c@{interface.\+c}}
+\subsubsection[{\texorpdfstring{fin\+\_\+jeux()}{fin_jeux()}}]{\setlength{\rightskip}{0pt plus 5cm}int fin\+\_\+jeux (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}{}\label{interface_8c_aaf7c47a849a327b7fbdbd49703caf145}
+
+
+Menu pour la fin de la partie. 
+
+\begin{DoxyReturn}{Renvoie}
+Retourne le choix de l\textquotesingle{}utilisateur 
+\end{DoxyReturn}
+\index{interface.\+c@{interface.\+c}!menu@{menu}}
+\index{menu@{menu}!interface.\+c@{interface.\+c}}
+\subsubsection[{\texorpdfstring{menu()}{menu()}}]{\setlength{\rightskip}{0pt plus 5cm}int menu (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}{}\label{interface_8c_ae83fcdbeb2b6757fc741ae953b633ee1}
+
+
+Menu pour commencer la partie. 
+
+\begin{DoxyReturn}{Renvoie}
+Retourne le choix de l\textquotesingle{}utilisateur 
+\end{DoxyReturn}
+\index{interface.\+c@{interface.\+c}!quitter@{quitter}}
+\index{quitter@{quitter}!interface.\+c@{interface.\+c}}
+\subsubsection[{\texorpdfstring{quitter()}{quitter()}}]{\setlength{\rightskip}{0pt plus 5cm}int quitter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}{}\label{interface_8c_aa9977dddb1e2de8bdeba6e9fb553ad28}
+
+
+Menu qui demande à l\textquotesingle{}utilisaeur de quitter et/ou sauvegarder pendant une partie. 
+
+\begin{DoxyReturn}{Renvoie}
+Choix de l\textquotesingle{}utilisateur 
+\end{DoxyReturn}

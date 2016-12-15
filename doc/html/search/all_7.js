@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main',['main',['../game_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'game.c']]],
-  ['menu',['menu',['../interface_8c.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;interface.c'],['../classique_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;interface.c']]]
+  ['load_5favance',['load_avance',['../grille__avance_8c.html#a79fcddade7d37414a5cbb2fc894f73f3',1,'load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1, int *nb_block2, int *nb_block3, int *nb_block4):&#160;grille_avance.c'],['../avance_8h.html#a79fcddade7d37414a5cbb2fc894f73f3',1,'load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1, int *nb_block2, int *nb_block3, int *nb_block4):&#160;grille_avance.c']]]
 ];

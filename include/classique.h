@@ -4,20 +4,22 @@
 
 /**
 *\file classique.h
-*\brief Prototypes des fonctions du puissance 4 classique utilisées
+*\brief Prototypes des fonctions du puissance 4 classique
 *\author Benjamin, Julien, Arthur
 *\version 1.0
 *\date Novembre 2016
 */
 
 /**
-*\struct t_piece
-*\brief Structure pour définir un pion
-*\enum t_type
-*\brief type de la pièce
+*\struct t_score
+*\brief Récupère le score et le pseudo à partir d'un fichier
+
 */
 
-typedef struct{int score ; char pseudo[L] ;}t_score;
+typedef struct{
+	int score ; /**< Score du joueur*/ 
+	char pseudo[L] ; /**< Pseudo du joueur*/
+}t_score;
 
 int menu();
 

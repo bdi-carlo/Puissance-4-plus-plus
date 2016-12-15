@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['nb_5fjoueur',['nb_joueur',['../interface__avance_8c.html#af18ae061080400f928e5878158833089',1,'nb_joueur():&#160;interface_avance.c'],['../avance_8h.html#af18ae061080400f928e5878158833089',1,'nb_joueur():&#160;interface_avance.c']]]
+  ['main',['main',['../game_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'game.c']]],
+  ['menu',['menu',['../interface_8c.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;interface.c'],['../classique_8h.html#ae83fcdbeb2b6757fc741ae953b633ee1',1,'menu():&#160;interface.c']]]
 ];
