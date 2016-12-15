@@ -189,22 +189,22 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 */
 void afficher_regles(){
 	int regles;
-	do{
-		system("clear");
-		printf("\n+--------------------------------------------------------------------------------------------------------------+");
-		printf("\n|													       |");
-		printf("\n|						 Regles du jeu  					       |");
-		printf("\n|													       |");
-		printf("\n|	- Pour gagner la partie il suffit d'aligner 4 pions de sa couleur				       |");
-		printf("\n|	- Le joueur a à sa disposition 3 types de pièces : Bloquantes, Creuses et Pleines		       |");
-		printf("\n|		* Une pièce creuse peut passer au dessus d’une pièce pleine (ou s’arrêter dessus)	       |");
-		printf("\n|		* Une pièce pleine peut passer au travers d’une pièce creuse (ou s’arrêter dessus)	       |");
-		printf("\n|		* Deux pièces de même type ne peuvent pas se traverser					       |");
-		printf("\n|		* Une pièce bloquante ne peut être traversée ni par une pièce creuse ni par une pièce pleine.  |");
-		printf("\n|		* Les joueurs n’ont droit qu’à 2 pièces bloquantes durant une partie.			       |");
-		printf("\n|													       |");
-		printf("\n+--------------------------------------------------------------------------------------------------------------+");
-		printf("\n \n				    Tapez 1 pour passer au jeu : ");
-		scanf("%i",&regles);
-	}while(regles != 1);
+	
+	system("clear");
+	printf("\n+--------------------------------------------------------------------------------------------------------------+");
+	printf("\n|													       |");
+	printf("\n|						 Regles du jeu  					       |");
+	printf("\n|													       |");
+	printf("\n|	- Pour gagner la partie il suffit d'aligner 4 pions de sa couleur				       |");
+	printf("\n|	- Le joueur a à sa disposition 3 types de pièces : Bloquantes, Creuses et Pleines		       |");
+	printf("\n|		* Une pièce creuse peut passer au dessus d’une pièce pleine (ou s’arrêter dessus)	       |");
+	printf("\n|		* Une pièce pleine peut passer au travers d’une pièce creuse (ou s’arrêter dessus)	       |");
+	printf("\n|		* Deux pièces de même type ne peuvent pas se traverser					       |");
+	printf("\n|		* Une pièce bloquante ne peut être traversée ni par une pièce creuse ni par une pièce pleine.  |");
+	printf("\n|		* Les joueurs n’ont droit qu’à 2 pièces bloquantes durant une partie.			       |");
+	printf("\n|													       |");
+	printf("\n+--------------------------------------------------------------------------------------------------------------+");
+	printf("\n \n				    Appuyer sur entrer pour passer au jeu");
+	
+	getchar();
 }
