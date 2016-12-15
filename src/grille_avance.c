@@ -7,36 +7,23 @@
 #define couleur(param) printf("\033[%sm",param)
 
 /**
+
 *\file grille_avance.c
 *\brief Interface du jeu Puissance 4 ++
 *\author Benjamin, Julien, Arthur
 *\version 1.0
 *\date Novembre 2016
+
 */
+
 
 
 /**
+
 *\fn void init_matrice_avance(t_piece matrice[N][M])
 *\brief Initialise à vide la grille du Puissance 4++
 
-*\fn int grille_pleine(t_piece matrice[N][M])
-*\brief Verifie si la grille est pleine ou non
-
-*\fn void afficher_matrice_avance(t_piece matrice[N][M])
-*\brief Affiche la grille du Puissance 4++ en cours
-
-*\fn int choix_ligne_avance(t_piece matrice[N][M], int colonne)
-*\brief Retourne la premiere ligne libre
-
-*\fn void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type)
-*\brief Place le pion dans la colonne sélectionné et sur la bonne ligne
-
-*\fn int gagne_avance(t_piece grille[N][M])
-*\brief Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non
 */
-
-
-
 void init_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
 
@@ -50,6 +37,13 @@ void init_matrice_avance(t_piece matrice[N][M]){
 	}
 }
 
+/**
+
+*\fn int grille_pleine(t_piece matrice[N][M])
+*\brief Verifie si la grille est pleine ou non
+*\return Renvoie Vrai si la grille est pleine
+
+*/
 int grille_pleine(t_piece matrice[N][M]){
 	int i,j;
 
@@ -67,6 +61,12 @@ int grille_pleine(t_piece matrice[N][M]){
 	return 1;
 }
 
+/**
+
+*\fn void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int nb_block1, int nb_block2, int nb_block3, int nb_block4)
+*\brief Enregistre la grille et le nombre de pièces bloquantes restantes pour chaque joueur dans un fichier dans le Puissance 4++
+
+*/
 void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int nb_block1, int nb_block2, int nb_block3, int nb_block4){
 	int i,j;
 	FILE * fichier;
@@ -105,6 +105,13 @@ void save_quit_avance(t_piece matrice[N][M], int tour, char pseudo1[L], char pse
 	fclose(fichier);
 }
 
+/**
+
+*\fn int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4)
+*\brief Charge la partie sauvegardée dans le Puissance 4++
+*\return Retourne une erreur si le fichier n'existe pas
+
+*/
 int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int *nb_joueurs, int *nb_block1,  int *nb_block2, int *nb_block3, int *nb_block4){
 	int i,j;
 	FILE * fichier;
@@ -147,6 +154,12 @@ int load_avance(t_piece matrice[N][M], int *tour, char pseudo1[L], char pseudo2[
 	return 0;
 }
 
+/**
+
+*\fn void afficher_matrice_avance(t_piece matrice[N][M])
+*\brief Affiche la grille du Puissance 4++ en cours
+
+*/
 void afficher_matrice_avance(t_piece matrice[N][M]){
 	int i,j;
 
@@ -496,6 +509,14 @@ void afficher_matrice_avance(t_piece matrice[N][M]){
 	printf("\n");
 }
 
+/**
+
+*\fn int choix_ligne_avance(t_piece matrice[N][M], int colonne)
+*\brief Recherche la bonne ligne pour placer le pion dans le Puissance 4++
+*\param On entre la colonne choisie pour trouver la ligne
+*\return Retourne la ligne où le pion doit se placer
+
+*/
 int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 	int i;
 	int ligne = N-1;
@@ -510,6 +531,12 @@ int choix_ligne_avance(t_piece matrice[N][M], int colonne){
 	return ligne;
 }
 
+/**
+
+*\fn void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type)
+*\brief Place le pion dans la colonne sélectionné et sur la bonne ligne dans le Puissance 4++
+
+*/
 void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_joueur, int type){
 	int i;
 
@@ -720,6 +747,13 @@ void placer_pions_avance(t_piece matrice[N][M], int colonne, int ligne, int num_
 	}
 }
 
+/**
+
+*\fn int gagne_avance(t_piece grille[N][M])
+*\brief Parcours la grille du Puissance 4++ pour savoir si un joueur a gagné ou non
+*\return Retourne le numéro du joueur vainqueur
+
+*/
 int gagne_avance(t_piece grille[N][M]){
 	int player1 = 0;
 	int player2 = 0;
