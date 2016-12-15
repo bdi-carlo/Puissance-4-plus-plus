@@ -11,9 +11,18 @@
 */
 
 /**
+
+*\struct t_piece
+*\brief Structure pour définir un pion
+*\enum t_type
+*\brief type de la pièce
+
+*/
+
+/**
 Pour le Puissance 4++, une pièce peut être soit creuse, pleine ou bloquante.
 */   
-typedef enum{vide /**< Pas de pièce*/,creuse /**< Pièce creuse*/,pleine /**< Pièce pleine*/,bloquante /**< Pièce bloquante*/}t_type;
+typedef enum{vide /**< Pas de pièce*/,creuse /**< Pièce creuse*/,pleine /**< Pièce pleine*/,bloquante /**< Pièce bloquante*/}t_type;²
 
 /**
 Il peut y avoir 2 pièces dans la même case, on définit donc à quel joueur appartiennent les pièces ainsi que leur type.
