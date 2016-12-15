@@ -16,7 +16,10 @@
 
 */
 
-typedef struct{int score ; /**< Score du joueur*/ char pseudo[L] ; /**< Pseudo du joueur*/}t_score;
+typedef struct{
+	int score ; /**< Score du joueur*/ 
+	char pseudo[L] ; /**< Pseudo du joueur*/
+}t_score;
 
 int menu();
 

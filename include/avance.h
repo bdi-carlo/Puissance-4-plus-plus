@@ -22,12 +22,23 @@
 /**
 Pour le Puissance 4++, une pièce peut être soit creuse, pleine ou bloquante.
 */   
-typedef enum{vide /**< Pas de pièce*/,creuse /**< Pièce creuse*/,pleine /**< Pièce pleine*/,bloquante /**< Pièce bloquante*/}t_type;
+typedef enum{
+	vide /**< Pas de pièce*/,
+	creuse /**< Pièce creuse*/,
+	pleine /**< Pièce pleine*/,
+	bloquante /**< Pièce bloquante*/
+}t_type;
 
 /**
 Il peut y avoir 2 pièces dans la même case, on définit donc à quel joueur appartiennent les pièces ainsi que leur type.
 */
-typedef struct{int valeur_pion1 ;/**< Numéro du joueur de la première pièce*/ t_type type1 ;/**< type de la première pièce*/int valeur_pion2 ;/**< Numéro du joueur de la deuxième pièce*/ t_type type2 ;/**< type de la deuxième pièce*/}t_piece;
+typedef struct{
+	int valeur_pion1 ;/**< Numéro du joueur de la première pièce*/ 
+	t_type type1 ;/**< type de la première pièce*/
+	int valeur_pion2 ;/**< Numéro du joueur de la deuxième pièce*/ 
+	t_type type2 ;/**< type de la deuxième pièce*/
+}t_piece;
+
 
 void init_matrice_avance(t_piece matrice[N][M]);
 void afficher_matrice_avance(t_piece matrice[N][M]);
