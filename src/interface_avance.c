@@ -207,4 +207,5 @@ void afficher_regles(){
 	printf("\n \n				    Appuyer sur entrer pour passer au jeu");
 	
 	getchar();
+	getchar();
 }
