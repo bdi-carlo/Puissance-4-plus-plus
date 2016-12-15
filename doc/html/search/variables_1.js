@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['valeur_5fpion1',['valeur_pion1',['../structt__piece.html#a2854e60853e81ec5cb32a0b4d42a2c8f',1,'t_piece']]],
-  ['valeur_5fpion2',['valeur_pion2',['../structt__piece.html#a072647ef6ac729981f55d043655f928f',1,'t_piece']]]
+  ['score',['score',['../structt__score.html#a342cf1aaec29772e5e56d29837395434',1,'t_score']]]
 ];

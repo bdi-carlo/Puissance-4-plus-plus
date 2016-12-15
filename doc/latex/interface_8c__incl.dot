@@ -12,5 +12,7 @@ digraph "src/interface.c"
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
   Node5 [label="unistd.h",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
   Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="../include/classique.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classique_8h.html",tooltip="Prototypes des fonctions du puissance 4 classique utilisées. "];
+  Node6 [label="../include/classique.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classique_8h.html",tooltip="Prototypes des fonctions du puissance 4 classique. "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="../include/avance.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$avance_8h.html",tooltip="Prototypes des fonctions du puissance 4 avance utilisées. "];
 }

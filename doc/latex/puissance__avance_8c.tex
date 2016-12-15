@@ -21,9 +21,8 @@ Graphe des dépendances par inclusion de puissance\+\_\+avance.\+c\+:
 \subsection*{Fonctions}
 \begin{DoxyCompactItemize}
 \item 
-int {\bfseries player1} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block1, int pions, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs, int tour, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)\hypertarget{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}{}\label{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}
-
-\item 
+int \hyperlink{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}{player1} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block1, int pions, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]}, int nb\+\_\+joueurs, int tour, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)
+\begin{DoxyCompactList}\small\item\em Permet au Joueur 1 de jouer ou de quitter et d\textquotesingle{}enregistrer la partie. \end{DoxyCompactList}\item 
 void \hyperlink{puissance__avance_8c_a284bba16cf23938d4f51484c13689d76}{player2} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block2, int pions, char pseudo2\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_a284bba16cf23938d4f51484c13689d76}{}\label{puissance__avance_8c_a284bba16cf23938d4f51484c13689d76}
 
 \begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 2. \end{DoxyCompactList}\item 
@@ -33,12 +32,12 @@ void \hyperlink{puissance__avance_8c_aa70c11e0fde5d1e21b462027203d0641}{player3}
 void \hyperlink{puissance__avance_8c_a2b6a0a4dcaf028ac0ea36949596656e5}{player4} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int $\ast$nb\+\_\+block4, int pions, char pseudo4\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_a2b6a0a4dcaf028ac0ea36949596656e5}{}\label{puissance__avance_8c_a2b6a0a4dcaf028ac0ea36949596656e5}
 
 \begin{DoxyCompactList}\small\item\em Choix du type et de la position de la pièce du Joueur 4. \end{DoxyCompactList}\item 
-void {\bfseries enregistrement\+\_\+score\+\_\+avance} (char joueur\mbox{[}L\mbox{]}, int nb\+\_\+coups)\hypertarget{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}{}\label{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}
+void \hyperlink{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}{enregistrement\+\_\+score\+\_\+avance} (char joueur\mbox{[}L\mbox{]}, int nb\+\_\+coups)\hypertarget{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}{}\label{puissance__avance_8c_a90edd1cd55ec27206445060791e10e27}
 
-\item 
+\begin{DoxyCompactList}\small\item\em Enregistrement du score du gagnant pour le Puissance 4++. \end{DoxyCompactList}\item 
 void \hyperlink{puissance__avance_8c_a76241034cbb33d29399d26db374965ec}{affich\+\_\+result\+\_\+avance} (\hyperlink{structt__piece}{t\+\_\+piece} grille\mbox{[}N\mbox{]}\mbox{[}M\mbox{]}, int win, int tour, char pseudo1\mbox{[}L\mbox{]}, char pseudo2\mbox{[}L\mbox{]}, char pseudo3\mbox{[}L\mbox{]}, char pseudo4\mbox{[}L\mbox{]})\hypertarget{puissance__avance_8c_a76241034cbb33d29399d26db374965ec}{}\label{puissance__avance_8c_a76241034cbb33d29399d26db374965ec}
 
-\begin{DoxyCompactList}\small\item\em Affichage du résultat. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Affichage du vainqueur ou du match nul de la partie du Puissance 4++. \end{DoxyCompactList}\item 
 void \hyperlink{puissance__avance_8c_a6746b00e648617c6414537b36e08217d}{puissance\+\_\+avance} ()\hypertarget{puissance__avance_8c_a6746b00e648617c6414537b36e08217d}{}\label{puissance__avance_8c_a6746b00e648617c6414537b36e08217d}
 
 \begin{DoxyCompactList}\small\item\em Construction du Puissance 4++. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -56,3 +55,31 @@ Benjamin, Julien, Arthur
 \begin{DoxyDate}{Date}
 Novembre 2016 
 \end{DoxyDate}
+
+
+\subsection{Documentation des fonctions}
+\index{puissance\+\_\+avance.\+c@{puissance\+\_\+avance.\+c}!player1@{player1}}
+\index{player1@{player1}!puissance\+\_\+avance.\+c@{puissance\+\_\+avance.\+c}}
+\subsubsection[{\texorpdfstring{player1(t\+\_\+piece grille[N][M], int $\ast$nb\+\_\+block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb\+\_\+joueurs, int tour, int nb\+\_\+block2, int nb\+\_\+block3, int nb\+\_\+block4)}{player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4)}}]{\setlength{\rightskip}{0pt plus 5cm}int player1 (
+\begin{DoxyParamCaption}
+\item[{{\bf t\+\_\+piece}}]{grille\mbox{[}\+N\mbox{]}\mbox{[}\+M\mbox{]}, }
+\item[{int $\ast$}]{nb\+\_\+block1, }
+\item[{int}]{pions, }
+\item[{char}]{pseudo1\mbox{[}\+L\mbox{]}, }
+\item[{char}]{pseudo2\mbox{[}\+L\mbox{]}, }
+\item[{char}]{pseudo3\mbox{[}\+L\mbox{]}, }
+\item[{char}]{pseudo4\mbox{[}\+L\mbox{]}, }
+\item[{int}]{nb\+\_\+joueurs, }
+\item[{int}]{tour, }
+\item[{int}]{nb\+\_\+block2, }
+\item[{int}]{nb\+\_\+block3, }
+\item[{int}]{nb\+\_\+block4}
+\end{DoxyParamCaption}
+)}\hypertarget{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}{}\label{puissance__avance_8c_a77f2cbf46c0f7a20c07ea2372e213c21}
+
+
+Permet au Joueur 1 de jouer ou de quitter et d\textquotesingle{}enregistrer la partie. 
+
+\begin{DoxyReturn}{Renvoie}
+0 si le joueur a joué, 10 s\textquotesingle{}il a quitté la partie 
+\end{DoxyReturn}

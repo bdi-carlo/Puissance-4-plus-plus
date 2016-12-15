@@ -115,8 +115,8 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Fonctions</h2></td></tr>
-<tr class="memitem:a77f2cbf46c0f7a20c07ea2372e213c21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77f2cbf46c0f7a20c07ea2372e213c21"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>player1</b> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4)</td></tr>
+<tr class="memitem:a77f2cbf46c0f7a20c07ea2372e213c21"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a77f2cbf46c0f7a20c07ea2372e213c21">player1</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4)</td></tr>
+<tr class="memdesc:a77f2cbf46c0f7a20c07ea2372e213c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Permet au Joueur 1 de jouer ou de quitter et d'enregistrer la partie.  <a href="#a77f2cbf46c0f7a20c07ea2372e213c21">Plus de détails...</a><br /></td></tr>
 <tr class="separator:a77f2cbf46c0f7a20c07ea2372e213c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a284bba16cf23938d4f51484c13689d76"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a284bba16cf23938d4f51484c13689d76"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a284bba16cf23938d4f51484c13689d76">player2</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int *nb_block2, int pions, char pseudo2[L])</td></tr>
@@ -131,11 +131,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puis
 <tr class="memdesc:a2b6a0a4dcaf028ac0ea36949596656e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Choix du type et de la position de la pièce du Joueur 4. <br /></td></tr>
 <tr class="separator:a2b6a0a4dcaf028ac0ea36949596656e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90edd1cd55ec27206445060791e10e27"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a90edd1cd55ec27206445060791e10e27"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>enregistrement_score_avance</b> (char joueur[L], int nb_coups)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a90edd1cd55ec27206445060791e10e27">enregistrement_score_avance</a> (char joueur[L], int nb_coups)</td></tr>
+<tr class="memdesc:a90edd1cd55ec27206445060791e10e27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enregistrement du score du gagnant pour le Puissance 4++. <br /></td></tr>
 <tr class="separator:a90edd1cd55ec27206445060791e10e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76241034cbb33d29399d26db374965ec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a76241034cbb33d29399d26db374965ec"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a76241034cbb33d29399d26db374965ec">affich_result_avance</a> (<a class="el" href="structt__piece.html">t_piece</a> grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L])</td></tr>
-<tr class="memdesc:a76241034cbb33d29399d26db374965ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage du résultat. <br /></td></tr>
+<tr class="memdesc:a76241034cbb33d29399d26db374965ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Affichage du vainqueur ou du match nul de la partie du Puissance 4++. <br /></td></tr>
 <tr class="separator:a76241034cbb33d29399d26db374965ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6746b00e648617c6414537b36e08217d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6746b00e648617c6414537b36e08217d"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puissance__avance_8c.html#a6746b00e648617c6414537b36e08217d">puissance_avance</a> ()</td></tr>
@@ -147,7 +148,97 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puis
 <dl class="section author"><dt>Auteur</dt><dd>Benjamin, Julien, Arthur </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>Novembre 2016 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Documentation des fonctions</h2>
+<a class="anchor" id="a77f2cbf46c0f7a20c07ea2372e213c21"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int player1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structt__piece.html">t_piece</a>&#160;</td>
+          <td class="paramname"><em>grille</em>[N][M], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>nb_block1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>pions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pseudo1</em>[L], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pseudo2</em>[L], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pseudo3</em>[L], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>pseudo4</em>[L], </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_joueurs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>tour</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_block2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_block3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nb_block4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Permet au Joueur 1 de jouer ou de quitter et d'enregistrer la partie. </p>
+<dl class="section return"><dt>Renvoie</dt><dd>0 si le joueur a joué, 10 s'il a quitté la partie </dd></dl>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Généré par &#160;<a href="http://www.doxygen.org/index.html">
