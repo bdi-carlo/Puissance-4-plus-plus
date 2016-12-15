@@ -37,3 +37,6 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut);
 void enregistrement_score_classique(char joueur[L], int nb_coups);
 void puissance_classique();
 int fin_jeux();
+
+//Tests
+void fct_test(int grille[N][M], int tour);

@@ -1,4 +1,4 @@
-OBJET =  game.o interface.o puissance_classique.o grille.o interface_avance.o puissance_avance.o grille_avance.o
+OBJET =  test.o game.o interface.o puissance_classique.o grille.o interface_avance.o puissance_avance.o grille_avance.o
 COMMANDE = -g -Wextra
 BIN = ./bin/
 SRC = ./src/
@@ -8,8 +8,7 @@ INCLUDE2 = ./include/avance.h
 #compile tout les fichiers et crée un executable
 all : ${OBJET}
 	gcc -o Puissance_4++.exe ${OBJET}
-	rm -rf *.o
-
+	
 #compilation de toutes les dépendances
 game.o : ${SRC}game.c ${INCLUDE1} ${INCLUDE2}
 	gcc -c ${SRC}game.c ${COMMANDE}
@@ -34,7 +33,12 @@ grille_avance.o : ${SRC}grille_avance.c ${INCLUDE1} ${INCLUDE2}
 puissance_avance.o : ${SRC}puissance_avance.c ${INCLUDE1} ${INCLUDE2}
 	gcc -c ${SRC}puissance_avance.c ${COMMANDE}
 
-	
+
+#test
+test.o : ./test/test.C ${INCLUDE1}
+	gcc -c ./test/test.c ${COMMANDE}
+
+
 #suppression des fichiers temporaires
 clean_o :
 	rm -rf *.o

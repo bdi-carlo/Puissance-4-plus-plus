@@ -157,6 +157,8 @@ void puissance_classique(){
 
 			//Mise à jour de la grille
 			afficher_matrice(grille);
+
+			//fct_test(grille, tour);
 		
 			//Test pour savoir si le joueur à gagné
 			if(gagne(grille) == 1)break;
