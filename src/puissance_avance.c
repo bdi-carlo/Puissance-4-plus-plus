@@ -16,27 +16,14 @@
 
 */
 
+
 /**
-*\fn void player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L])
-*\brief Choix du type et de la position de la pièce du Joueur 1
 
-*\fn void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L])
-*\brief Choix du type et de la position de la pièce du Joueur 2
-
-*\fn void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L])
-*\brief Choix du type et de la position de la pièce du Joueur 3
-
-*\fn void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L])
-*\brief Choix du type et de la position de la pièce du Joueur 4
-
-*\fn void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L])
-*\brief Affichage du résultat
-
-*\fn void puissance_avance()
-*\brief Construction du Puissance 4++
+*\fn int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4)
+*\brief Permet au Joueur 1 de jouer ou de quitter et d'enregistrer la partie
+*\return 0 si le joueur a joué, 10 s'il a quitté la partie
 
 */
-
 int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs, int tour, int nb_block2, int nb_block3, int nb_block4){
 	int num_joueur, ligne, colonne, test;
 	unsigned int type;
@@ -122,6 +109,12 @@ int player1(t_piece grille[N][M], int *nb_block1, int pions, char pseudo1[L], ch
 	return 0;
 }
 
+/**
+
+*\fn void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L])
+*\brief Choix du type et de la position de la pièce du Joueur 2
+
+*/
 void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 	int num_joueur, ligne, colonne, test;
 	unsigned int type;
@@ -197,6 +190,12 @@ void player2(t_piece grille[N][M], int *nb_block2, int pions, char pseudo2[L]){
 	couleur("0");
 }
 
+/**
+
+*\fn void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L])
+*\brief Choix du type et de la position de la pièce du Joueur 3
+
+*/
 void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 	int num_joueur, ligne, colonne, test;
 	unsigned int type;
@@ -261,8 +260,13 @@ void player3(t_piece grille[N][M], int *nb_block3, int pions, char pseudo3[L]){
 	couleur("0");
 }
 
+/**
+*\fn void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L])
+*\brief Choix du type et de la position de la pièce du Joueur 4
+
+*/
 void player4(t_piece grille[N][M], int *nb_block4, int pions, char pseudo4[L]){
-	int num_joueur, ligne, colonne, test;
+	int num_joueur, ligne, c olonne, test;
 	unsigned int type;
 
 	num_joueur = 4;
@@ -333,6 +337,12 @@ void enregistrement_score_avance(char joueur[L], int nb_coups){
 	fclose(fichier);
 }
 
+/**
+
+*\fn void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L])
+*\brief Affichage du vainqueur ou du match nul de la partie du Puissance 4++
+
+*/
 void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L]){
 	system("clear");
 	
@@ -395,6 +405,11 @@ void affich_result_avance(t_piece grille[N][M], int win, int tour, char pseudo1[
 	}
 }
 
+/**
+*\fn void puissance_avance()
+*\brief Construction du Puissance 4++
+
+*/
 void puissance_avance(){
 	t_piece grille[N][M];
 	int colonne, ligne, pions, num_joueur, tour, nb_joueurs, type, win, nb_block1, nb_block2, nb_block3, nb_block4, test, menutest, quit, party ,debut;
