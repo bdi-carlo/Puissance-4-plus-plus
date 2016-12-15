@@ -22,6 +22,7 @@
 
 *\fn int menu()
 *\brief Menu pour commencer la partie
+*\return Retourne le choix de l'utilisateur
 
 */
 int menu(){
@@ -106,7 +107,7 @@ void affich_score_classique(){
 
 *\fn int fin_jeux()
 *\brief Menu pour la fin de la partie
-*\return 
+*\return Retourne le choix de l'utilisateur 
 
 */
 int fin_jeux(){
@@ -170,9 +171,9 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 
 /**
 
-\fn int quitter()
-\brief Menu qui demande à l'utilisaeur de quitter et/ou sauvegarder pendant une partie
-\return Retourne le choix de l'utilisateur
+*\fn int quitter()
+*\brief Menu qui demande à l'utilisaeur de quitter et/ou sauvegarder pendant une partie
+*\return Retourne le choix de l'utilisateur
 
 */
 int quitter(){
@@ -200,9 +201,9 @@ int quitter(){
 
 /**
 
-\fn int begin()
-\brief Menu au début de la partie
-\return Retourne le choix de l'utilisateur
+*\fn int begin()
+*\brief Menu au début de la partie
+*\return Retourne le choix de l'utilisateur
 
 */
 int begin(){

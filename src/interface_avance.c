@@ -17,20 +17,14 @@
 *\date Novembre 2016
 */
 
+
+
 /**
-*\fn int fin_jeux_avance()
-*\brief Menu pour la fin de la partie
 
-*\fn int nb_joueur()
-*\brief Choix du nombre de joueurs
+\fn void affich_score_avance()
+\brief Affiche les meilleurs scores du Puissance 4++ 
 
-*\fn void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs)
-*\brief Choix des pseudos
-
-*\fn void afficher_regles()
-*\brief Affiche les règles du Puissance 4++
 */
-
 void affich_score_avance(){
 	int i, j, taille;
 	t_score temp;
@@ -73,6 +67,11 @@ void affich_score_avance(){
 	printf("\n");
 }
 
+/**
+*\fn int fin_jeux_avance()
+*\brief Menu pour la fin de la partie du Puissance 4++
+
+*/
 int fin_jeux_avance(){
 	int choix;
 
@@ -99,6 +98,13 @@ int fin_jeux_avance(){
 	}while(choix < 1 || choix > 3);
 }
 
+/**
+
+*\fn int nb_joueur()
+*\brief Choix du nombre de joueurs pour le Puissance 4++
+*\return Nombre de joueurs choisis
+
+*/
 int nb_joueur(){
 	int choix;
 
@@ -121,6 +127,12 @@ int nb_joueur(){
 	return choix;
 }
 
+/**
+
+*\fn void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs)
+*\brief Choix des pseudos
+
+*/
 void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseudo4[L], int nb_joueurs){
 	system("clear");
 
@@ -169,6 +181,11 @@ void pseudo_avance(char pseudo1[L], char pseudo2[L], char pseudo3[L], char pseud
 	couleur("0");
 }
 
+/**
+
+*\fn void afficher_regles()
+*\brief Affiche les règles du Puissance 4++
+*/
 void afficher_regles(){
 	int regles;
 	do{
