@@ -97,13 +97,13 @@ int IA (int grille[N][M], int tour) {
 		}
 		
 		//Test diagonale droite
-		for(k = 5; k >= 4; k--){
+		for(k = 5; k >= 3; k--){
 			player1 = 0;
 			player2 = 0;
 			j = 0;
 
 			i = k;
-			while(i >= 1 && j <= k-1){
+			while(i >= 0 && j <= k-1){
 				if(grille[i][j] == 1){
 					player1++;
 					player2 = 0;
@@ -128,13 +128,13 @@ int IA (int grille[N][M], int tour) {
 		}
 			
 
-		for(k = 1; k <= 2; k++){
+		for(k = 1; k <= 3; k++){
 			player1 = 0;
 			player2 = 0;
 			i = 5;
 
 			j = k;
-			while(i >= 3 && j <= 5){
+			while(i >= k-1 && j <= 6){
 				if(grille[i][j] == 1){
 					player1++;
 					player2 = 0;
@@ -158,14 +158,14 @@ int IA (int grille[N][M], int tour) {
 			}	
 		}	
 		
-		/*//Test diagonale gauche
-		for(k = 5; k >= 4; k--){
+		//Test diagonale gauche
+		for(k = 3; k <= 5; k++){
 			player1 = 0;
 			player2 = 0;
 			j = 6;
 
 			i = k;
-			while(i >= 1 && j <= k-1){
+			while(i >= 0 && j >= 6-k){
 				if(grille[i][j] == 1){
 					player1++;
 					player2 = 0;
@@ -189,13 +189,13 @@ int IA (int grille[N][M], int tour) {
 			}
 		}
 
-		for(k = 5; k >= 4; k--){
+		for(k = 5; k >=3; k--){
 			player1 = 0;
 			player2 = 0;
 			i = 5;
 
 			j = k;
-			while(i <= k && j <= 5){
+			while(i <= 5-k && j <= 5){
 				if(grille[i][j] == 1){
 					player1++;
 					player2 = 0;
@@ -217,12 +217,13 @@ int IA (int grille[N][M], int tour) {
 				i--;
 				j--;	
 			}
-		}*/
+		}
 		for(i = 0; i < N; i++){
 			printf("\n");
 			for(j = 0; j < M; j++){
-				printf(" %i ",valeur[i][j]);
+				printf("%i ",valeur[i][j]);
 			}
+			
 		}
 
 		for(i = 0; i < N; i++){
