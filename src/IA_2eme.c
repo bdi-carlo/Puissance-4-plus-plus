@@ -7,9 +7,9 @@
 #define L 50
 
 int IA (int grille[N][M], int tour) {
-	int valeur[N][M];
+	int tab_max[L], valeur[N][M];
 	int col, player1, player2;
-	int max = 0;
+	int valeur_max = 2;
 	int i, j, k ;
 
 	//Au premier tour l'IA joue aleatoirement
@@ -227,14 +227,23 @@ int IA (int grille[N][M], int tour) {
 			
 		}
 
-		for(i = 0; i < N; i++){
+		for(i = 0, k = 0; i < N; i++){
 			for(j = 0; j < M; j++){
-				if(valeur[i][j] > max){
-					max = valeur[i][j];
-					col = j;
+				if(valeur[i][j] >= valeur_max){
+					if(valeur_max > tab_max[k]){
+						tab_max[k] = valeur_max ;
+						valeur_max = valeur[i][j];
+					}
+					else if(tab_max[k] == valeur_max){
+						k++ ;
+						tab_max[k] = valeur_max ;
+					}
 				}
+				
 			}
+				
 		}
+		col = tab_max[rand()%(k+1)] + 1;
 		return col + 1;
 	}
 }

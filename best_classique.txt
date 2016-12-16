@@ -7,3 +7,5 @@
 1 8
 Arth 7
 Ordi 8
+Arth 8
+Arth 11
