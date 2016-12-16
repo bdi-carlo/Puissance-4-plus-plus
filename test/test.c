@@ -26,15 +26,15 @@ void fct_test(int grille[N][M], int tour){
 	if(tour == 4){
 		j = 0;
 	
-		for(i = 5; i > 0; i++){
+		for(i = 0; i < N; i++){
 			if(grille[i][j] == 1)
 				nb_joueur1++;
 		}
 	
 		if(tour == 4 && nb_joueur1 == 4)
-			printf("\nLe test a rate");
-		else
 			printf("\nLe test a reussi");
+		else
+			printf("\nLe test a rate");
 
 		getchar();
 		getchar();

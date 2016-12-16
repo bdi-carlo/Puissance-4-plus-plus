@@ -106,8 +106,13 @@ int fin_jeux_avance(){
 *\return Nombre de joueurs choisis
 
 */
-int nb_joueur(){
+int nb_joueur(int party, int debut){
 	int choix;
+
+	system("clear");
+
+	if(party == 1 && debut == 2)
+		printf("\nAUCUNE PARTIE ENREGISTRE\n");
 
 	printf("\n+-------------------------------+ ");
 	printf("\n|	  PUISSANCE 4 avance    |");

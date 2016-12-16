@@ -440,7 +440,7 @@ void puissance_avance(){
 
 		//Si le joueur commence une nouvelle partie ou si il n'y avais pas de partie a restaurer on demande le nombre de joueur
 		if(debut == 1 || (debut == 2 && party == 1)){
-			nb_joueurs = nb_joueur() ;
+			nb_joueurs = nb_joueur(party, debut) ;
 			if(nb_joueurs == 1){
 				menu();
 				menutest = 1;
