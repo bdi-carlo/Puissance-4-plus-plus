@@ -3,6 +3,7 @@
 #include <string.h>
 #include <unistd.h>
 #include "../include/classique.h"
+#include "../include/avance.h"
 
 #define couleur(param) printf("\033[%sm",param)
 #define T 100
@@ -18,29 +19,25 @@
 
 
 /**
+
 *\fn int menu()
 *\brief Menu pour commencer la partie
+*\return Retourne le choix de l'utilisateur
 
-*\fn int fin_jeux()
-*\brief Menu pour la fin de la partie
-
-*\fn void pseudo_classique(char pseudo1[L], char pseudo2[L])
-*\brief Demande les pseudos des joueurs
 */
-
 int menu(){
 	int choix;
 
 	system("clear");
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	        Menu            |");
 	printf("\n|				|");
 	printf("\n|  1 - Puissance 4 classique	|");
 	printf("\n|  2 - Puissance 4 avance	|");
 	printf("\n|  3 - Quitter			|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	
 	do{
 		printf("\n>> Votre choix : ");
@@ -58,6 +55,12 @@ int menu(){
 	return 0;
 }
 
+/**
+
+*\fn void affich_score_classique()
+*\brief Affiche les meilleurs scores
+
+*/
 void affich_score_classique(){
 	int i, j, taille;
 	t_score temp;
@@ -70,7 +73,7 @@ void affich_score_classique(){
 	//Met tout les scores dans un tableau
 	i = 0;
 	do{
-		fscanf(fichier, "%s", &tab[i].pseudo);
+		fscanf(fichier, "%s", tab[i].pseudo);
 		fscanf(fichier, "%i", &tab[i].score);
 		i++;
 	}while(!feof(fichier));
@@ -100,17 +103,24 @@ void affich_score_classique(){
 	printf("\n");
 }
 
+/**
+
+*\fn int fin_jeux()
+*\brief Menu pour la fin de la partie
+*\return Retourne le choix de l'utilisateur 
+
+*/
 int fin_jeux(){
 	int choix;
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	        FIN             |");
 	printf("\n|				|");
 	printf("\n| 	 1 - Rejouer		|");
 	printf("\n|  	 2 - Retour au menu	|");
 	printf("\n|  	 3 - Quitter		|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	
 	do{
 		printf("\n>> Votre choix : ");
@@ -126,44 +136,65 @@ int fin_jeux(){
 	}while(choix < 1 || choix > 3);
 }
 
-void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
+/**
+
+*\fn void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut)
+*\brief Demande les pseudos des joueurs
+
+*/
+void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut, int ordinateur){
 	system("clear");
 	if(party == 1 && debut == 2)
 		printf("\nAUCUNE PARTIE ENREGISTRE\n");
 		
 	printf("\nVeuillez choisir vos pseudos sachant qu'ils ne doivent pas depasser 5 caracteres \n \n");
 	
-	do{
-		couleur("31");
-		printf("\nJoueur 1: ");
-		scanf("%s", pseudo1);
-		couleur("0");
-		if(strlen(pseudo1) > 5)
-			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
-	}while(strlen(pseudo1) > 5);
+	if(ordinateur == 1 || ordinateur == 2){
+		do{
+			couleur("31");
+			printf("\nJoueur 1: ");
+			scanf("%s", pseudo1);
+			couleur("0");
+				if(strlen(pseudo1) > 5)
+					printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+		}while(strlen(pseudo1) > 5);
 	couleur("0");
-
-	do{
-		couleur("34");
-		printf("\nJoueur 2: ");
-		scanf("%s", pseudo2);
-		couleur("0");
-		if(strlen(pseudo2) > 5)
-			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
-	}while(strlen(pseudo2) > 5);
+	
+	}
+	
+	if(ordinateur == 2){
+		do{
+			couleur("34");
+			printf("\nJoueur 2: ");
+			scanf("%s", pseudo2);
+			couleur("0");
+			if(strlen(pseudo2) > 5)
+				printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+		}while(strlen(pseudo2) > 5);
+	}
+	
+	else if(ordinateur == 1){
+		strcpy(pseudo2,"Ordi");
+	}
 }
+/**
 
+*\fn int quitter()
+*\brief Menu qui demande à l'utilisaeur de quitter et/ou sauvegarder pendant une partie
+*\return Choix de l'utilisateur
+
+*/
 int quitter(){
 	int choix;
 	system("clear");
 
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 	printf("\n|	       Quitter          |");
 	printf("\n|				|");
 	printf("\n|  1 - Quitter sans sauvegarder	|");
 	printf("\n|  2 - Quitter et sauvegarder	|");
 	printf("\n|				|");
-	printf("\n ------------------------------- ");
+	printf("\n+-------------------------------+ ");
 
 	do{
 		printf("\n>> Votre choix : ");
@@ -176,11 +207,18 @@ int quitter(){
 	return choix;
 }
 
+/**
+
+*\fn int begin()
+*\brief Menu au début de la partie
+*\return Choix de l'utilisateur
+
+*/
 int begin(){
 	int choix;
 	system("clear");
 
-	printf("\n ------------------------------------- ");
+	printf("\n+---------------------------------------+ ");
 	printf("\n|    		  Début          	|");
 	printf("\n|					|");
 	printf("\n|  1 - Commencer une nouvelle partie	|");
@@ -193,11 +231,31 @@ int begin(){
 		printf("\n>> Votre choix : ");
 		scanf("%d",&choix);
 		
-		if(choix == 3)
-			menu();
+		if(choix < 1 || choix > 3)
+			printf("\nErreur: votre choix doit etre 1,2 ou 3\n");
+	}while(choix < 1 || choix > 3);
+	
+	return choix;
+}
 
-		else if(choix < 1 || choix > 2)
-			printf("\nErreur: votre choix doit etre 1 ou 2\n");
+int ordi(){
+	int choix;
+	system("clear");
+
+	printf("\n+---------------------------------------+ ");
+	printf("\n|	    Puissance classique		|");
+	printf("\n|					|");
+	printf("\n|	1 - Jouer contre l'ordinateur	|");
+	printf("\n|	2 - Jouer à 2 joueurs		|");
+	printf("\n|					|");
+	printf("\n+---------------------------------------+ ");
+
+	do{
+		printf("\n>> Votre choix : ");
+		scanf("%d",&choix);
+			
+		if(choix < 1 || choix > 2)
+			printf("\nErreur: votre choix doit être 1 ou 2\n");
 	}while(choix < 1 || choix > 2);
 	
 	return choix;
