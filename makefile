@@ -35,7 +35,7 @@ puissance_avance.o : ${SRC}puissance_avance.c ${INCLUDE1} ${INCLUDE2}
 
 
 #test
-test.o : ./test/test.C ${INCLUDE1}
+test.o : ./test/test.c ${INCLUDE1}
 	gcc -c ./test/test.c ${COMMANDE}
 
 
