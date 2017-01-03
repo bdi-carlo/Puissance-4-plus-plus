@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <windows.h> 
 #include "../include/classique.h"
 
 #define couleur(param) printf("\033[%sm",param)
@@ -85,7 +86,7 @@ void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour)
 */
 void puissance_classique(){
 	int grille[N][M];
-	int colonne, ligne, pions, nb_tours, num_joueur, tour, test, party, debut;
+	int colonne, ligne, pions, nb_tours, num_joueur, tour, test, party, debut, nb_joueurs;
 	char joueur1[L],joueur2[L];
 
 /****************************** INITIALISATION ****************************************/
@@ -96,14 +97,18 @@ void puissance_classique(){
 	debut = begin();
 	if(debut != 3){
 		if(debut == 2){
-			party = load_classique(grille, &tour, joueur1, joueur2);
+			party = load_classique(grille, &tour, joueur1, joueur2, &nb_joueurs);
 			if(party == 0)	
 				pions = tour;
+				
 		}
 
 		if((party == 1 && debut == 2) || debut == 1){
+			//Demande si il veut jouer seul ou à deux
+			nb_joueurs = nb_joueurs_classique();
+			
 			//Initialisation des pseudos
-			pseudo_classique(joueur1, joueur2, party, debut);
+			pseudo_classique(joueur1, joueur2, party, debut, nb_joueurs);
 
 			//Initialisation de la matrice et effaçage de l'écran pour afficher la grille vierge
 			init_matrice(grille);
@@ -153,7 +158,7 @@ void puissance_classique(){
 			if(colonne == 10){
 				test = 1;
 				if(quitter() == 2)
-					save_quit_classique(grille, tour, joueur1, joueur2);
+					save_quit_classique(grille, tour, joueur1, joueur2, nb_joueurs);
 				break;
 			}
 		
@@ -165,7 +170,7 @@ void puissance_classique(){
 			//Mise à jour de la grille
 			afficher_matrice(grille);
 
-			fct_test(grille, tour);
+			//fct_test(grille, tour);
 		
 			//Test pour savoir si le joueur à gagné
 			if(gagne(grille) == 1)break;
@@ -173,28 +178,39 @@ void puissance_classique(){
 /****************************** JOUEUR 2 JOUE *****************************************/
 
 			num_joueur = 2;
+
+			//Si le joueur joue contre l'ordinateur
+			if(nb_joueurs == 1){
+				Sleep(1000);
+				
+				colonne = IA(grille, tour) ;
+				ligne = choix_ligne(grille, colonne);
+				placer_pions(grille, colonne, ligne, num_joueur);
+			}
+
+			else{
+				couleur("34");
+				printf("		  %s   ",joueur2);
+				couleur("0");
+				
+				//Demande où il veut jouer
+				do{			
+					printf("\nColonne: ");
+					scanf("%i", &colonne);
 			
-			couleur("34");
-			printf("		  %s  ",joueur2);
-			couleur("0");
+					if(colonne < 1 || colonne > 7)
+						printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
 			
-			//Demande où il veut jouer
-			do{			
-				printf("\nColonne: ");
-				scanf("%i", &colonne);
-			
-				if(colonne < 1 || colonne > 7)
-					printf("Erreur: entrez une colonne entre 1 et 7 compris: ");
-			
-				else{
-					//Placement du pion sur la grille si et seulement si la colonne le permet
-					ligne = choix_ligne(grille, colonne);
-					if(ligne < 0)
-						printf("Erreur: colonne pleine veuillez en choisir une autre: ");
-					else
-						placer_pions(grille, colonne, ligne, num_joueur);
-				}
-			}while(colonne < 1 || colonne > 7 || ligne < 0);
+					else{
+						//Placement du pion sur la grille si et seulement si la colonne le permet
+						ligne = choix_ligne(grille, colonne);
+						if(ligne < 0)
+							printf("Erreur: colonne pleine veuillez en choisir une autre: ");
+						else
+							placer_pions(grille, colonne, ligne, num_joueur);
+					}
+				}while(colonne < 1 || colonne > 7 || ligne < 0);
+			}
 
 			//Affichage du numéro du tour
 			system("clear");

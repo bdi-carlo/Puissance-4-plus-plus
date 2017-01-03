@@ -55,6 +55,29 @@ int menu(){
 	return 0;
 }
 
+//Demande et retourne le nombre de joueurs
+int nb_joueurs_classique(){
+	int choix;
+
+	system("clear");
+
+	printf("\n+-------------------------------+ ");
+	printf("\n|	  PUISSANCE 4 classique |");
+	printf("\n|				|");
+	printf("\n|	  Nombre de joueurs:    |");
+	printf("\n| 	      1 joueurs		|");
+	printf("\n| 	      2 joueurs		|");
+	printf("\n|				|");
+	printf("\n+-------------------------------+ ");
+
+	do{
+		printf("\n>>Votre choix : ");
+		scanf("%d",&choix);
+	}while(choix < 1 || choix > 2);
+
+	return choix;
+}
+
 /**
 
 *\fn void affich_score_classique()
@@ -142,7 +165,7 @@ int fin_jeux(){
 *\brief Demande les pseudos des joueurs
 
 */
-void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
+void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut, int nb_joueurs){
 	system("clear");
 	if(party == 1 && debut == 2)
 		printf("\nAUCUNE PARTIE ENREGISTRE\n");
@@ -159,14 +182,19 @@ void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut){
 	}while(strlen(pseudo1) > 5);
 	couleur("0");
 
-	do{
-		couleur("34");
-		printf("\nJoueur 2: ");
-		scanf("%s", pseudo2);
-		couleur("0");
-		if(strlen(pseudo2) > 5)
-			printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
-	}while(strlen(pseudo2) > 5);
+	if(nb_joueurs == 2){
+		do{
+			couleur("34");
+			printf("\nJoueur 2: ");
+			scanf("%s", pseudo2);
+			couleur("0");
+			if(strlen(pseudo2) > 5)
+				printf("Erreur: votre pseudo ne doit pas depasser 5 caracteres");
+		}while(strlen(pseudo2) > 5);
+	}
+
+	else
+		strcpy(pseudo2,"Ordi");
 }
 
 /**

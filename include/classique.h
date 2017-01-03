@@ -29,13 +29,14 @@ int choix_ligne(int matrice[N][M], int colonne);
 void placer_pions(int matrice[N][M], int colonne, int ligne, int num_joueur);
 int gagne(int grille[N][M]);
 int quitter();
-void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L]);
+void save_quit_classique(int matrice[N][M], int tour, char pseudo1[L], char pseudo2[L], int nb_joueurs);
 int begin();
-int load_classique(int grille[N][M], int *tour, char pseudo1[L], char pseudo2[L]);
+int load_classique(int grille[N][M], int *tour, char pseudo1[L], char pseudo2[L], int *nb_joueurs);
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour);
 void affich_score_classique();
+int IA(int grille[N][M], int tour);
 
-void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut);
+void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut, int nb_joueurs);
 void enregistrement_score_classique(char joueur[L], int nb_coups);
 void puissance_classique();
 int fin_jeux();
