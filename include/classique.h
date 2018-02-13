@@ -17,7 +17,7 @@
 */
 
 typedef struct{
-	int score ; /**< Score du joueur*/ 
+	int score ; /**< Score du joueur*/
 	char pseudo[L] ; /**< Pseudo du joueur*/
 }t_score;
 
@@ -35,6 +35,7 @@ int load_classique(int grille[N][M], int *tour, char pseudo1[L], char pseudo2[L]
 void affich_result(int grille[N][M], char joueur1[L], char joueur2[L], int tour);
 void affich_score_classique();
 int IA(int grille[N][M], int tour);
+int nb_joueurs_classique();
 
 void pseudo_classique(char pseudo1[L], char pseudo2[L], int party, int debut, int nb_joueurs);
 void enregistrement_score_classique(char joueur[L], int nb_coups);
